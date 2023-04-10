@@ -30,6 +30,8 @@ import (
 
 	"github.com/IBM-Cloud/hpcs-grep11-go/ep11"
 	pb "github.com/IBM-Cloud/hpcs-grep11-go/grpc"
+	"github.com/IBM-Cloud/hpcs-grep11-go/other_curves/bcurves"
+	btcec "github.com/btcsuite/btcd/btcec/v2"
 	"github.com/golang/protobuf/proto"
 	"google.golang.org/grpc/status"
 )
@@ -167,6 +169,9 @@ var (
 // GetNamedCurveFromOID returns an elliptic curve from the specified curve OID
 func GetNamedCurveFromOID(oid asn1.ObjectIdentifier) elliptic.Curve {
 	switch {
+	case oid.Equal(OIDNamedCurveSecp256k1):
+		return btcec.S256()
+
 	case oid.Equal(OIDNamedCurveP224):
 		return elliptic.P224()
 	case oid.Equal(OIDNamedCurveP256):
@@ -175,6 +180,36 @@ func GetNamedCurveFromOID(oid asn1.ObjectIdentifier) elliptic.Curve {
 		return elliptic.P384()
 	case oid.Equal(OIDNamedCurveP521):
 		return elliptic.P521()
+
+	case oid.Equal(bcurves.OIDNamedCurveBP160R1):
+		return bcurves.P160r1()
+	case oid.Equal(bcurves.OIDNamedCurveBP192R1):
+		return bcurves.P192r1()
+	case oid.Equal(bcurves.OIDNamedCurveBP224R1):
+		return bcurves.P224r1()
+	case oid.Equal(bcurves.OIDNamedCurveBP256R1):
+		return bcurves.P256r1()
+	case oid.Equal(bcurves.OIDNamedCurveBP320R1):
+		return bcurves.P320r1()
+	case oid.Equal(bcurves.OIDNamedCurveBP384R1):
+		return bcurves.P384r1()
+	case oid.Equal(bcurves.OIDNamedCurveBP512R1):
+		return bcurves.P512r1()
+
+	case oid.Equal(bcurves.OIDNamedCurveBP160T1):
+		return bcurves.P160t1()
+	case oid.Equal(bcurves.OIDNamedCurveBP192T1):
+		return bcurves.P192t1()
+	case oid.Equal(bcurves.OIDNamedCurveBP224T1):
+		return bcurves.P224t1()
+	case oid.Equal(bcurves.OIDNamedCurveBP256T1):
+		return bcurves.P256t1()
+	case oid.Equal(bcurves.OIDNamedCurveBP320T1):
+		return bcurves.P320t1()
+	case oid.Equal(bcurves.OIDNamedCurveBP384T1):
+		return bcurves.P384t1()
+	case oid.Equal(bcurves.OIDNamedCurveBP512T1):
+		return bcurves.P512t1()
 	}
 	return nil
 }
