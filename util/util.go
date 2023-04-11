@@ -31,7 +31,7 @@ import (
 	"github.com/IBM-Cloud/hpcs-grep11-go/ep11"
 	pb "github.com/IBM-Cloud/hpcs-grep11-go/grpc"
 	"github.com/IBM-Cloud/hpcs-grep11-go/other_curves/bcurves"
-	btcec "github.com/btcsuite/btcd/btcec/v2"
+	"github.com/IBM-Cloud/hpcs-grep11-go/other_curves/ncurves"
 	"github.com/golang/protobuf/proto"
 	"google.golang.org/grpc/status"
 )
@@ -152,6 +152,7 @@ func Convert(err error) (bool, *pb.Grep11Error) {
 
 var (
 	// The following variables are standardized elliptic curve definitions
+	OIDNamedCurveP192      = asn1.ObjectIdentifier{1, 2, 840, 10045, 3, 1, 1}
 	OIDNamedCurveP224      = asn1.ObjectIdentifier{1, 3, 132, 0, 33}
 	OIDNamedCurveP256      = asn1.ObjectIdentifier{1, 2, 840, 10045, 3, 1, 7}
 	OIDNamedCurveP384      = asn1.ObjectIdentifier{1, 3, 132, 0, 34}
@@ -169,9 +170,11 @@ var (
 // GetNamedCurveFromOID returns an elliptic curve from the specified curve OID
 func GetNamedCurveFromOID(oid asn1.ObjectIdentifier) elliptic.Curve {
 	switch {
-	case oid.Equal(OIDNamedCurveSecp256k1):
-		return btcec.S256()
+	case oid.Equal(OIDNamedCurveP192):
+		return ncurves.P192()
 
+	case oid.Equal(OIDNamedCurveP224):
+		return elliptic.P224()
 	case oid.Equal(OIDNamedCurveP224):
 		return elliptic.P224()
 	case oid.Equal(OIDNamedCurveP256):
