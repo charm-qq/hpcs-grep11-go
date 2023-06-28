@@ -32,6 +32,7 @@ import (
 	pb "github.com/IBM-Cloud/hpcs-grep11-go/grpc"
 	"github.com/IBM-Cloud/hpcs-grep11-go/other_curves/bcurves"
 	"github.com/IBM-Cloud/hpcs-grep11-go/other_curves/ncurves"
+	btcec "github.com/btcsuite/btcd/btcec/v2"
 	"github.com/golang/protobuf/proto"
 	"google.golang.org/grpc/status"
 )
@@ -170,6 +171,9 @@ var (
 // GetNamedCurveFromOID returns an elliptic curve from the specified curve OID
 func GetNamedCurveFromOID(oid asn1.ObjectIdentifier) elliptic.Curve {
 	switch {
+	case oid.Equal(OIDNamedCurveSecp256k1):
+		return btcec.S256()
+
 	case oid.Equal(OIDNamedCurveP192):
 		return ncurves.P192()
 
