@@ -6,7 +6,7 @@ package grep11
 import (
 	context "context"
 	fmt "fmt"
-	github_com_IBM_Cloud_hpcs_grep11_go_ep11 "github.com/IBM-Cloud/hpcs-grep11-go/ep11"
+	"github.com/IBM-Cloud/hpcs-grep11-go/ep11"
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	grpc "google.golang.org/grpc"
@@ -26,7 +26,7 @@ var _ = math.Inf
 // is compatible with the proto package it is being compiled against.
 // A compilation error at this line likely means your copy of the
 // proto package needs to be updated.
-const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
+// const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
 type RSAOAEPParm_Mask int32
 
@@ -62,7 +62,7 @@ func (x RSAOAEPParm_Mask) String() string {
 }
 
 func (RSAOAEPParm_Mask) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_ad098daeda4239f7, []int{79, 0}
+	return fileDescriptor_ad098daeda4239f7, []int{75, 0}
 }
 
 type RSAOAEPParm_ParmType int32
@@ -87,7 +87,7 @@ func (x RSAOAEPParm_ParmType) String() string {
 }
 
 func (RSAOAEPParm_ParmType) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_ad098daeda4239f7, []int{79, 1}
+	return fileDescriptor_ad098daeda4239f7, []int{75, 1}
 }
 
 type RSAPSSParm_Mask int32
@@ -124,7 +124,7 @@ func (x RSAPSSParm_Mask) String() string {
 }
 
 func (RSAPSSParm_Mask) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_ad098daeda4239f7, []int{80, 0}
+	return fileDescriptor_ad098daeda4239f7, []int{76, 0}
 }
 
 type ECDH1DeriveParm_KeyDerivationFunction int32
@@ -170,7 +170,78 @@ func (x ECDH1DeriveParm_KeyDerivationFunction) String() string {
 }
 
 func (ECDH1DeriveParm_KeyDerivationFunction) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_ad098daeda4239f7, []int{81, 0}
+	return fileDescriptor_ad098daeda4239f7, []int{77, 0}
+}
+
+type BTCDeriveParm_BTCDeriveType int32
+
+const (
+	BTCDeriveParm_CkBIP0032NotUsed  BTCDeriveParm_BTCDeriveType = 0
+	BTCDeriveParm_CkBIP0032PRV2PRV  BTCDeriveParm_BTCDeriveType = 1
+	BTCDeriveParm_CkBIP0032PRV2PUB  BTCDeriveParm_BTCDeriveType = 2
+	BTCDeriveParm_CkBIP0032PUB2PUB  BTCDeriveParm_BTCDeriveType = 3
+	BTCDeriveParm_CkBIP0032MASTERK  BTCDeriveParm_BTCDeriveType = 4
+	BTCDeriveParm_CkSLIP0010PRV2PRV BTCDeriveParm_BTCDeriveType = 5
+	BTCDeriveParm_CkSLIP0010PRV2PUB BTCDeriveParm_BTCDeriveType = 6
+	BTCDeriveParm_CkSLIP0010PUB2PUB BTCDeriveParm_BTCDeriveType = 7
+	BTCDeriveParm_CkSLIP0010MASTERK BTCDeriveParm_BTCDeriveType = 8
+)
+
+var BTCDeriveParm_BTCDeriveType_name = map[int32]string{
+	0: "CkBIP0032NotUsed",
+	1: "CkBIP0032PRV2PRV",
+	2: "CkBIP0032PRV2PUB",
+	3: "CkBIP0032PUB2PUB",
+	4: "CkBIP0032MASTERK",
+	5: "CkSLIP0010PRV2PRV",
+	6: "CkSLIP0010PRV2PUB",
+	7: "CkSLIP0010PUB2PUB",
+	8: "CkSLIP0010MASTERK",
+}
+
+var BTCDeriveParm_BTCDeriveType_value = map[string]int32{
+	"CkBIP0032NotUsed":  0,
+	"CkBIP0032PRV2PRV":  1,
+	"CkBIP0032PRV2PUB":  2,
+	"CkBIP0032PUB2PUB":  3,
+	"CkBIP0032MASTERK":  4,
+	"CkSLIP0010PRV2PRV": 5,
+	"CkSLIP0010PRV2PUB": 6,
+	"CkSLIP0010PUB2PUB": 7,
+	"CkSLIP0010MASTERK": 8,
+}
+
+func (x BTCDeriveParm_BTCDeriveType) String() string {
+	return proto.EnumName(BTCDeriveParm_BTCDeriveType_name, int32(x))
+}
+
+func (BTCDeriveParm_BTCDeriveType) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_ad098daeda4239f7, []int{78, 0}
+}
+
+type ECSGParm_ECSGType int32
+
+const (
+	ECSGParm_CkEcsgIbmNotUsed    ECSGParm_ECSGType = 0
+	ECSGParm_CkEcsgIbmEcsdsaS256 ECSGParm_ECSGType = 3
+)
+
+var ECSGParm_ECSGType_name = map[int32]string{
+	0: "CkEcsgIbmNotUsed",
+	3: "CkEcsgIbmEcsdsaS256",
+}
+
+var ECSGParm_ECSGType_value = map[string]int32{
+	"CkEcsgIbmNotUsed":    0,
+	"CkEcsgIbmEcsdsaS256": 3,
+}
+
+func (x ECSGParm_ECSGType) String() string {
+	return proto.EnumName(ECSGParm_ECSGType_name, int32(x))
+}
+
+func (ECSGParm_ECSGType) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_ad098daeda4239f7, []int{79, 0}
 }
 
 type GenerateRandomRequest struct {
@@ -2920,11 +2991,12 @@ func (m *VerifySingleResponse) XXX_DiscardUnknown() {
 var xxx_messageInfo_VerifySingleResponse proto.InternalMessageInfo
 
 type GenerateKeyRequest struct {
-	Mech                 *Mechanism                                                             `protobuf:"bytes,1,opt,name=Mech,proto3" json:"Mech,omitempty"`
-	Template             map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue `protobuf:"bytes,6,rep,name=Template,proto3,castkey=github.com/IBM-Cloud/hpcs-grep11-go/ep11.Attribute" json:"Template,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	XXX_NoUnkeyedLiteral struct{}                                                               `json:"-"`
-	XXX_unrecognized     []byte                                                                 `json:"-"`
-	XXX_sizecache        int32                                                                  `json:"-"`
+	Mech                 *Mechanism                         `protobuf:"bytes,1,opt,name=Mech,proto3" json:"Mech,omitempty"`
+	TemplateBytes        map[ep11.Attribute][]byte          `protobuf:"bytes,2,rep,name=TemplateBytes,proto3,castkey=github.com/ibm-hyper-protect/ibm-cloud-hyperprotectcrypto/golang/ep11.Attribute" json:"TemplateBytes,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Template             map[ep11.Attribute]*AttributeValue `protobuf:"bytes,6,rep,name=Template,proto3,castkey=github.com/ibm-hyper-protect/ibm-cloud-hyperprotectcrypto/golang/ep11.Attribute" json:"Template,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	XXX_NoUnkeyedLiteral struct{}                           `json:"-"`
+	XXX_unrecognized     []byte                             `json:"-"`
+	XXX_sizecache        int32                              `json:"-"`
 }
 
 func (m *GenerateKeyRequest) Reset()         { *m = GenerateKeyRequest{} }
@@ -2967,7 +3039,14 @@ func (m *GenerateKeyRequest) GetMech() *Mechanism {
 	return nil
 }
 
-func (m *GenerateKeyRequest) GetTemplate() map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue {
+func (m *GenerateKeyRequest) GetTemplateBytes() map[ep11.Attribute][]byte {
+	if m != nil {
+		return m.TemplateBytes
+	}
+	return nil
+}
+
+func (m *GenerateKeyRequest) GetTemplate() map[ep11.Attribute]*AttributeValue {
 	if m != nil {
 		return m.Template
 	}
@@ -3038,12 +3117,14 @@ func (m *GenerateKeyResponse) GetKey() *KeyBlob {
 }
 
 type GenerateKeyPairRequest struct {
-	Mech                 *Mechanism                                                             `protobuf:"bytes,1,opt,name=Mech,proto3" json:"Mech,omitempty"`
-	PrivKeyTemplate      map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue `protobuf:"bytes,7,rep,name=PrivKeyTemplate,proto3,castkey=github.com/IBM-Cloud/hpcs-grep11-go/ep11.Attribute" json:"PrivKeyTemplate,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	PubKeyTemplate       map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue `protobuf:"bytes,8,rep,name=PubKeyTemplate,proto3,castkey=github.com/IBM-Cloud/hpcs-grep11-go/ep11.Attribute" json:"PubKeyTemplate,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	XXX_NoUnkeyedLiteral struct{}                                                               `json:"-"`
-	XXX_unrecognized     []byte                                                                 `json:"-"`
-	XXX_sizecache        int32                                                                  `json:"-"`
+	Mech                 *Mechanism                         `protobuf:"bytes,1,opt,name=Mech,proto3" json:"Mech,omitempty"`
+	PubKeyTemplateBytes  map[ep11.Attribute][]byte          `protobuf:"bytes,2,rep,name=PubKeyTemplateBytes,proto3,castkey=github.com/ibm-hyper-protect/ibm-cloud-hyperprotectcrypto/golang/ep11.Attribute" json:"PubKeyTemplateBytes,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	PrivKeyTemplateBytes map[ep11.Attribute][]byte          `protobuf:"bytes,3,rep,name=PrivKeyTemplateBytes,proto3,castkey=github.com/ibm-hyper-protect/ibm-cloud-hyperprotectcrypto/golang/ep11.Attribute" json:"PrivKeyTemplateBytes,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	PrivKeyTemplate      map[ep11.Attribute]*AttributeValue `protobuf:"bytes,7,rep,name=PrivKeyTemplate,proto3,castkey=github.com/ibm-hyper-protect/ibm-cloud-hyperprotectcrypto/golang/ep11.Attribute" json:"PrivKeyTemplate,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	PubKeyTemplate       map[ep11.Attribute]*AttributeValue `protobuf:"bytes,8,rep,name=PubKeyTemplate,proto3,castkey=github.com/ibm-hyper-protect/ibm-cloud-hyperprotectcrypto/golang/ep11.Attribute" json:"PubKeyTemplate,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	XXX_NoUnkeyedLiteral struct{}                           `json:"-"`
+	XXX_unrecognized     []byte                             `json:"-"`
+	XXX_sizecache        int32                              `json:"-"`
 }
 
 func (m *GenerateKeyPairRequest) Reset()         { *m = GenerateKeyPairRequest{} }
@@ -3086,14 +3167,28 @@ func (m *GenerateKeyPairRequest) GetMech() *Mechanism {
 	return nil
 }
 
-func (m *GenerateKeyPairRequest) GetPrivKeyTemplate() map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue {
+func (m *GenerateKeyPairRequest) GetPubKeyTemplateBytes() map[ep11.Attribute][]byte {
+	if m != nil {
+		return m.PubKeyTemplateBytes
+	}
+	return nil
+}
+
+func (m *GenerateKeyPairRequest) GetPrivKeyTemplateBytes() map[ep11.Attribute][]byte {
+	if m != nil {
+		return m.PrivKeyTemplateBytes
+	}
+	return nil
+}
+
+func (m *GenerateKeyPairRequest) GetPrivKeyTemplate() map[ep11.Attribute]*AttributeValue {
 	if m != nil {
 		return m.PrivKeyTemplate
 	}
 	return nil
 }
 
-func (m *GenerateKeyPairRequest) GetPubKeyTemplate() map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue {
+func (m *GenerateKeyPairRequest) GetPubKeyTemplate() map[ep11.Attribute]*AttributeValue {
 	if m != nil {
 		return m.PubKeyTemplate
 	}
@@ -3290,14 +3385,15 @@ func (m *WrapKeyResponse) GetWrapped() []byte {
 }
 
 type UnwrapKeyRequest struct {
-	Wrapped              []byte                                                                 `protobuf:"bytes,1,opt,name=Wrapped,proto3" json:"Wrapped,omitempty"`
-	KeK                  []byte                                                                 `protobuf:"bytes,2,opt,name=KeK,proto3" json:"KeK,omitempty"`
-	MacKey               []byte                                                                 `protobuf:"bytes,3,opt,name=MacKey,proto3" json:"MacKey,omitempty"`
-	Mech                 *Mechanism                                                             `protobuf:"bytes,5,opt,name=Mech,proto3" json:"Mech,omitempty"`
-	Template             map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue `protobuf:"bytes,9,rep,name=Template,proto3,castkey=github.com/IBM-Cloud/hpcs-grep11-go/ep11.Attribute" json:"Template,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	XXX_NoUnkeyedLiteral struct{}                                                               `json:"-"`
-	XXX_unrecognized     []byte                                                                 `json:"-"`
-	XXX_sizecache        int32                                                                  `json:"-"`
+	Wrapped              []byte                             `protobuf:"bytes,1,opt,name=Wrapped,proto3" json:"Wrapped,omitempty"`
+	KeK                  []byte                             `protobuf:"bytes,2,opt,name=KeK,proto3" json:"KeK,omitempty"`
+	MacKey               []byte                             `protobuf:"bytes,3,opt,name=MacKey,proto3" json:"MacKey,omitempty"`
+	Mech                 *Mechanism                         `protobuf:"bytes,5,opt,name=Mech,proto3" json:"Mech,omitempty"`
+	TemplateBytes        map[ep11.Attribute][]byte          `protobuf:"bytes,6,rep,name=TemplateBytes,proto3,castkey=github.com/ibm-hyper-protect/ibm-cloud-hyperprotectcrypto/golang/ep11.Attribute" json:"TemplateBytes,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Template             map[ep11.Attribute]*AttributeValue `protobuf:"bytes,9,rep,name=Template,proto3,castkey=github.com/ibm-hyper-protect/ibm-cloud-hyperprotectcrypto/golang/ep11.Attribute" json:"Template,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	XXX_NoUnkeyedLiteral struct{}                           `json:"-"`
+	XXX_unrecognized     []byte                             `json:"-"`
+	XXX_sizecache        int32                              `json:"-"`
 }
 
 func (m *UnwrapKeyRequest) Reset()         { *m = UnwrapKeyRequest{} }
@@ -3361,7 +3457,14 @@ func (m *UnwrapKeyRequest) GetMech() *Mechanism {
 	return nil
 }
 
-func (m *UnwrapKeyRequest) GetTemplate() map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue {
+func (m *UnwrapKeyRequest) GetTemplateBytes() map[ep11.Attribute][]byte {
+	if m != nil {
+		return m.TemplateBytes
+	}
+	return nil
+}
+
+func (m *UnwrapKeyRequest) GetTemplate() map[ep11.Attribute]*AttributeValue {
 	if m != nil {
 		return m.Template
 	}
@@ -3432,13 +3535,14 @@ func (m *UnwrapKeyResponse) GetUnwrapped() *KeyBlob {
 }
 
 type DeriveKeyRequest struct {
-	Mech                 *Mechanism                                                             `protobuf:"bytes,1,opt,name=Mech,proto3" json:"Mech,omitempty"`
-	BaseKey              []byte                                                                 `protobuf:"bytes,3,opt,name=BaseKey,proto3" json:"BaseKey,omitempty"`
-	Data                 []byte                                                                 `protobuf:"bytes,4,opt,name=Data,proto3" json:"Data,omitempty"`
-	Template             map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue `protobuf:"bytes,8,rep,name=Template,proto3,castkey=github.com/IBM-Cloud/hpcs-grep11-go/ep11.Attribute" json:"Template,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	XXX_NoUnkeyedLiteral struct{}                                                               `json:"-"`
-	XXX_unrecognized     []byte                                                                 `json:"-"`
-	XXX_sizecache        int32                                                                  `json:"-"`
+	Mech                 *Mechanism                         `protobuf:"bytes,1,opt,name=Mech,proto3" json:"Mech,omitempty"`
+	TemplateBytes        map[ep11.Attribute][]byte          `protobuf:"bytes,2,rep,name=TemplateBytes,proto3,castkey=github.com/ibm-hyper-protect/ibm-cloud-hyperprotectcrypto/golang/ep11.Attribute" json:"TemplateBytes,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	BaseKey              []byte                             `protobuf:"bytes,3,opt,name=BaseKey,proto3" json:"BaseKey,omitempty"`
+	Data                 []byte                             `protobuf:"bytes,4,opt,name=Data,proto3" json:"Data,omitempty"`
+	Template             map[ep11.Attribute]*AttributeValue `protobuf:"bytes,8,rep,name=Template,proto3,castkey=github.com/ibm-hyper-protect/ibm-cloud-hyperprotectcrypto/golang/ep11.Attribute" json:"Template,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	XXX_NoUnkeyedLiteral struct{}                           `json:"-"`
+	XXX_unrecognized     []byte                             `json:"-"`
+	XXX_sizecache        int32                              `json:"-"`
 }
 
 func (m *DeriveKeyRequest) Reset()         { *m = DeriveKeyRequest{} }
@@ -3481,6 +3585,13 @@ func (m *DeriveKeyRequest) GetMech() *Mechanism {
 	return nil
 }
 
+func (m *DeriveKeyRequest) GetTemplateBytes() map[ep11.Attribute][]byte {
+	if m != nil {
+		return m.TemplateBytes
+	}
+	return nil
+}
+
 func (m *DeriveKeyRequest) GetBaseKey() []byte {
 	if m != nil {
 		return m.BaseKey
@@ -3495,7 +3606,7 @@ func (m *DeriveKeyRequest) GetData() []byte {
 	return nil
 }
 
-func (m *DeriveKeyRequest) GetTemplate() map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue {
+func (m *DeriveKeyRequest) GetTemplate() map[ep11.Attribute]*AttributeValue {
 	if m != nil {
 		return m.Template
 	}
@@ -3605,10 +3716,10 @@ func (m *GetMechanismListRequest) XXX_DiscardUnknown() {
 var xxx_messageInfo_GetMechanismListRequest proto.InternalMessageInfo
 
 type GetMechanismListResponse struct {
-	Mechs                []github_com_IBM_Cloud_hpcs_grep11_go_ep11.Mechanism `protobuf:"varint,2,rep,packed,name=Mechs,proto3,casttype=github.com/IBM-Cloud/hpcs-grep11-go/ep11.Mechanism" json:"Mechs,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                                             `json:"-"`
-	XXX_unrecognized     []byte                                               `json:"-"`
-	XXX_sizecache        int32                                                `json:"-"`
+	Mechs                []ep11.Mechanism `protobuf:"varint,2,rep,packed,name=Mechs,proto3,casttype=github.com/ibm-hyper-protect/ibm-cloud-hyperprotectcrypto/golang/ep11.Mechanism" json:"Mechs,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}         `json:"-"`
+	XXX_unrecognized     []byte           `json:"-"`
+	XXX_sizecache        int32            `json:"-"`
 }
 
 func (m *GetMechanismListResponse) Reset()         { *m = GetMechanismListResponse{} }
@@ -3644,7 +3755,7 @@ func (m *GetMechanismListResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_GetMechanismListResponse proto.InternalMessageInfo
 
-func (m *GetMechanismListResponse) GetMechs() []github_com_IBM_Cloud_hpcs_grep11_go_ep11.Mechanism {
+func (m *GetMechanismListResponse) GetMechs() []ep11.Mechanism {
 	if m != nil {
 		return m.Mechs
 	}
@@ -3652,10 +3763,10 @@ func (m *GetMechanismListResponse) GetMechs() []github_com_IBM_Cloud_hpcs_grep11
 }
 
 type GetMechanismInfoRequest struct {
-	Mech                 github_com_IBM_Cloud_hpcs_grep11_go_ep11.Mechanism `protobuf:"varint,2,opt,name=Mech,proto3,casttype=github.com/IBM-Cloud/hpcs-grep11-go/ep11.Mechanism" json:"Mech,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                                           `json:"-"`
-	XXX_unrecognized     []byte                                             `json:"-"`
-	XXX_sizecache        int32                                              `json:"-"`
+	Mech                 ep11.Mechanism `protobuf:"varint,2,opt,name=Mech,proto3,casttype=github.com/ibm-hyper-protect/ibm-cloud-hyperprotectcrypto/golang/ep11.Mechanism" json:"Mech,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
 }
 
 func (m *GetMechanismInfoRequest) Reset()         { *m = GetMechanismInfoRequest{} }
@@ -3691,7 +3802,7 @@ func (m *GetMechanismInfoRequest) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_GetMechanismInfoRequest proto.InternalMessageInfo
 
-func (m *GetMechanismInfoRequest) GetMech() github_com_IBM_Cloud_hpcs_grep11_go_ep11.Mechanism {
+func (m *GetMechanismInfoRequest) GetMech() ep11.Mechanism {
 	if m != nil {
 		return m.Mech
 	}
@@ -3746,12 +3857,12 @@ func (m *GetMechanismInfoResponse) GetMechInfo() *MechanismInfo {
 }
 
 type GetAttributeValueRequest struct {
-	Object               []byte                                                                 `protobuf:"bytes,1,opt,name=Object,proto3" json:"Object,omitempty"`
-	AttributesBytes      map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute][]byte          `protobuf:"bytes,2,rep,name=AttributesBytes,proto3,castkey=github.com/IBM-Cloud/hpcs-grep11-go/ep11.Attribute" json:"AttributesBytes,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	Attributes           map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue `protobuf:"bytes,3,rep,name=Attributes,proto3,castkey=github.com/IBM-Cloud/hpcs-grep11-go/ep11.Attribute" json:"Attributes,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	XXX_NoUnkeyedLiteral struct{}                                                               `json:"-"`
-	XXX_unrecognized     []byte                                                                 `json:"-"`
-	XXX_sizecache        int32                                                                  `json:"-"`
+	Object               []byte                             `protobuf:"bytes,1,opt,name=Object,proto3" json:"Object,omitempty"`
+	AttributesBytes      map[ep11.Attribute][]byte          `protobuf:"bytes,2,rep,name=AttributesBytes,proto3,castkey=github.com/ibm-hyper-protect/ibm-cloud-hyperprotectcrypto/golang/ep11.Attribute" json:"AttributesBytes,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Attributes           map[ep11.Attribute]*AttributeValue `protobuf:"bytes,3,rep,name=Attributes,proto3,castkey=github.com/ibm-hyper-protect/ibm-cloud-hyperprotectcrypto/golang/ep11.Attribute" json:"Attributes,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	XXX_NoUnkeyedLiteral struct{}                           `json:"-"`
+	XXX_unrecognized     []byte                             `json:"-"`
+	XXX_sizecache        int32                              `json:"-"`
 }
 
 func (m *GetAttributeValueRequest) Reset()         { *m = GetAttributeValueRequest{} }
@@ -3794,14 +3905,14 @@ func (m *GetAttributeValueRequest) GetObject() []byte {
 	return nil
 }
 
-func (m *GetAttributeValueRequest) GetAttributesBytes() map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute][]byte {
+func (m *GetAttributeValueRequest) GetAttributesBytes() map[ep11.Attribute][]byte {
 	if m != nil {
 		return m.AttributesBytes
 	}
 	return nil
 }
 
-func (m *GetAttributeValueRequest) GetAttributes() map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue {
+func (m *GetAttributeValueRequest) GetAttributes() map[ep11.Attribute]*AttributeValue {
 	if m != nil {
 		return m.Attributes
 	}
@@ -3809,11 +3920,11 @@ func (m *GetAttributeValueRequest) GetAttributes() map[github_com_IBM_Cloud_hpcs
 }
 
 type GetAttributeValueResponse struct {
-	AttributesBytes      map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute][]byte          `protobuf:"bytes,2,rep,name=AttributesBytes,proto3,castkey=github.com/IBM-Cloud/hpcs-grep11-go/ep11.Attribute" json:"AttributesBytes,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	Attributes           map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue `protobuf:"bytes,4,rep,name=Attributes,proto3,castkey=github.com/IBM-Cloud/hpcs-grep11-go/ep11.Attribute" json:"Attributes,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	XXX_NoUnkeyedLiteral struct{}                                                               `json:"-"`
-	XXX_unrecognized     []byte                                                                 `json:"-"`
-	XXX_sizecache        int32                                                                  `json:"-"`
+	AttributesBytes      map[ep11.Attribute][]byte          `protobuf:"bytes,2,rep,name=AttributesBytes,proto3,castkey=github.com/ibm-hyper-protect/ibm-cloud-hyperprotectcrypto/golang/ep11.Attribute" json:"AttributesBytes,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Attributes           map[ep11.Attribute]*AttributeValue `protobuf:"bytes,4,rep,name=Attributes,proto3,castkey=github.com/ibm-hyper-protect/ibm-cloud-hyperprotectcrypto/golang/ep11.Attribute" json:"Attributes,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	XXX_NoUnkeyedLiteral struct{}                           `json:"-"`
+	XXX_unrecognized     []byte                             `json:"-"`
+	XXX_sizecache        int32                              `json:"-"`
 }
 
 func (m *GetAttributeValueResponse) Reset()         { *m = GetAttributeValueResponse{} }
@@ -3849,14 +3960,14 @@ func (m *GetAttributeValueResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_GetAttributeValueResponse proto.InternalMessageInfo
 
-func (m *GetAttributeValueResponse) GetAttributesBytes() map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute][]byte {
+func (m *GetAttributeValueResponse) GetAttributesBytes() map[ep11.Attribute][]byte {
 	if m != nil {
 		return m.AttributesBytes
 	}
 	return nil
 }
 
-func (m *GetAttributeValueResponse) GetAttributes() map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue {
+func (m *GetAttributeValueResponse) GetAttributes() map[ep11.Attribute]*AttributeValue {
 	if m != nil {
 		return m.Attributes
 	}
@@ -3864,11 +3975,12 @@ func (m *GetAttributeValueResponse) GetAttributes() map[github_com_IBM_Cloud_hpc
 }
 
 type SetAttributeValueRequest struct {
-	Object               []byte                                                                 `protobuf:"bytes,1,opt,name=Object,proto3" json:"Object,omitempty"`
-	Attributes           map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue `protobuf:"bytes,3,rep,name=Attributes,proto3,castkey=github.com/IBM-Cloud/hpcs-grep11-go/ep11.Attribute" json:"Attributes,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	XXX_NoUnkeyedLiteral struct{}                                                               `json:"-"`
-	XXX_unrecognized     []byte                                                                 `json:"-"`
-	XXX_sizecache        int32                                                                  `json:"-"`
+	Object               []byte                             `protobuf:"bytes,1,opt,name=Object,proto3" json:"Object,omitempty"`
+	AttributesBytes      map[ep11.Attribute][]byte          `protobuf:"bytes,2,rep,name=AttributesBytes,proto3,castkey=github.com/ibm-hyper-protect/ibm-cloud-hyperprotectcrypto/golang/ep11.Attribute" json:"AttributesBytes,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Attributes           map[ep11.Attribute]*AttributeValue `protobuf:"bytes,3,rep,name=Attributes,proto3,castkey=github.com/ibm-hyper-protect/ibm-cloud-hyperprotectcrypto/golang/ep11.Attribute" json:"Attributes,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	XXX_NoUnkeyedLiteral struct{}                           `json:"-"`
+	XXX_unrecognized     []byte                             `json:"-"`
+	XXX_sizecache        int32                              `json:"-"`
 }
 
 func (m *SetAttributeValueRequest) Reset()         { *m = SetAttributeValueRequest{} }
@@ -3911,7 +4023,14 @@ func (m *SetAttributeValueRequest) GetObject() []byte {
 	return nil
 }
 
-func (m *SetAttributeValueRequest) GetAttributes() map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue {
+func (m *SetAttributeValueRequest) GetAttributesBytes() map[ep11.Attribute][]byte {
+	if m != nil {
+		return m.AttributesBytes
+	}
+	return nil
+}
+
+func (m *SetAttributeValueRequest) GetAttributes() map[ep11.Attribute]*AttributeValue {
 	if m != nil {
 		return m.Attributes
 	}
@@ -3965,193 +4084,15 @@ func (m *SetAttributeValueResponse) GetObject() []byte {
 	return nil
 }
 
-type LoginRequest struct {
-	Storeid              []byte   `protobuf:"bytes,1,opt,name=Storeid,proto3" json:"Storeid,omitempty"`
-	Pin                  []byte   `protobuf:"bytes,2,opt,name=Pin,proto3" json:"Pin,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *LoginRequest) Reset()         { *m = LoginRequest{} }
-func (m *LoginRequest) String() string { return proto.CompactTextString(m) }
-func (*LoginRequest) ProtoMessage()    {}
-func (*LoginRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad098daeda4239f7, []int{72}
-}
-func (m *LoginRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *LoginRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_LoginRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *LoginRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_LoginRequest.Merge(m, src)
-}
-func (m *LoginRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *LoginRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_LoginRequest.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_LoginRequest proto.InternalMessageInfo
-
-func (m *LoginRequest) GetStoreid() []byte {
-	if m != nil {
-		return m.Storeid
-	}
-	return nil
-}
-
-func (m *LoginRequest) GetPin() []byte {
-	if m != nil {
-		return m.Pin
-	}
-	return nil
-}
-
-type LoginResponse struct {
-	Pinblob              []byte   `protobuf:"bytes,4,opt,name=Pinblob,proto3" json:"Pinblob,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *LoginResponse) Reset()         { *m = LoginResponse{} }
-func (m *LoginResponse) String() string { return proto.CompactTextString(m) }
-func (*LoginResponse) ProtoMessage()    {}
-func (*LoginResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad098daeda4239f7, []int{73}
-}
-func (m *LoginResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *LoginResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_LoginResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *LoginResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_LoginResponse.Merge(m, src)
-}
-func (m *LoginResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *LoginResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_LoginResponse.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_LoginResponse proto.InternalMessageInfo
-
-func (m *LoginResponse) GetPinblob() []byte {
-	if m != nil {
-		return m.Pinblob
-	}
-	return nil
-}
-
-type LogoutRequest struct {
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *LogoutRequest) Reset()         { *m = LogoutRequest{} }
-func (m *LogoutRequest) String() string { return proto.CompactTextString(m) }
-func (*LogoutRequest) ProtoMessage()    {}
-func (*LogoutRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad098daeda4239f7, []int{74}
-}
-func (m *LogoutRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *LogoutRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_LogoutRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *LogoutRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_LogoutRequest.Merge(m, src)
-}
-func (m *LogoutRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *LogoutRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_LogoutRequest.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_LogoutRequest proto.InternalMessageInfo
-
-type LogoutResponse struct {
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *LogoutResponse) Reset()         { *m = LogoutResponse{} }
-func (m *LogoutResponse) String() string { return proto.CompactTextString(m) }
-func (*LogoutResponse) ProtoMessage()    {}
-func (*LogoutResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad098daeda4239f7, []int{75}
-}
-func (m *LogoutResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *LogoutResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_LogoutResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *LogoutResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_LogoutResponse.Merge(m, src)
-}
-func (m *LogoutResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *LogoutResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_LogoutResponse.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_LogoutResponse proto.InternalMessageInfo
-
 type Mechanism struct {
-	Mechanism github_com_IBM_Cloud_hpcs_grep11_go_ep11.Mechanism `protobuf:"varint,1,opt,name=Mechanism,proto3,casttype=github.com/IBM-Cloud/hpcs-grep11-go/ep11.Mechanism" json:"Mechanism,omitempty"`
+	Mechanism ep11.Mechanism `protobuf:"varint,1,opt,name=Mechanism,proto3,casttype=github.com/ibm-hyper-protect/ibm-cloud-hyperprotectcrypto/golang/ep11.Mechanism" json:"Mechanism,omitempty"`
 	// Types that are valid to be assigned to Parameter:
 	//	*Mechanism_ParameterB
 	//	*Mechanism_RSAOAEPParameter
 	//	*Mechanism_RSAPSSParameter
 	//	*Mechanism_ECDH1DeriveParameter
+	//	*Mechanism_BTCDeriveParameter
+	//	*Mechanism_ECSGParameter
 	Parameter            isMechanism_Parameter `protobuf_oneof:"Parameter"`
 	XXX_NoUnkeyedLiteral struct{}              `json:"-"`
 	XXX_unrecognized     []byte                `json:"-"`
@@ -4162,7 +4103,7 @@ func (m *Mechanism) Reset()         { *m = Mechanism{} }
 func (m *Mechanism) String() string { return proto.CompactTextString(m) }
 func (*Mechanism) ProtoMessage()    {}
 func (*Mechanism) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad098daeda4239f7, []int{76}
+	return fileDescriptor_ad098daeda4239f7, []int{72}
 }
 func (m *Mechanism) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4209,11 +4150,19 @@ type Mechanism_RSAPSSParameter struct {
 type Mechanism_ECDH1DeriveParameter struct {
 	ECDH1DeriveParameter *ECDH1DeriveParm `protobuf:"bytes,5,opt,name=ECDH1DeriveParameter,proto3,oneof" json:"ECDH1DeriveParameter,omitempty"`
 }
+type Mechanism_BTCDeriveParameter struct {
+	BTCDeriveParameter *BTCDeriveParm `protobuf:"bytes,6,opt,name=BTCDeriveParameter,proto3,oneof" json:"BTCDeriveParameter,omitempty"`
+}
+type Mechanism_ECSGParameter struct {
+	ECSGParameter *ECSGParm `protobuf:"bytes,7,opt,name=ECSGParameter,proto3,oneof" json:"ECSGParameter,omitempty"`
+}
 
 func (*Mechanism_ParameterB) isMechanism_Parameter()           {}
 func (*Mechanism_RSAOAEPParameter) isMechanism_Parameter()     {}
 func (*Mechanism_RSAPSSParameter) isMechanism_Parameter()      {}
 func (*Mechanism_ECDH1DeriveParameter) isMechanism_Parameter() {}
+func (*Mechanism_BTCDeriveParameter) isMechanism_Parameter()   {}
+func (*Mechanism_ECSGParameter) isMechanism_Parameter()        {}
 
 func (m *Mechanism) GetParameter() isMechanism_Parameter {
 	if m != nil {
@@ -4222,7 +4171,7 @@ func (m *Mechanism) GetParameter() isMechanism_Parameter {
 	return nil
 }
 
-func (m *Mechanism) GetMechanism() github_com_IBM_Cloud_hpcs_grep11_go_ep11.Mechanism {
+func (m *Mechanism) GetMechanism() ep11.Mechanism {
 	if m != nil {
 		return m.Mechanism
 	}
@@ -4257,6 +4206,20 @@ func (m *Mechanism) GetECDH1DeriveParameter() *ECDH1DeriveParm {
 	return nil
 }
 
+func (m *Mechanism) GetBTCDeriveParameter() *BTCDeriveParm {
+	if x, ok := m.GetParameter().(*Mechanism_BTCDeriveParameter); ok {
+		return x.BTCDeriveParameter
+	}
+	return nil
+}
+
+func (m *Mechanism) GetECSGParameter() *ECSGParm {
+	if x, ok := m.GetParameter().(*Mechanism_ECSGParameter); ok {
+		return x.ECSGParameter
+	}
+	return nil
+}
+
 // XXX_OneofWrappers is for the internal use of the proto package.
 func (*Mechanism) XXX_OneofWrappers() []interface{} {
 	return []interface{}{
@@ -4264,6 +4227,8 @@ func (*Mechanism) XXX_OneofWrappers() []interface{} {
 		(*Mechanism_RSAOAEPParameter)(nil),
 		(*Mechanism_RSAPSSParameter)(nil),
 		(*Mechanism_ECDH1DeriveParameter)(nil),
+		(*Mechanism_BTCDeriveParameter)(nil),
+		(*Mechanism_ECSGParameter)(nil),
 	}
 }
 
@@ -4280,7 +4245,7 @@ func (m *MechanismInfo) Reset()         { *m = MechanismInfo{} }
 func (m *MechanismInfo) String() string { return proto.CompactTextString(m) }
 func (*MechanismInfo) ProtoMessage()    {}
 func (*MechanismInfo) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad098daeda4239f7, []int{77}
+	return fileDescriptor_ad098daeda4239f7, []int{73}
 }
 func (m *MechanismInfo) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4331,19 +4296,19 @@ func (m *MechanismInfo) GetFlags() uint64 {
 }
 
 type Grep11Error struct {
-	Code                 github_com_IBM_Cloud_hpcs_grep11_go_ep11.Return `protobuf:"varint,1,opt,name=Code,proto3,casttype=github.com/IBM-Cloud/hpcs-grep11-go/ep11.Return" json:"Code,omitempty"`
-	Detail               string                                          `protobuf:"bytes,2,opt,name=Detail,proto3" json:"Detail,omitempty"`
-	Retry                bool                                            `protobuf:"varint,3,opt,name=Retry,proto3" json:"Retry,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                                        `json:"-"`
-	XXX_unrecognized     []byte                                          `json:"-"`
-	XXX_sizecache        int32                                           `json:"-"`
+	Code                 ep11.Return `protobuf:"varint,1,opt,name=Code,proto3,casttype=github.com/ibm-hyper-protect/ibm-cloud-hyperprotectcrypto/golang/ep11.Return" json:"Code,omitempty"`
+	Detail               string      `protobuf:"bytes,2,opt,name=Detail,proto3" json:"Detail,omitempty"`
+	Retry                bool        `protobuf:"varint,3,opt,name=Retry,proto3" json:"Retry,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
+	XXX_unrecognized     []byte      `json:"-"`
+	XXX_sizecache        int32       `json:"-"`
 }
 
 func (m *Grep11Error) Reset()         { *m = Grep11Error{} }
 func (m *Grep11Error) String() string { return proto.CompactTextString(m) }
 func (*Grep11Error) ProtoMessage()    {}
 func (*Grep11Error) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad098daeda4239f7, []int{78}
+	return fileDescriptor_ad098daeda4239f7, []int{74}
 }
 func (m *Grep11Error) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4372,7 +4337,7 @@ func (m *Grep11Error) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Grep11Error proto.InternalMessageInfo
 
-func (m *Grep11Error) GetCode() github_com_IBM_Cloud_hpcs_grep11_go_ep11.Return {
+func (m *Grep11Error) GetCode() ep11.Return {
 	if m != nil {
 		return m.Code
 	}
@@ -4394,20 +4359,20 @@ func (m *Grep11Error) GetRetry() bool {
 }
 
 type RSAOAEPParm struct {
-	HashMech             github_com_IBM_Cloud_hpcs_grep11_go_ep11.Mechanism `protobuf:"varint,1,opt,name=HashMech,proto3,casttype=github.com/IBM-Cloud/hpcs-grep11-go/ep11.Mechanism" json:"HashMech,omitempty"`
-	Mgf                  RSAOAEPParm_Mask                                   `protobuf:"varint,2,opt,name=Mgf,proto3,enum=grep11.RSAOAEPParm_Mask" json:"Mgf,omitempty"`
-	EncodingParmType     RSAOAEPParm_ParmType                               `protobuf:"varint,3,opt,name=EncodingParmType,proto3,enum=grep11.RSAOAEPParm_ParmType" json:"EncodingParmType,omitempty"`
-	EncodingParm         []byte                                             `protobuf:"bytes,4,opt,name=EncodingParm,proto3" json:"EncodingParm,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                                           `json:"-"`
-	XXX_unrecognized     []byte                                             `json:"-"`
-	XXX_sizecache        int32                                              `json:"-"`
+	HashMech             ep11.Mechanism       `protobuf:"varint,1,opt,name=HashMech,proto3,casttype=github.com/ibm-hyper-protect/ibm-cloud-hyperprotectcrypto/golang/ep11.Mechanism" json:"HashMech,omitempty"`
+	Mgf                  RSAOAEPParm_Mask     `protobuf:"varint,2,opt,name=Mgf,proto3,enum=grep11.RSAOAEPParm_Mask" json:"Mgf,omitempty"`
+	EncodingParmType     RSAOAEPParm_ParmType `protobuf:"varint,3,opt,name=EncodingParmType,proto3,enum=grep11.RSAOAEPParm_ParmType" json:"EncodingParmType,omitempty"`
+	EncodingParm         []byte               `protobuf:"bytes,4,opt,name=EncodingParm,proto3" json:"EncodingParm,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
+	XXX_unrecognized     []byte               `json:"-"`
+	XXX_sizecache        int32                `json:"-"`
 }
 
 func (m *RSAOAEPParm) Reset()         { *m = RSAOAEPParm{} }
 func (m *RSAOAEPParm) String() string { return proto.CompactTextString(m) }
 func (*RSAOAEPParm) ProtoMessage()    {}
 func (*RSAOAEPParm) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad098daeda4239f7, []int{79}
+	return fileDescriptor_ad098daeda4239f7, []int{75}
 }
 func (m *RSAOAEPParm) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4436,7 +4401,7 @@ func (m *RSAOAEPParm) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_RSAOAEPParm proto.InternalMessageInfo
 
-func (m *RSAOAEPParm) GetHashMech() github_com_IBM_Cloud_hpcs_grep11_go_ep11.Mechanism {
+func (m *RSAOAEPParm) GetHashMech() ep11.Mechanism {
 	if m != nil {
 		return m.HashMech
 	}
@@ -4465,19 +4430,19 @@ func (m *RSAOAEPParm) GetEncodingParm() []byte {
 }
 
 type RSAPSSParm struct {
-	HashMech             github_com_IBM_Cloud_hpcs_grep11_go_ep11.Mechanism `protobuf:"varint,1,opt,name=HashMech,proto3,casttype=github.com/IBM-Cloud/hpcs-grep11-go/ep11.Mechanism" json:"HashMech,omitempty"`
-	Mgf                  RSAPSSParm_Mask                                    `protobuf:"varint,2,opt,name=Mgf,proto3,enum=grep11.RSAPSSParm_Mask" json:"Mgf,omitempty"`
-	SaltByteCount        uint64                                             `protobuf:"varint,3,opt,name=SaltByteCount,proto3" json:"SaltByteCount,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                                           `json:"-"`
-	XXX_unrecognized     []byte                                             `json:"-"`
-	XXX_sizecache        int32                                              `json:"-"`
+	HashMech             ep11.Mechanism  `protobuf:"varint,1,opt,name=HashMech,proto3,casttype=github.com/ibm-hyper-protect/ibm-cloud-hyperprotectcrypto/golang/ep11.Mechanism" json:"HashMech,omitempty"`
+	Mgf                  RSAPSSParm_Mask `protobuf:"varint,2,opt,name=Mgf,proto3,enum=grep11.RSAPSSParm_Mask" json:"Mgf,omitempty"`
+	SaltByteCount        uint64          `protobuf:"varint,3,opt,name=SaltByteCount,proto3" json:"SaltByteCount,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
+	XXX_unrecognized     []byte          `json:"-"`
+	XXX_sizecache        int32           `json:"-"`
 }
 
 func (m *RSAPSSParm) Reset()         { *m = RSAPSSParm{} }
 func (m *RSAPSSParm) String() string { return proto.CompactTextString(m) }
 func (*RSAPSSParm) ProtoMessage()    {}
 func (*RSAPSSParm) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad098daeda4239f7, []int{80}
+	return fileDescriptor_ad098daeda4239f7, []int{76}
 }
 func (m *RSAPSSParm) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4506,7 +4471,7 @@ func (m *RSAPSSParm) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_RSAPSSParm proto.InternalMessageInfo
 
-func (m *RSAPSSParm) GetHashMech() github_com_IBM_Cloud_hpcs_grep11_go_ep11.Mechanism {
+func (m *RSAPSSParm) GetHashMech() ep11.Mechanism {
 	if m != nil {
 		return m.HashMech
 	}
@@ -4540,7 +4505,7 @@ func (m *ECDH1DeriveParm) Reset()         { *m = ECDH1DeriveParm{} }
 func (m *ECDH1DeriveParm) String() string { return proto.CompactTextString(m) }
 func (*ECDH1DeriveParm) ProtoMessage()    {}
 func (*ECDH1DeriveParm) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad098daeda4239f7, []int{81}
+	return fileDescriptor_ad098daeda4239f7, []int{77}
 }
 func (m *ECDH1DeriveParm) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4590,6 +4555,124 @@ func (m *ECDH1DeriveParm) GetPublicData() []byte {
 	return nil
 }
 
+type BTCDeriveParm struct {
+	Type                 BTCDeriveParm_BTCDeriveType `protobuf:"varint,1,opt,name=Type,proto3,enum=grep11.BTCDeriveParm_BTCDeriveType" json:"Type,omitempty"`
+	ChildKeyIndex        uint64                      `protobuf:"varint,2,opt,name=ChildKeyIndex,proto3" json:"ChildKeyIndex,omitempty"`
+	ChainCode            []byte                      `protobuf:"bytes,3,opt,name=ChainCode,proto3" json:"ChainCode,omitempty"`
+	Version              uint64                      `protobuf:"varint,4,opt,name=Version,proto3" json:"Version,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                    `json:"-"`
+	XXX_unrecognized     []byte                      `json:"-"`
+	XXX_sizecache        int32                       `json:"-"`
+}
+
+func (m *BTCDeriveParm) Reset()         { *m = BTCDeriveParm{} }
+func (m *BTCDeriveParm) String() string { return proto.CompactTextString(m) }
+func (*BTCDeriveParm) ProtoMessage()    {}
+func (*BTCDeriveParm) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad098daeda4239f7, []int{78}
+}
+func (m *BTCDeriveParm) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *BTCDeriveParm) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_BTCDeriveParm.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *BTCDeriveParm) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_BTCDeriveParm.Merge(m, src)
+}
+func (m *BTCDeriveParm) XXX_Size() int {
+	return m.Size()
+}
+func (m *BTCDeriveParm) XXX_DiscardUnknown() {
+	xxx_messageInfo_BTCDeriveParm.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_BTCDeriveParm proto.InternalMessageInfo
+
+func (m *BTCDeriveParm) GetType() BTCDeriveParm_BTCDeriveType {
+	if m != nil {
+		return m.Type
+	}
+	return BTCDeriveParm_CkBIP0032NotUsed
+}
+
+func (m *BTCDeriveParm) GetChildKeyIndex() uint64 {
+	if m != nil {
+		return m.ChildKeyIndex
+	}
+	return 0
+}
+
+func (m *BTCDeriveParm) GetChainCode() []byte {
+	if m != nil {
+		return m.ChainCode
+	}
+	return nil
+}
+
+func (m *BTCDeriveParm) GetVersion() uint64 {
+	if m != nil {
+		return m.Version
+	}
+	return 0
+}
+
+type ECSGParm struct {
+	Type                 ECSGParm_ECSGType `protobuf:"varint,1,opt,name=Type,proto3,enum=grep11.ECSGParm_ECSGType" json:"Type,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
+	XXX_unrecognized     []byte            `json:"-"`
+	XXX_sizecache        int32             `json:"-"`
+}
+
+func (m *ECSGParm) Reset()         { *m = ECSGParm{} }
+func (m *ECSGParm) String() string { return proto.CompactTextString(m) }
+func (*ECSGParm) ProtoMessage()    {}
+func (*ECSGParm) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad098daeda4239f7, []int{79}
+}
+func (m *ECSGParm) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *ECSGParm) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_ECSGParm.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *ECSGParm) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ECSGParm.Merge(m, src)
+}
+func (m *ECSGParm) XXX_Size() int {
+	return m.Size()
+}
+func (m *ECSGParm) XXX_DiscardUnknown() {
+	xxx_messageInfo_ECSGParm.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ECSGParm proto.InternalMessageInfo
+
+func (m *ECSGParm) GetType() ECSGParm_ECSGType {
+	if m != nil {
+		return m.Type
+	}
+	return ECSGParm_CkEcsgIbmNotUsed
+}
+
 type HMACGeneralParm struct {
 	ReturnByteCount      uint32   `protobuf:"varint,1,opt,name=ReturnByteCount,proto3" json:"ReturnByteCount,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -4601,7 +4684,7 @@ func (m *HMACGeneralParm) Reset()         { *m = HMACGeneralParm{} }
 func (m *HMACGeneralParm) String() string { return proto.CompactTextString(m) }
 func (*HMACGeneralParm) ProtoMessage()    {}
 func (*HMACGeneralParm) Descriptor() ([]byte, []int) {
-	return fileDescriptor_ad098daeda4239f7, []int{82}
+	return fileDescriptor_ad098daeda4239f7, []int{80}
 }
 func (m *HMACGeneralParm) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4635,6 +4718,100 @@ func (m *HMACGeneralParm) GetReturnByteCount() uint32 {
 		return m.ReturnByteCount
 	}
 	return 0
+}
+
+type ReEncryptRequest struct {
+	WrappedKey           []byte   `protobuf:"bytes,1,opt,name=WrappedKey,proto3" json:"WrappedKey,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ReEncryptRequest) Reset()         { *m = ReEncryptRequest{} }
+func (m *ReEncryptRequest) String() string { return proto.CompactTextString(m) }
+func (*ReEncryptRequest) ProtoMessage()    {}
+func (*ReEncryptRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad098daeda4239f7, []int{81}
+}
+func (m *ReEncryptRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *ReEncryptRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_ReEncryptRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *ReEncryptRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ReEncryptRequest.Merge(m, src)
+}
+func (m *ReEncryptRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *ReEncryptRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_ReEncryptRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ReEncryptRequest proto.InternalMessageInfo
+
+func (m *ReEncryptRequest) GetWrappedKey() []byte {
+	if m != nil {
+		return m.WrappedKey
+	}
+	return nil
+}
+
+type ReEncryptResponse struct {
+	RewrappedKey         []byte   `protobuf:"bytes,1,opt,name=RewrappedKey,proto3" json:"RewrappedKey,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ReEncryptResponse) Reset()         { *m = ReEncryptResponse{} }
+func (m *ReEncryptResponse) String() string { return proto.CompactTextString(m) }
+func (*ReEncryptResponse) ProtoMessage()    {}
+func (*ReEncryptResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_ad098daeda4239f7, []int{82}
+}
+func (m *ReEncryptResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *ReEncryptResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_ReEncryptResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *ReEncryptResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ReEncryptResponse.Merge(m, src)
+}
+func (m *ReEncryptResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *ReEncryptResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_ReEncryptResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ReEncryptResponse proto.InternalMessageInfo
+
+func (m *ReEncryptResponse) GetRewrappedKey() []byte {
+	if m != nil {
+		return m.RewrappedKey
+	}
+	return nil
 }
 
 type RewrapKeyBlobRequest struct {
@@ -4841,14 +5018,14 @@ func (*AttributeValue) XXX_OneofWrappers() []interface{} {
 }
 
 type KeyBlob struct {
-	KeyBlobID            []byte                                                                 `protobuf:"bytes,1,opt,name=KeyBlobID,proto3" json:"KeyBlobID,omitempty"`
-	Version              int64                                                                  `protobuf:"varint,2,opt,name=Version,proto3" json:"Version,omitempty"`
-	TxID                 []byte                                                                 `protobuf:"bytes,3,opt,name=TxID,proto3" json:"TxID,omitempty"`
-	Attributes           map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue `protobuf:"bytes,4,rep,name=Attributes,proto3,castkey=github.com/IBM-Cloud/hpcs-grep11-go/ep11.Attribute" json:"Attributes,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	KeyBlobs             [][]byte                                                               `protobuf:"bytes,5,rep,name=KeyBlobs,proto3" json:"KeyBlobs,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                                                               `json:"-"`
-	XXX_unrecognized     []byte                                                                 `json:"-"`
-	XXX_sizecache        int32                                                                  `json:"-"`
+	KeyBlobID            []byte                             `protobuf:"bytes,1,opt,name=KeyBlobID,proto3" json:"KeyBlobID,omitempty"`
+	Version              int64                              `protobuf:"varint,2,opt,name=Version,proto3" json:"Version,omitempty"`
+	TxID                 []byte                             `protobuf:"bytes,3,opt,name=TxID,proto3" json:"TxID,omitempty"`
+	Attributes           map[ep11.Attribute]*AttributeValue `protobuf:"bytes,4,rep,name=Attributes,proto3,castkey=github.com/ibm-hyper-protect/ibm-cloud-hyperprotectcrypto/golang/ep11.Attribute" json:"Attributes,omitempty" protobuf_key:"varint,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	KeyBlobs             [][]byte                           `protobuf:"bytes,5,rep,name=KeyBlobs,proto3" json:"KeyBlobs,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                           `json:"-"`
+	XXX_unrecognized     []byte                             `json:"-"`
+	XXX_sizecache        int32                              `json:"-"`
 }
 
 func (m *KeyBlob) Reset()         { *m = KeyBlob{} }
@@ -4905,7 +5082,7 @@ func (m *KeyBlob) GetTxID() []byte {
 	return nil
 }
 
-func (m *KeyBlob) GetAttributes() map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue {
+func (m *KeyBlob) GetAttributes() map[ep11.Attribute]*AttributeValue {
 	if m != nil {
 		return m.Attributes
 	}
@@ -4924,6 +5101,8 @@ func init() {
 	proto.RegisterEnum("grep11.RSAOAEPParm_ParmType", RSAOAEPParm_ParmType_name, RSAOAEPParm_ParmType_value)
 	proto.RegisterEnum("grep11.RSAPSSParm_Mask", RSAPSSParm_Mask_name, RSAPSSParm_Mask_value)
 	proto.RegisterEnum("grep11.ECDH1DeriveParm_KeyDerivationFunction", ECDH1DeriveParm_KeyDerivationFunction_name, ECDH1DeriveParm_KeyDerivationFunction_value)
+	proto.RegisterEnum("grep11.BTCDeriveParm_BTCDeriveType", BTCDeriveParm_BTCDeriveType_name, BTCDeriveParm_BTCDeriveType_value)
+	proto.RegisterEnum("grep11.ECSGParm_ECSGType", ECSGParm_ECSGType_name, ECSGParm_ECSGType_value)
 	proto.RegisterType((*GenerateRandomRequest)(nil), "grep11.GenerateRandomRequest")
 	proto.RegisterType((*GenerateRandomResponse)(nil), "grep11.GenerateRandomResponse")
 	proto.RegisterType((*DigestInitRequest)(nil), "grep11.DigestInitRequest")
@@ -4979,237 +5158,277 @@ func init() {
 	proto.RegisterType((*VerifySingleRequest)(nil), "grep11.VerifySingleRequest")
 	proto.RegisterType((*VerifySingleResponse)(nil), "grep11.VerifySingleResponse")
 	proto.RegisterType((*GenerateKeyRequest)(nil), "grep11.GenerateKeyRequest")
-	proto.RegisterMapType((map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue)(nil), "grep11.GenerateKeyRequest.TemplateEntry")
+	proto.RegisterMapType((map[ep11.Attribute][]byte)(nil), "grep11.GenerateKeyRequest.TemplateBytesEntry")
+	proto.RegisterMapType((map[ep11.Attribute]*AttributeValue)(nil), "grep11.GenerateKeyRequest.TemplateEntry")
 	proto.RegisterType((*GenerateKeyResponse)(nil), "grep11.GenerateKeyResponse")
 	proto.RegisterType((*GenerateKeyPairRequest)(nil), "grep11.GenerateKeyPairRequest")
-	proto.RegisterMapType((map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue)(nil), "grep11.GenerateKeyPairRequest.PrivKeyTemplateEntry")
-	proto.RegisterMapType((map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue)(nil), "grep11.GenerateKeyPairRequest.PubKeyTemplateEntry")
+	proto.RegisterMapType((map[ep11.Attribute][]byte)(nil), "grep11.GenerateKeyPairRequest.PrivKeyTemplateBytesEntry")
+	proto.RegisterMapType((map[ep11.Attribute]*AttributeValue)(nil), "grep11.GenerateKeyPairRequest.PrivKeyTemplateEntry")
+	proto.RegisterMapType((map[ep11.Attribute][]byte)(nil), "grep11.GenerateKeyPairRequest.PubKeyTemplateBytesEntry")
+	proto.RegisterMapType((map[ep11.Attribute]*AttributeValue)(nil), "grep11.GenerateKeyPairRequest.PubKeyTemplateEntry")
 	proto.RegisterType((*GenerateKeyPairResponse)(nil), "grep11.GenerateKeyPairResponse")
 	proto.RegisterType((*WrapKeyRequest)(nil), "grep11.WrapKeyRequest")
 	proto.RegisterType((*WrapKeyResponse)(nil), "grep11.WrapKeyResponse")
 	proto.RegisterType((*UnwrapKeyRequest)(nil), "grep11.UnwrapKeyRequest")
-	proto.RegisterMapType((map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue)(nil), "grep11.UnwrapKeyRequest.TemplateEntry")
+	proto.RegisterMapType((map[ep11.Attribute][]byte)(nil), "grep11.UnwrapKeyRequest.TemplateBytesEntry")
+	proto.RegisterMapType((map[ep11.Attribute]*AttributeValue)(nil), "grep11.UnwrapKeyRequest.TemplateEntry")
 	proto.RegisterType((*UnwrapKeyResponse)(nil), "grep11.UnwrapKeyResponse")
 	proto.RegisterType((*DeriveKeyRequest)(nil), "grep11.DeriveKeyRequest")
-	proto.RegisterMapType((map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue)(nil), "grep11.DeriveKeyRequest.TemplateEntry")
+	proto.RegisterMapType((map[ep11.Attribute][]byte)(nil), "grep11.DeriveKeyRequest.TemplateBytesEntry")
+	proto.RegisterMapType((map[ep11.Attribute]*AttributeValue)(nil), "grep11.DeriveKeyRequest.TemplateEntry")
 	proto.RegisterType((*DeriveKeyResponse)(nil), "grep11.DeriveKeyResponse")
 	proto.RegisterType((*GetMechanismListRequest)(nil), "grep11.GetMechanismListRequest")
 	proto.RegisterType((*GetMechanismListResponse)(nil), "grep11.GetMechanismListResponse")
 	proto.RegisterType((*GetMechanismInfoRequest)(nil), "grep11.GetMechanismInfoRequest")
 	proto.RegisterType((*GetMechanismInfoResponse)(nil), "grep11.GetMechanismInfoResponse")
 	proto.RegisterType((*GetAttributeValueRequest)(nil), "grep11.GetAttributeValueRequest")
-	proto.RegisterMapType((map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute][]byte)(nil), "grep11.GetAttributeValueRequest.AttributesBytesEntry")
-	proto.RegisterMapType((map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue)(nil), "grep11.GetAttributeValueRequest.AttributesEntry")
+	proto.RegisterMapType((map[ep11.Attribute][]byte)(nil), "grep11.GetAttributeValueRequest.AttributesBytesEntry")
+	proto.RegisterMapType((map[ep11.Attribute]*AttributeValue)(nil), "grep11.GetAttributeValueRequest.AttributesEntry")
 	proto.RegisterType((*GetAttributeValueResponse)(nil), "grep11.GetAttributeValueResponse")
-	proto.RegisterMapType((map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute][]byte)(nil), "grep11.GetAttributeValueResponse.AttributesBytesEntry")
-	proto.RegisterMapType((map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue)(nil), "grep11.GetAttributeValueResponse.AttributesEntry")
+	proto.RegisterMapType((map[ep11.Attribute][]byte)(nil), "grep11.GetAttributeValueResponse.AttributesBytesEntry")
+	proto.RegisterMapType((map[ep11.Attribute]*AttributeValue)(nil), "grep11.GetAttributeValueResponse.AttributesEntry")
 	proto.RegisterType((*SetAttributeValueRequest)(nil), "grep11.SetAttributeValueRequest")
-	proto.RegisterMapType((map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue)(nil), "grep11.SetAttributeValueRequest.AttributesEntry")
+	proto.RegisterMapType((map[ep11.Attribute][]byte)(nil), "grep11.SetAttributeValueRequest.AttributesBytesEntry")
+	proto.RegisterMapType((map[ep11.Attribute]*AttributeValue)(nil), "grep11.SetAttributeValueRequest.AttributesEntry")
 	proto.RegisterType((*SetAttributeValueResponse)(nil), "grep11.SetAttributeValueResponse")
-	proto.RegisterType((*LoginRequest)(nil), "grep11.LoginRequest")
-	proto.RegisterType((*LoginResponse)(nil), "grep11.LoginResponse")
-	proto.RegisterType((*LogoutRequest)(nil), "grep11.LogoutRequest")
-	proto.RegisterType((*LogoutResponse)(nil), "grep11.LogoutResponse")
 	proto.RegisterType((*Mechanism)(nil), "grep11.Mechanism")
 	proto.RegisterType((*MechanismInfo)(nil), "grep11.MechanismInfo")
 	proto.RegisterType((*Grep11Error)(nil), "grep11.Grep11Error")
 	proto.RegisterType((*RSAOAEPParm)(nil), "grep11.RSAOAEPParm")
 	proto.RegisterType((*RSAPSSParm)(nil), "grep11.RSAPSSParm")
 	proto.RegisterType((*ECDH1DeriveParm)(nil), "grep11.ECDH1DeriveParm")
+	proto.RegisterType((*BTCDeriveParm)(nil), "grep11.BTCDeriveParm")
+	proto.RegisterType((*ECSGParm)(nil), "grep11.ECSGParm")
 	proto.RegisterType((*HMACGeneralParm)(nil), "grep11.HMACGeneralParm")
+	proto.RegisterType((*ReEncryptRequest)(nil), "grep11.ReEncryptRequest")
+	proto.RegisterType((*ReEncryptResponse)(nil), "grep11.ReEncryptResponse")
 	proto.RegisterType((*RewrapKeyBlobRequest)(nil), "grep11.RewrapKeyBlobRequest")
 	proto.RegisterType((*RewrapKeyBlobResponse)(nil), "grep11.RewrapKeyBlobResponse")
 	proto.RegisterType((*AttributeValue)(nil), "grep11.AttributeValue")
 	proto.RegisterType((*KeyBlob)(nil), "grep11.KeyBlob")
-	proto.RegisterMapType((map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue)(nil), "grep11.KeyBlob.AttributesEntry")
+	proto.RegisterMapType((map[ep11.Attribute]*AttributeValue)(nil), "grep11.KeyBlob.AttributesEntry")
 }
 
 func init() { proto.RegisterFile("server.proto", fileDescriptor_ad098daeda4239f7) }
 
 var fileDescriptor_ad098daeda4239f7 = []byte{
-	// 2911 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe4, 0x3b, 0xcd, 0x6f, 0x1b, 0xc7,
-	0xf5, 0x5c, 0x92, 0x92, 0xa8, 0x47, 0x89, 0xa4, 0x46, 0x1f, 0xa6, 0x19, 0x45, 0x56, 0x16, 0xbf,
-	0x5f, 0x22, 0x3b, 0x91, 0x1c, 0x51, 0xb6, 0x92, 0xb8, 0x69, 0x0d, 0x53, 0x92, 0x23, 0x55, 0x96,
-	0xc3, 0x2e, 0xed, 0x04, 0xcd, 0xa5, 0x58, 0x91, 0x23, 0x6a, 0x2b, 0x6a, 0x97, 0x5d, 0x2e, 0x9d,
-	0xc8, 0xe8, 0xa9, 0x28, 0x82, 0xf6, 0xd2, 0x43, 0xd1, 0xa2, 0xbd, 0xf7, 0xd0, 0x4b, 0x81, 0x16,
-	0x28, 0x0a, 0xf4, 0x5a, 0xa0, 0x87, 0x9e, 0x8a, 0xfe, 0x03, 0x75, 0x0b, 0x1f, 0x73, 0xec, 0x31,
-	0xa7, 0x62, 0x77, 0x66, 0xe7, 0x6b, 0x87, 0xd4, 0x97, 0xdd, 0x22, 0xe8, 0x49, 0x9c, 0x37, 0x6f,
-	0xde, 0x7b, 0xf3, 0xbe, 0xe6, 0xed, 0xcc, 0x13, 0x4c, 0xf4, 0xb0, 0xff, 0x04, 0xfb, 0x2b, 0x5d,
-	0xdf, 0x0b, 0x3c, 0x34, 0xda, 0xf6, 0x71, 0x77, 0x75, 0xb5, 0x02, 0x6d, 0xaf, 0xed, 0x11, 0x98,
-	0x79, 0x1d, 0x66, 0x3f, 0xc0, 0x2e, 0xf6, 0xed, 0x00, 0x5b, 0xb6, 0xdb, 0xf2, 0x8e, 0x2d, 0xfc,
-	0xbd, 0x3e, 0xee, 0x05, 0xa8, 0x04, 0x99, 0x07, 0xd8, 0x2d, 0x1b, 0x8b, 0xc6, 0x52, 0xd6, 0x0a,
-	0x7f, 0x9a, 0x37, 0x60, 0x4e, 0x45, 0xed, 0x75, 0x3d, 0xb7, 0x87, 0x43, 0x5c, 0xcb, 0x6d, 0x45,
-	0xb8, 0x13, 0x56, 0xf8, 0xd3, 0xbc, 0x03, 0x53, 0x9b, 0x4e, 0x1b, 0xf7, 0x82, 0x1d, 0xd7, 0x09,
-	0x62, 0x92, 0xff, 0x0f, 0xd9, 0x3d, 0xdc, 0x3c, 0x2c, 0xa7, 0x17, 0x8d, 0xa5, 0x7c, 0x75, 0x6a,
-	0x85, 0x88, 0xb3, 0x12, 0xc2, 0x6c, 0xd7, 0xe9, 0x1d, 0x5b, 0xd1, 0xb4, 0x79, 0x03, 0x90, 0xb8,
-	0x96, 0xf2, 0x98, 0x81, 0x91, 0x46, 0x60, 0x07, 0x98, 0x72, 0x21, 0x03, 0xf3, 0x3d, 0x98, 0x24,
-	0xb8, 0x31, 0x0f, 0x2d, 0x1a, 0x42, 0x90, 0xdd, 0xb4, 0x03, 0x3b, 0xe2, 0x3c, 0x61, 0x45, 0xbf,
-	0xcd, 0x25, 0x28, 0xc4, 0x4b, 0x29, 0x8b, 0x39, 0x18, 0x25, 0x90, 0x72, 0x26, 0xc2, 0xa3, 0x23,
-	0xf3, 0x2e, 0x4c, 0x93, 0x5f, 0x8f, 0xbb, 0xad, 0x70, 0xf3, 0xe7, 0x66, 0xf5, 0x16, 0xcc, 0xc8,
-	0x04, 0x86, 0xee, 0xe9, 0x0e, 0x94, 0x08, 0xf6, 0x2e, 0x3e, 0x19, 0xce, 0xab, 0x04, 0x99, 0x5d,
-	0x7c, 0x42, 0x59, 0x85, 0x3f, 0xcd, 0xeb, 0xb1, 0xde, 0xa3, 0xb5, 0x43, 0xd9, 0x30, 0x35, 0xdf,
-	0x77, 0x5c, 0xbb, 0x33, 0x94, 0x91, 0xb9, 0x1c, 0x6b, 0x80, 0xe2, 0x26, 0x14, 0x96, 0x96, 0x14,
-	0x56, 0x8f, 0xd1, 0x1b, 0x8e, 0xdb, 0xee, 0x60, 0xd5, 0xfe, 0xc6, 0x50, 0xfb, 0x6b, 0x35, 0xb8,
-	0x12, 0x6b, 0x30, 0xa6, 0x78, 0x8a, 0xc9, 0xf6, 0x00, 0x6d, 0xb9, 0x4d, 0xff, 0xa4, 0x7b, 0x01,
-	0x07, 0x8c, 0xd5, 0x9a, 0xe1, 0x6a, 0x7d, 0x13, 0xa6, 0x25, 0x72, 0x43, 0x15, 0xbb, 0x07, 0x68,
-	0x13, 0xbf, 0x50, 0xde, 0x12, 0xb9, 0xa1, 0xbc, 0x6b, 0x30, 0x43, 0x05, 0x3d, 0x8b, 0xaf, 0xce,
-	0xc0, 0x48, 0xbd, 0x63, 0x3b, 0x2e, 0x55, 0x35, 0x19, 0x98, 0x3b, 0x30, 0xab, 0xd0, 0x18, 0xc6,
-	0x12, 0x55, 0x20, 0xb7, 0xe1, 0x74, 0x0f, 0xb1, 0x8f, 0x5b, 0x54, 0x6c, 0x36, 0x36, 0xb7, 0x61,
-	0x86, 0xca, 0x7e, 0x16, 0x71, 0x44, 0x4a, 0x69, 0x85, 0xd2, 0x06, 0xcc, 0x2a, 0x94, 0x86, 0x0a,
-	0xc5, 0x76, 0x96, 0x11, 0x77, 0xf6, 0x3e, 0x14, 0xe8, 0xce, 0x2e, 0xa2, 0x97, 0x65, 0x28, 0xb2,
-	0xd5, 0x94, 0xf9, 0xb0, 0xbd, 0xd7, 0xa0, 0x40, 0x25, 0xbe, 0xf8, 0xae, 0xdf, 0x80, 0x22, 0xa3,
-	0xc1, 0xf7, 0xab, 0xd9, 0x19, 0x77, 0xd0, 0x33, 0x44, 0x73, 0x95, 0x39, 0x89, 0x1c, 0xce, 0xc3,
-	0x24, 0xe1, 0x5e, 0x78, 0x06, 0x06, 0x6f, 0x31, 0xb3, 0xcb, 0x0c, 0xf4, 0x7a, 0xc5, 0x4c, 0x1c,
-	0x39, 0x5d, 0xd0, 0x50, 0x30, 0x58, 0x28, 0x9c, 0x35, 0x86, 0xf4, 0x2a, 0x5a, 0x63, 0x6e, 0xad,
-	0xe4, 0x10, 0x71, 0xdb, 0x59, 0x65, 0xdb, 0x47, 0x6c, 0x27, 0x2f, 0x48, 0xb6, 0x61, 0x1e, 0xb3,
-	0xcc, 0x7c, 0x5c, 0x91, 0x90, 0x6d, 0x28, 0x2b, 0x6e, 0xc8, 0x82, 0x62, 0xc3, 0x69, 0xbb, 0x17,
-	0x48, 0x32, 0x65, 0x18, 0xab, 0xfb, 0xce, 0x13, 0x9e, 0x68, 0xe2, 0xa1, 0xb9, 0x04, 0x25, 0x4e,
-	0x73, 0x68, 0xa6, 0xb1, 0x60, 0xea, 0x23, 0xec, 0x3b, 0x07, 0x27, 0x17, 0xe0, 0x3f, 0x07, 0xa3,
-	0xf5, 0xfe, 0x3e, 0x67, 0x4f, 0x47, 0xe1, 0x91, 0x24, 0xd2, 0x1c, 0xca, 0xff, 0xeb, 0x30, 0x15,
-	0x4a, 0x7a, 0xd1, 0x23, 0xf9, 0x06, 0x20, 0x71, 0xf9, 0x50, 0x56, 0x77, 0x61, 0x9a, 0x88, 0x75,
-	0x89, 0xf3, 0x5f, 0x26, 0x30, 0x94, 0x1d, 0xb5, 0xc1, 0x19, 0xe2, 0x6c, 0x95, 0xe8, 0x40, 0x0e,
-	0xb2, 0x79, 0x18, 0x0f, 0x81, 0x76, 0xd0, 0xf7, 0x31, 0x95, 0x82, 0x03, 0xcc, 0xed, 0x58, 0xc5,
-	0xa7, 0x93, 0x3f, 0x85, 0xd2, 0x6c, 0xac, 0x15, 0x89, 0xbd, 0xf9, 0x0e, 0xe4, 0x43, 0x9c, 0x8b,
-	0x28, 0x69, 0x82, 0x2c, 0xd4, 0xed, 0x23, 0xa3, 0x72, 0xff, 0x18, 0x26, 0x09, 0xf7, 0x73, 0x33,
-	0x3a, 0x85, 0x70, 0x09, 0x0a, 0x31, 0x61, 0xba, 0xa3, 0x43, 0xa2, 0x65, 0x39, 0x01, 0x08, 0x21,
-	0x64, 0x48, 0x21, 0x74, 0xd6, 0x18, 0x88, 0x25, 0xcb, 0x08, 0x2a, 0xa8, 0x12, 0xa7, 0x54, 0xa2,
-	0x5f, 0x92, 0x37, 0xab, 0xca, 0xfb, 0xb9, 0x11, 0xdb, 0x41, 0x16, 0x90, 0xc7, 0x98, 0x21, 0xc6,
-	0xd8, 0x25, 0xc4, 0x3b, 0x45, 0x90, 0xb9, 0xd8, 0xc9, 0x65, 0xf1, 0xcd, 0x9f, 0xa4, 0x01, 0xc5,
-	0xdf, 0x0d, 0x42, 0x45, 0x7b, 0xc6, 0x62, 0xf0, 0xfb, 0x90, 0x7b, 0x84, 0x8f, 0xbb, 0x9d, 0xd0,
-	0xb2, 0xa3, 0x8b, 0x99, 0xa5, 0x7c, 0x75, 0x29, 0x46, 0x4d, 0x12, 0x5d, 0x89, 0x51, 0xb7, 0xdc,
-	0xc0, 0x3f, 0xa9, 0xad, 0xff, 0xe0, 0x1f, 0xd7, 0xaa, 0x6d, 0x27, 0x38, 0xec, 0xef, 0xaf, 0x34,
-	0xbd, 0xe3, 0x9b, 0x3b, 0xb5, 0xbd, 0xe5, 0x8d, 0x8e, 0xd7, 0x6f, 0xdd, 0x3c, 0xec, 0x36, 0x7b,
-	0xcb, 0x84, 0xcc, 0x72, 0xdb, 0xbb, 0x19, 0x91, 0xbb, 0x17, 0x04, 0xbe, 0xb3, 0xdf, 0x0f, 0xb0,
-	0xc5, 0x38, 0x56, 0x1a, 0x30, 0x29, 0x91, 0x0c, 0xf3, 0xfe, 0x11, 0x55, 0x69, 0xd6, 0x0a, 0x7f,
-	0xa2, 0xb7, 0x60, 0xe4, 0x89, 0xdd, 0xe9, 0x63, 0xaa, 0xd0, 0xb9, 0x58, 0x3a, 0x46, 0xee, 0xa3,
-	0x70, 0xd6, 0x22, 0x48, 0x77, 0xd2, 0xef, 0x1a, 0x66, 0x17, 0xa6, 0x25, 0xd1, 0xf9, 0x31, 0xb4,
-	0x8b, 0x4f, 0x6a, 0x27, 0x01, 0xee, 0xc5, 0xc7, 0x50, 0x3c, 0x8e, 0x4e, 0x8d, 0x43, 0xdc, 0x3c,
-	0x6a, 0xf4, 0x8f, 0xcb, 0x23, 0xf4, 0xd4, 0xa0, 0x63, 0xf4, 0x1a, 0x39, 0x8a, 0xc6, 0x22, 0xf6,
-	0xc5, 0x98, 0x7d, 0xb8, 0xb4, 0xe3, 0xed, 0x93, 0x12, 0xf2, 0x57, 0x59, 0xfe, 0xe9, 0xb6, 0x8b,
-	0x4f, 0xea, 0xb6, 0xe3, 0x9f, 0xd3, 0x0c, 0x3f, 0x37, 0xa0, 0x48, 0x1d, 0x9c, 0x99, 0x63, 0x2c,
-	0x32, 0xc7, 0x9a, 0xc6, 0x1c, 0x02, 0x83, 0x15, 0x65, 0xd5, 0xe5, 0x2c, 0xa3, 0xca, 0x80, 0x7e,
-	0x6a, 0x40, 0x81, 0x38, 0x36, 0x13, 0x2b, 0x17, 0x89, 0x55, 0x3d, 0x4d, 0x2c, 0x69, 0xd1, 0xe5,
-	0xa4, 0x52, 0x24, 0xa8, 0x7c, 0x02, 0x33, 0xba, 0x5d, 0xbf, 0x08, 0xe7, 0xa9, 0x7c, 0x1b, 0xa6,
-	0x35, 0xa2, 0xbf, 0x10, 0xbf, 0xfc, 0xbd, 0x01, 0x57, 0x12, 0xda, 0xa2, 0xce, 0x69, 0xc2, 0x04,
-	0xdd, 0x12, 0x71, 0x50, 0xe2, 0x84, 0x12, 0x0c, 0x2d, 0x42, 0x9e, 0x88, 0x46, 0x50, 0x46, 0x23,
-	0x14, 0x11, 0x84, 0xae, 0xf3, 0xa4, 0x39, 0xae, 0x77, 0x57, 0x96, 0x45, 0xdf, 0x60, 0xe9, 0x0b,
-	0xf4, 0x98, 0x71, 0xcd, 0xd0, 0x83, 0xc2, 0xc7, 0xbe, 0xdd, 0x15, 0x32, 0x4b, 0xb2, 0x36, 0x8b,
-	0x20, 0xbb, 0xfc, 0x3b, 0x79, 0x37, 0xcc, 0x8e, 0x7b, 0x76, 0x53, 0xa8, 0x40, 0xc8, 0x88, 0x85,
-	0x43, 0x76, 0xf8, 0x15, 0xc5, 0x9b, 0x50, 0x64, 0x4c, 0xa9, 0x86, 0xca, 0x30, 0x16, 0x82, 0xba,
-	0xb8, 0x45, 0x95, 0x13, 0x0f, 0xcd, 0xbf, 0xa6, 0xa1, 0xf4, 0xd8, 0xfd, 0x54, 0x16, 0x52, 0x40,
-	0x37, 0x24, 0xf4, 0x0b, 0x08, 0x3b, 0x32, 0x3c, 0x76, 0x9f, 0x0a, 0x29, 0x74, 0x3c, 0x0a, 0x8e,
-	0xd7, 0x63, 0x54, 0x55, 0xac, 0xaf, 0x46, 0x02, 0xfd, 0xdc, 0x80, 0x29, 0x41, 0x72, 0x6a, 0x80,
-	0xd7, 0xa1, 0x40, 0x80, 0x5d, 0xdc, 0x22, 0x1e, 0x38, 0x16, 0x69, 0x4b, 0x81, 0x4a, 0xb9, 0x34,
-	0xa7, 0xe4, 0xd2, 0x65, 0x18, 0x67, 0xd8, 0x83, 0x1c, 0x8f, 0x63, 0x98, 0x7f, 0x4c, 0x43, 0x69,
-	0x13, 0xfb, 0xce, 0x93, 0x0b, 0x1c, 0x6c, 0x65, 0x18, 0xab, 0xd9, 0x3d, 0x2c, 0xd4, 0xe0, 0x74,
-	0xc8, 0x8e, 0xde, 0xac, 0x70, 0xf4, 0x8a, 0x36, 0xcc, 0xc9, 0x36, 0x54, 0x05, 0xf8, 0x6a, 0xd8,
-	0xf0, 0x29, 0x4c, 0x09, 0x82, 0x53, 0x13, 0x2e, 0x42, 0xfe, 0x21, 0xfe, 0x54, 0xcd, 0x20, 0x02,
-	0x48, 0x32, 0xde, 0x98, 0x62, 0xbc, 0x37, 0x60, 0x94, 0xa0, 0x0e, 0x4a, 0x2e, 0x74, 0xda, 0xbc,
-	0x1a, 0xe6, 0xb9, 0x80, 0x19, 0xe4, 0x81, 0xc3, 0xae, 0x0f, 0xcd, 0x43, 0x28, 0x27, 0xa7, 0xa8,
-	0x74, 0x0f, 0x60, 0x24, 0x9c, 0xe8, 0x95, 0xd3, 0x8b, 0x99, 0xa5, 0x6c, 0x6d, 0xfd, 0xcb, 0x67,
-	0xe7, 0x50, 0x2c, 0x37, 0x3f, 0x21, 0x62, 0x62, 0x59, 0x88, 0x1d, 0xf7, 0xc0, 0x8b, 0x3d, 0xe8,
-	0x9b, 0x42, 0x89, 0x76, 0x71, 0x3e, 0x24, 0x53, 0xed, 0xc9, 0x1b, 0x22, 0x6c, 0xe8, 0x86, 0x56,
-	0x21, 0x17, 0x4e, 0x84, 0xb0, 0xc8, 0x07, 0xf3, 0xd5, 0xd9, 0x84, 0xb7, 0x46, 0x0b, 0x18, 0x9a,
-	0xf9, 0xaf, 0x4c, 0x44, 0x4f, 0xb1, 0x2b, 0x2f, 0x39, 0x3f, 0xdc, 0xff, 0x2e, 0x6e, 0x06, 0x71,
-	0xc9, 0x49, 0x46, 0xe8, 0x17, 0x06, 0x14, 0xd9, 0x8a, 0x1e, 0xb1, 0x6d, 0x3a, 0x72, 0xe2, 0xdb,
-	0xfc, 0x94, 0xd6, 0xd3, 0x5c, 0x51, 0xd6, 0x5d, 0xb2, 0x7c, 0x50, 0xa8, 0xa1, 0x1f, 0x19, 0x00,
-	0x1c, 0x56, 0xce, 0x44, 0x42, 0xbd, 0x7d, 0x0e, 0xa1, 0x2e, 0x27, 0x8f, 0xc0, 0xbb, 0x52, 0x83,
-	0x19, 0xdd, 0x5e, 0x35, 0xc1, 0x36, 0x23, 0x06, 0xdb, 0x84, 0x58, 0x1c, 0x3c, 0x16, 0xf5, 0xfc,
-	0xe2, 0x62, 0xf5, 0xef, 0x19, 0xb8, 0xaa, 0xd1, 0x05, 0xf5, 0xa2, 0x5f, 0x0e, 0xb4, 0xee, 0xfa,
-	0x10, 0x45, 0x92, 0xc5, 0x2f, 0xd9, 0xbc, 0x3f, 0x96, 0xcd, 0x9b, 0x8d, 0xa4, 0x5a, 0x3d, 0x8f,
-	0x54, 0xff, 0x13, 0xf6, 0xfd, 0x59, 0x1a, 0xca, 0x8d, 0xf3, 0x06, 0xf5, 0xf0, 0xd0, 0x69, 0xfc,
-	0x27, 0x43, 0xe7, 0x25, 0xa9, 0x65, 0x0d, 0xae, 0x36, 0x06, 0x7a, 0xfd, 0x00, 0xb5, 0x98, 0x77,
-	0x60, 0xe2, 0x81, 0xd7, 0x76, 0x5c, 0xa1, 0xce, 0x6b, 0x04, 0x9e, 0x8f, 0x1d, 0x56, 0xe7, 0xd1,
-	0x61, 0x28, 0x62, 0x9d, 0x5d, 0x85, 0x86, 0x3f, 0xcd, 0xeb, 0x30, 0x49, 0xd7, 0xf2, 0x9a, 0xb2,
-	0xee, 0xb8, 0xfb, 0x1d, 0x6f, 0x9f, 0x16, 0x03, 0xf1, 0xd0, 0x2c, 0x46, 0xa8, 0x5e, 0x9f, 0x1d,
-	0x5c, 0x25, 0x28, 0xc4, 0x00, 0xfa, 0xdd, 0xfd, 0x3c, 0x0d, 0xe3, 0x2c, 0x8d, 0xa3, 0x47, 0xc2,
-	0x80, 0xa8, 0xe5, 0xc2, 0x07, 0x8b, 0x40, 0x75, 0x11, 0xa0, 0x6e, 0xfb, 0xf6, 0x31, 0x0e, 0xb0,
-	0x5f, 0x23, 0x5b, 0xd9, 0x4e, 0x59, 0x02, 0x0c, 0xdd, 0x83, 0x92, 0xd5, 0xb8, 0xf7, 0xe1, 0xbd,
-	0xad, 0x3a, 0x03, 0xd2, 0xb3, 0x66, 0x3a, 0xb6, 0x00, 0x9f, 0x3f, 0xde, 0x4e, 0x59, 0x09, 0x74,
-	0xf4, 0x0d, 0x28, 0x5a, 0x8d, 0x7b, 0xf5, 0x46, 0x83, 0x53, 0x20, 0xe5, 0x39, 0x12, 0x28, 0x90,
-	0xe9, 0x90, 0x80, 0x8a, 0x8c, 0xf6, 0x60, 0x66, 0x6b, 0x63, 0x73, 0x7b, 0x95, 0xd4, 0x1b, 0x9c,
-	0x08, 0x29, 0x9b, 0xaf, 0xc4, 0x44, 0x64, 0x9c, 0x90, 0x92, 0x76, 0x59, 0x2d, 0x0f, 0xe3, 0x6c,
-	0x60, 0x62, 0x98, 0x94, 0x8e, 0x4a, 0xb4, 0x00, 0xb0, 0xe7, 0xb8, 0xbb, 0xf8, 0xa4, 0xe1, 0x3c,
-	0xc5, 0xd4, 0xff, 0x04, 0x48, 0x34, 0x6f, 0x7f, 0x16, 0xcf, 0xa7, 0xe9, 0x3c, 0x83, 0x84, 0xc1,
-	0x7f, 0xbf, 0x63, 0xb7, 0x7b, 0x91, 0x92, 0xb2, 0x16, 0x19, 0x98, 0x3f, 0x34, 0x20, 0xff, 0x41,
-	0x24, 0xe6, 0x96, 0xef, 0x7b, 0x3e, 0xfa, 0x00, 0xb2, 0x1b, 0x5e, 0x8b, 0xd2, 0xaf, 0xad, 0x7d,
-	0xf9, 0xec, 0xda, 0xcd, 0x33, 0x1b, 0xd2, 0xc2, 0x41, 0xdf, 0x77, 0xad, 0x88, 0x40, 0xf4, 0x7e,
-	0x86, 0x03, 0xdb, 0xe9, 0x44, 0xa2, 0x8c, 0x5b, 0x74, 0x14, 0x8a, 0x61, 0xe1, 0xc0, 0x27, 0xb5,
-	0x69, 0xce, 0x22, 0x03, 0xf3, 0x37, 0x19, 0xc8, 0x0b, 0xd6, 0x42, 0x16, 0xe4, 0xb6, 0xed, 0xde,
-	0x21, 0x2b, 0x77, 0x2f, 0xee, 0x53, 0x8c, 0x0e, 0xba, 0x01, 0x99, 0xbd, 0xf6, 0x41, 0x24, 0x4e,
-	0xa1, 0x5a, 0xd6, 0xf8, 0xc8, 0xca, 0x9e, 0xdd, 0x3b, 0xb2, 0x42, 0x24, 0xb4, 0x0d, 0xa5, 0x2d,
-	0xb7, 0xe9, 0xb5, 0x1c, 0xb7, 0x1d, 0xce, 0x3c, 0x3a, 0xe9, 0x92, 0x0b, 0xbd, 0x42, 0x75, 0x5e,
-	0xb7, 0x30, 0xc6, 0xb1, 0x12, 0xab, 0xc2, 0xef, 0x5b, 0x11, 0x46, 0xc3, 0x4d, 0x82, 0x99, 0x01,
-	0x64, 0x43, 0xd6, 0xa8, 0x08, 0xf9, 0x8d, 0xa3, 0xf6, 0x5e, 0xfb, 0x60, 0xf5, 0xa1, 0xe7, 0xe2,
-	0x52, 0x4a, 0x00, 0x34, 0x0e, 0xed, 0xd5, 0x92, 0x81, 0xa6, 0x60, 0x92, 0x03, 0xaa, 0xb7, 0xd7,
-	0x4b, 0x69, 0x19, 0xb4, 0xf6, 0xee, 0xad, 0x52, 0x46, 0x06, 0xdd, 0x5e, 0xad, 0x96, 0xb2, 0xca,
-	0xc2, 0xea, 0xad, 0xd2, 0x88, 0xf9, 0x1e, 0xe4, 0x98, 0x94, 0x73, 0x80, 0x36, 0x8e, 0x9e, 0x3e,
-	0xf4, 0xc2, 0x4f, 0x82, 0x46, 0x17, 0x37, 0x9d, 0x03, 0x07, 0xb7, 0x4a, 0x29, 0x34, 0x0b, 0x53,
-	0x1b, 0x47, 0x4f, 0x05, 0x68, 0x08, 0x36, 0xcc, 0x5f, 0xa7, 0x01, 0x78, 0x68, 0xbc, 0x14, 0x6b,
-	0x5d, 0x17, 0xad, 0x75, 0x25, 0x19, 0x8f, 0x82, 0xb1, 0xfe, 0x0f, 0x26, 0x1b, 0x76, 0x27, 0x08,
-	0x8f, 0xbe, 0x0d, 0xaf, 0xef, 0x06, 0xd4, 0xc3, 0x65, 0xe0, 0x7f, 0x49, 0xc9, 0x7f, 0x4e, 0x43,
-	0x51, 0x89, 0x7f, 0x74, 0x17, 0x32, 0xbb, 0xad, 0x83, 0x48, 0x53, 0x85, 0xea, 0xf2, 0x80, 0x2c,
-	0x11, 0x7e, 0x5b, 0x44, 0x23, 0x3b, 0x70, 0x3c, 0xf7, 0x7e, 0xdf, 0x6d, 0x86, 0x7f, 0xad, 0x70,
-	0x65, 0x18, 0xea, 0x8d, 0x43, 0xdb, 0xc7, 0x2d, 0xe1, 0x06, 0x5a, 0x80, 0x84, 0xf3, 0xf5, 0xfe,
-	0x7e, 0xc7, 0x69, 0x0a, 0x17, 0xad, 0x02, 0xc4, 0xfc, 0xad, 0x01, 0xb3, 0x5a, 0xf2, 0x44, 0x17,
-	0xad, 0x87, 0x5e, 0xf0, 0xb8, 0x87, 0x5b, 0x6f, 0x97, 0x52, 0x28, 0x0f, 0x63, 0x21, 0xa0, 0xdf,
-	0xe9, 0x94, 0x0c, 0x54, 0x00, 0xd8, 0x38, 0x6a, 0x85, 0x5a, 0xda, 0x6d, 0x1d, 0x94, 0xd2, 0x32,
-	0xf6, 0x5a, 0x29, 0x23, 0x03, 0x6e, 0x95, 0xb2, 0xa8, 0x04, 0x13, 0x64, 0x45, 0xb5, 0x7a, 0x2b,
-	0x5c, 0x33, 0x22, 0x40, 0x6e, 0xaf, 0x87, 0x90, 0x51, 0x0e, 0x59, 0x7b, 0x37, 0xc2, 0x19, 0xe3,
-	0x90, 0xdb, 0xab, 0xd5, 0x10, 0x92, 0x33, 0xbf, 0x06, 0xc5, 0xed, 0xbd, 0x7b, 0x1b, 0xe4, 0x12,
-	0xa9, 0x13, 0x69, 0x71, 0x09, 0x8a, 0x24, 0xe1, 0x70, 0xbb, 0x87, 0x1a, 0x9d, 0xb4, 0x54, 0xb0,
-	0xb9, 0x0e, 0x33, 0x16, 0xa6, 0x1f, 0xf5, 0xd1, 0xe7, 0x1a, 0x3d, 0x41, 0x17, 0x00, 0xe8, 0xd5,
-	0x08, 0xbf, 0xd5, 0x11, 0x20, 0xe6, 0x01, 0xcc, 0x2a, 0xeb, 0xf8, 0x9d, 0x15, 0x99, 0x90, 0x96,
-	0x4a, 0x30, 0x74, 0x1d, 0xc6, 0xe8, 0x32, 0x5a, 0x17, 0x24, 0x6f, 0xa4, 0xe8, 0x0f, 0xf3, 0x0f,
-	0x06, 0x14, 0xe4, 0x62, 0x00, 0xbd, 0x2d, 0x94, 0x40, 0x35, 0x42, 0xbf, 0x56, 0xf8, 0xe2, 0xd9,
-	0x35, 0x01, 0x1a, 0x1e, 0x87, 0x7c, 0x84, 0xd6, 0x20, 0xcf, 0x46, 0x8f, 0xee, 0x47, 0x3c, 0x73,
-	0xb5, 0xe2, 0x17, 0xcf, 0xae, 0x89, 0xe0, 0xed, 0x94, 0x25, 0x0e, 0x25, 0x36, 0x3b, 0x91, 0xa3,
-	0x64, 0x14, 0x36, 0x3b, 0x12, 0x9b, 0x9d, 0x1a, 0x40, 0xce, 0x73, 0xf1, 0x77, 0xec, 0x20, 0xf0,
-	0xcd, 0x3f, 0xa5, 0xd9, 0x1e, 0xd1, 0x3c, 0x8c, 0xd3, 0x9f, 0x3b, 0x9b, 0x54, 0x1f, 0x1c, 0x10,
-	0x96, 0x1b, 0x1f, 0x61, 0xbf, 0xe7, 0x78, 0xa4, 0x2a, 0xc9, 0x58, 0xf1, 0x10, 0x21, 0xc8, 0x3e,
-	0xfa, 0x6c, 0x67, 0x33, 0x7e, 0x0d, 0x08, 0x7f, 0xa3, 0x4f, 0x35, 0xb5, 0xf5, 0x35, 0x45, 0x7b,
-	0x2f, 0xa3, 0xdc, 0x8b, 0x2f, 0xca, 0x3b, 0xde, 0x7e, 0xaf, 0x3c, 0xb2, 0x98, 0x89, 0x2f, 0xca,
-	0xc3, 0xf1, 0x4b, 0x2a, 0x05, 0xab, 0xbf, 0x9b, 0x83, 0xd1, 0x0d, 0xff, 0xa4, 0x1b, 0x78, 0xe8,
-	0x5b, 0x50, 0x90, 0xbb, 0xa0, 0xd0, 0xab, 0xea, 0x55, 0xb3, 0xd4, 0x48, 0x55, 0x59, 0x18, 0x34,
-	0x4d, 0xeb, 0xb4, 0x14, 0xda, 0x02, 0xe0, 0x0d, 0x4f, 0xe8, 0x2a, 0xbb, 0xd8, 0x51, 0x1b, 0xa8,
-	0x2a, 0x15, 0xdd, 0x14, 0x23, 0xf3, 0x5e, 0xdc, 0x0b, 0x83, 0x66, 0x65, 0xbc, 0x78, 0xf9, 0x9c,
-	0x0a, 0x66, 0x4b, 0x77, 0x61, 0x42, 0x6c, 0x50, 0x42, 0xaf, 0xc8, 0x98, 0xd2, 0xbb, 0x67, 0x65,
-	0x5e, 0x3f, 0xc9, 0x88, 0xd5, 0x60, 0x9c, 0xf5, 0x20, 0xa1, 0xb2, 0x8c, 0xcc, 0xaf, 0xa9, 0x2a,
-	0x57, 0x35, 0x33, 0x8c, 0xc6, 0x36, 0xe4, 0x85, 0x86, 0x23, 0xa4, 0x6c, 0x5c, 0x7c, 0xbb, 0xac,
-	0xbc, 0xa2, 0x9d, 0x4b, 0x6e, 0x8d, 0x3c, 0x4b, 0xa9, 0x5b, 0x93, 0x1e, 0xcd, 0xd4, 0xad, 0x29,
-	0x2f, 0x59, 0x91, 0x58, 0x42, 0x1f, 0x10, 0x17, 0x2b, 0xd9, 0x6b, 0xc4, 0xc5, 0xd2, 0x34, 0x0e,
-	0xd1, 0x0d, 0x62, 0x0d, 0xa5, 0x64, 0xe7, 0x90, 0xb0, 0x41, 0xac, 0xa3, 0xf4, 0x10, 0x26, 0xa5,
-	0x76, 0x1d, 0x34, 0xaf, 0x70, 0x96, 0xad, 0xf7, 0xea, 0x80, 0x59, 0x91, 0x9e, 0xd4, 0x69, 0xc3,
-	0xe9, 0xe9, 0x5a, 0x79, 0x38, 0x3d, 0x6d, 0x7b, 0x8e, 0x99, 0x42, 0xef, 0xc3, 0x18, 0x65, 0x85,
-	0xe6, 0x14, 0xde, 0x31, 0x8d, 0x2b, 0x09, 0xb8, 0xb8, 0x9a, 0x12, 0xe6, 0xab, 0xe5, 0xb6, 0x1a,
-	0xbe, 0x5a, 0x69, 0x95, 0x21, 0xc6, 0x17, 0x3b, 0x5d, 0x90, 0x6a, 0x14, 0xc9, 0x91, 0xe6, 0xf5,
-	0x93, 0x92, 0x27, 0x61, 0x1d, 0x31, 0x4d, 0x63, 0x4c, 0x65, 0x5e, 0x3f, 0xa9, 0xb1, 0x1a, 0xf5,
-	0x4b, 0x95, 0xbb, 0xec, 0x98, 0xaf, 0x0e, 0x98, 0xd5, 0x58, 0x4d, 0xa5, 0xa7, 0xeb, 0x5f, 0x49,
-	0x58, 0x2d, 0x41, 0xef, 0x2e, 0xe4, 0xe2, 0x46, 0x10, 0xc4, 0x14, 0xac, 0xb4, 0x9b, 0x54, 0xca,
-	0xc9, 0x09, 0x31, 0xa9, 0xf1, 0x5e, 0x0e, 0x9e, 0xd4, 0x12, 0x3d, 0x23, 0x3c, 0xa9, 0x25, 0x5b,
-	0x3f, 0x08, 0x19, 0xde, 0xa7, 0xc1, 0xc9, 0x24, 0x5a, 0x3f, 0x38, 0x99, 0x64, 0x5b, 0x07, 0xb1,
-	0x9d, 0xd8, 0x81, 0xc1, 0x6d, 0xa7, 0x69, 0xec, 0xe0, 0xb6, 0xd3, 0x35, 0x6d, 0x90, 0x04, 0xc7,
-	0xda, 0x2e, 0x90, 0xa4, 0x03, 0xc9, 0x05, 0xae, 0x6a, 0x66, 0xc4, 0xf8, 0x17, 0xba, 0x27, 0x90,
-	0xa2, 0x04, 0x7d, 0x82, 0xd3, 0xb5, 0x5b, 0xa4, 0xd0, 0x1a, 0x64, 0x43, 0x06, 0x68, 0x5a, 0x64,
-	0x17, 0xaf, 0x9d, 0x91, 0x81, 0xe2, 0x59, 0x41, 0xa8, 0xf1, 0xb3, 0x42, 0x6a, 0xa7, 0xe0, 0x67,
-	0x85, 0xd2, 0x0c, 0xc1, 0x2c, 0x42, 0xdd, 0x4c, 0xda, 0xa4, 0xec, 0x63, 0x15, 0xdd, 0x54, 0xd2,
-	0x22, 0x6a, 0x5e, 0xd6, 0x34, 0x33, 0xa8, 0x16, 0xd1, 0xe5, 0x65, 0xe1, 0xe5, 0x92, 0x6b, 0x33,
-	0xd9, 0x22, 0xc0, 0xb5, 0xa9, 0x79, 0x83, 0x37, 0x53, 0xe8, 0x11, 0x14, 0x95, 0x37, 0x50, 0xb4,
-	0x30, 0xfc, 0x29, 0xb9, 0x72, 0x6d, 0xe0, 0xbc, 0x98, 0xc5, 0xe8, 0x7b, 0x21, 0xcf, 0x62, 0xf2,
-	0xab, 0x25, 0xcf, 0x62, 0xca, 0xc3, 0x22, 0xf1, 0x37, 0xf6, 0xdc, 0xc5, 0xfd, 0x4d, 0x7d, 0xbb,
-	0xe3, 0xfe, 0x96, 0x78, 0x1b, 0xa3, 0x87, 0x72, 0xfc, 0xde, 0x22, 0x1c, 0xca, 0xca, 0xdb, 0x91,
-	0x70, 0x28, 0xab, 0x8f, 0x33, 0x66, 0x0a, 0x7d, 0x0c, 0x25, 0xf5, 0x71, 0x04, 0x09, 0x9b, 0xd7,
-	0xbe, 0xa8, 0x54, 0x16, 0x07, 0x23, 0x0c, 0x22, 0x1c, 0x5d, 0xa4, 0x68, 0x09, 0x0b, 0xaf, 0x24,
-	0x7a, 0xc2, 0xe2, 0xfb, 0x86, 0x99, 0x42, 0x9f, 0xc0, 0x54, 0xe2, 0x96, 0x17, 0x2d, 0x9e, 0x76,
-	0xbf, 0x5f, 0x79, 0xed, 0xd4, 0x2b, 0x62, 0x42, 0xbb, 0x31, 0x98, 0x76, 0xe3, 0x54, 0xda, 0x8d,
-	0x21, 0xb4, 0xd7, 0x61, 0x24, 0xba, 0x09, 0x44, 0x2c, 0x7e, 0xc5, 0x4b, 0xc5, 0xca, 0xac, 0x02,
-	0x15, 0xc3, 0x9a, 0xdc, 0x02, 0x22, 0x11, 0x85, 0x5f, 0x13, 0xf2, 0xb0, 0x56, 0x2e, 0x0b, 0xa3,
-	0x03, 0x44, 0xfa, 0x8c, 0xe2, 0x07, 0x88, 0xee, 0xab, 0x8c, 0x1f, 0x20, 0xda, 0x6f, 0x2f, 0x33,
-	0x55, 0x7b, 0xe7, 0x2f, 0xcf, 0x17, 0x8c, 0xbf, 0x3d, 0x5f, 0x30, 0xfe, 0xf9, 0x7c, 0xc1, 0x80,
-	0x4a, 0xd3, 0x3b, 0x5e, 0x71, 0xf6, 0x8f, 0x57, 0xa2, 0xd3, 0xc6, 0x8b, 0x17, 0xb7, 0xfd, 0x6e,
-	0xb3, 0x96, 0x27, 0x95, 0x75, 0xdd, 0xf7, 0x02, 0xaf, 0x6e, 0xec, 0x8f, 0x46, 0xff, 0x98, 0xb0,
-	0xf6, 0xef, 0x00, 0x00, 0x00, 0xff, 0xff, 0xfa, 0x03, 0xff, 0xd1, 0xbc, 0x30, 0x00, 0x00,
+	// 3453 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xec, 0x5b, 0xcb, 0x6f, 0x1c, 0xc7,
+	0xd1, 0xd7, 0x70, 0x97, 0xe4, 0xb2, 0xf8, 0x1a, 0x36, 0x1f, 0x5a, 0xae, 0x28, 0x92, 0x1a, 0x3f,
+	0xf4, 0xb0, 0x45, 0x8a, 0x4b, 0xbd, 0xac, 0xef, 0xe1, 0x4f, 0xbb, 0xa2, 0x44, 0x82, 0xa6, 0x4c,
+	0xcc, 0x8a, 0x32, 0x6c, 0xe0, 0xc3, 0x87, 0xe1, 0x6e, 0x73, 0x39, 0x1f, 0x97, 0xb3, 0xeb, 0xdd,
+	0xa1, 0x2c, 0xea, 0x83, 0x0f, 0x9f, 0x83, 0x18, 0x89, 0x91, 0x9b, 0x81, 0x20, 0xb9, 0xe4, 0x10,
+	0x20, 0x40, 0x2e, 0x41, 0x0e, 0x41, 0xfe, 0x81, 0x20, 0x87, 0x1c, 0x03, 0xe4, 0x94, 0x8b, 0x6c,
+	0x18, 0x41, 0x0e, 0x46, 0x8e, 0x39, 0xf9, 0x14, 0xf4, 0x63, 0xa6, 0x1f, 0xd3, 0xbb, 0x5c, 0x92,
+	0x12, 0x12, 0x38, 0x39, 0x08, 0xda, 0xae, 0xae, 0xae, 0x5f, 0x55, 0x75, 0x55, 0x57, 0xcf, 0x4c,
+	0x11, 0x86, 0x5a, 0xb8, 0xf9, 0x04, 0x37, 0x17, 0x1a, 0xcd, 0x7a, 0x58, 0x47, 0x7d, 0xd5, 0x26,
+	0x6e, 0x2c, 0x2d, 0xe5, 0xa0, 0x5a, 0xaf, 0xd6, 0x19, 0x2d, 0x37, 0x53, 0xad, 0xd7, 0xab, 0x35,
+	0xbc, 0xe8, 0x35, 0xfc, 0x45, 0x2f, 0x08, 0xea, 0xa1, 0x17, 0xfa, 0xf5, 0xa0, 0xc5, 0x66, 0x9d,
+	0xcb, 0x30, 0xf9, 0x00, 0x07, 0xb8, 0xe9, 0x85, 0xd8, 0xf5, 0x82, 0x4a, 0x7d, 0xdf, 0xc5, 0x1f,
+	0x1e, 0xe0, 0x56, 0x88, 0x6c, 0x48, 0xbd, 0x83, 0x83, 0xac, 0x35, 0x6f, 0x5d, 0x4a, 0xbb, 0xe4,
+	0xa7, 0x73, 0x05, 0xa6, 0x74, 0xd6, 0x56, 0xa3, 0x1e, 0xb4, 0x30, 0xe1, 0x75, 0x83, 0x0a, 0xe5,
+	0x1d, 0x72, 0xc9, 0x4f, 0xe7, 0x0e, 0x8c, 0xdd, 0xf3, 0xab, 0xb8, 0x15, 0xae, 0x05, 0x7e, 0x18,
+	0x89, 0x7c, 0x0d, 0xd2, 0x1b, 0xb8, 0xbc, 0x9b, 0xed, 0x99, 0xb7, 0x2e, 0x0d, 0xe6, 0xc7, 0x16,
+	0x98, 0xb2, 0x0b, 0x84, 0xe6, 0x05, 0x7e, 0x6b, 0xdf, 0xa5, 0xd3, 0xce, 0x15, 0x40, 0xf2, 0x5a,
+	0x8e, 0x31, 0x01, 0xbd, 0xa5, 0xd0, 0x0b, 0x31, 0x47, 0x61, 0x03, 0xe7, 0x2d, 0x18, 0x66, 0xbc,
+	0x11, 0x86, 0x91, 0x0d, 0x21, 0x48, 0xdf, 0xf3, 0x42, 0x8f, 0x22, 0x0f, 0xb9, 0xf4, 0xb7, 0x73,
+	0x09, 0x46, 0xa2, 0xa5, 0x1c, 0x62, 0x0a, 0xfa, 0x18, 0x25, 0x9b, 0xa2, 0x7c, 0x7c, 0xe4, 0xbc,
+	0x0d, 0xe3, 0xec, 0xd7, 0x56, 0xa3, 0x42, 0x8c, 0x3f, 0x36, 0xd4, 0x9b, 0x30, 0xa1, 0x0a, 0xe8,
+	0x68, 0xd3, 0x1d, 0xb0, 0x19, 0xf7, 0x3a, 0x3e, 0xec, 0x8c, 0x65, 0x43, 0x6a, 0x1d, 0x1f, 0x72,
+	0x28, 0xf2, 0xd3, 0xb9, 0x1c, 0xf9, 0x9d, 0xae, 0xed, 0x08, 0x13, 0xbb, 0xf9, 0xbe, 0x1f, 0x78,
+	0xb5, 0x8e, 0x40, 0xce, 0xd5, 0xc8, 0x03, 0x9c, 0x37, 0xe1, 0xb0, 0x1e, 0xc5, 0x61, 0x9b, 0x11,
+	0x7b, 0xc9, 0x0f, 0xaa, 0x35, 0xac, 0xef, 0xbf, 0xd5, 0x71, 0xff, 0x8d, 0x1e, 0x5c, 0x88, 0x3c,
+	0x18, 0x49, 0x3c, 0x62, 0xcb, 0x36, 0x00, 0xad, 0x04, 0xe5, 0xe6, 0x61, 0xe3, 0x04, 0x01, 0x18,
+	0xb9, 0x35, 0x25, 0xdc, 0xfa, 0x06, 0x8c, 0x2b, 0xe2, 0x3a, 0x3a, 0x76, 0x03, 0xd0, 0x3d, 0xfc,
+	0x42, 0xb1, 0x15, 0x71, 0x1d, 0xb1, 0x0b, 0x30, 0xc1, 0x15, 0xed, 0x26, 0x56, 0x27, 0xa0, 0x77,
+	0xb3, 0xe6, 0xf9, 0x01, 0x77, 0x35, 0x1b, 0x38, 0x6b, 0x30, 0xa9, 0xc9, 0xe8, 0x04, 0x89, 0x72,
+	0x90, 0x29, 0xfa, 0x8d, 0x5d, 0xdc, 0xc4, 0x15, 0xae, 0x76, 0x3c, 0x76, 0x56, 0x61, 0x82, 0xeb,
+	0xde, 0x8d, 0x3a, 0xb2, 0xa4, 0x1e, 0x4d, 0x52, 0x11, 0x26, 0x35, 0x49, 0x1d, 0x95, 0x8a, 0x2d,
+	0x4b, 0xc9, 0x96, 0xfd, 0x3b, 0x8c, 0x70, 0xcb, 0x4e, 0xe2, 0x97, 0xab, 0x30, 0x1a, 0xaf, 0xe6,
+	0xe0, 0x9d, 0x6c, 0x2f, 0xc0, 0x08, 0xd7, 0xf8, 0xe4, 0x56, 0x5f, 0x84, 0xd1, 0x58, 0x86, 0xb0,
+	0xd7, 0x60, 0x99, 0x08, 0xd0, 0x2e, 0xb2, 0x39, 0x1f, 0x07, 0x89, 0x9a, 0xce, 0x9d, 0x34, 0x11,
+	0x51, 0xd8, 0x05, 0xc0, 0x9b, 0xf1, 0xb6, 0xab, 0x00, 0x66, 0xbf, 0xe2, 0x58, 0x1d, 0xf5, 0xb8,
+	0xe0, 0xa9, 0x60, 0xc5, 0xa9, 0xd0, 0x6d, 0x0e, 0x99, 0x5d, 0xb4, 0x1c, 0x87, 0xb5, 0x76, 0x86,
+	0xc8, 0x66, 0xa7, 0x35, 0xb3, 0xf7, 0x62, 0x4b, 0x5e, 0x90, 0x6e, 0x9d, 0x22, 0xe6, 0x6a, 0x1c,
+	0xe3, 0x9a, 0x86, 0xb1, 0x41, 0x69, 0xd9, 0x20, 0x17, 0x46, 0x4b, 0x7e, 0x35, 0x38, 0xc1, 0x21,
+	0x93, 0x85, 0xfe, 0xcd, 0xa6, 0xff, 0x44, 0x1c, 0x34, 0xd1, 0xd0, 0xb9, 0x04, 0xb6, 0x90, 0xd9,
+	0xf1, 0xa4, 0x71, 0x61, 0xec, 0x31, 0x6e, 0xfa, 0x3b, 0x87, 0x27, 0xc0, 0x9f, 0x82, 0xbe, 0xcd,
+	0x83, 0x6d, 0x01, 0xcf, 0x47, 0xa4, 0x24, 0xc9, 0x32, 0x3b, 0xe2, 0xff, 0x07, 0x8c, 0x11, 0x4d,
+	0x4f, 0x5a, 0x92, 0xaf, 0x00, 0x92, 0x97, 0x77, 0x84, 0x7a, 0x1b, 0xc6, 0x99, 0x5a, 0xa7, 0xa8,
+	0xff, 0xaa, 0x80, 0x8e, 0x70, 0x7c, 0x0f, 0xba, 0xc8, 0xb3, 0x25, 0xe6, 0x03, 0x35, 0xc9, 0x66,
+	0x60, 0x80, 0x10, 0xbd, 0xf0, 0xa0, 0x89, 0xb9, 0x16, 0x82, 0xe0, 0xac, 0x46, 0x2e, 0x3e, 0x5a,
+	0xfc, 0x11, 0x92, 0x26, 0x23, 0xaf, 0x28, 0xf0, 0xce, 0x2d, 0x18, 0x24, 0x3c, 0x27, 0x71, 0xd2,
+	0x10, 0x5b, 0x68, 0xb2, 0x23, 0xa5, 0xa3, 0xbf, 0x07, 0xc3, 0x0c, 0xfd, 0xd8, 0x40, 0x47, 0x08,
+	0xb6, 0x61, 0x24, 0x12, 0xcc, 0x2d, 0xda, 0x65, 0x5e, 0x56, 0x0f, 0x00, 0x29, 0x85, 0x2c, 0x25,
+	0x85, 0xba, 0xcd, 0x81, 0x48, 0xb3, 0x94, 0xe4, 0x82, 0x3c, 0x0b, 0x4a, 0x2d, 0xfb, 0x15, 0x7d,
+	0xd3, 0xba, 0xbe, 0x9f, 0x5a, 0xd1, 0x3e, 0xa8, 0x0a, 0x8a, 0x1c, 0xb3, 0xe4, 0x1c, 0x3b, 0x85,
+	0x7a, 0x47, 0x28, 0x32, 0x15, 0x05, 0xb9, 0xaa, 0xbe, 0xf3, 0x65, 0x0a, 0x50, 0xf4, 0xdc, 0x20,
+	0xdd, 0x68, 0xbb, 0xbc, 0x0c, 0xfe, 0xc0, 0x82, 0xe1, 0x47, 0x78, 0xbf, 0x51, 0xf3, 0x42, 0x5c,
+	0x38, 0x0c, 0x71, 0x2b, 0xdb, 0x33, 0x9f, 0xba, 0x34, 0x98, 0xbf, 0x1a, 0x2d, 0x48, 0x8a, 0x5e,
+	0x50, 0xf8, 0x57, 0x82, 0xb0, 0x79, 0x58, 0xb8, 0xf5, 0xc9, 0x17, 0x73, 0xcb, 0x55, 0x3f, 0xdc,
+	0x3d, 0xd8, 0x5e, 0xf0, 0xb7, 0xf7, 0x17, 0xca, 0xf5, 0xfd, 0xc5, 0x0f, 0x3c, 0xaf, 0xb4, 0xc8,
+	0xa4, 0x2c, 0x56, 0xb9, 0x94, 0xca, 0x22, 0x15, 0x7a, 0x37, 0x0c, 0x9b, 0xfe, 0xf6, 0x41, 0x88,
+	0x5d, 0x15, 0x1c, 0x7d, 0x0c, 0x99, 0x88, 0x90, 0xed, 0xa3, 0x8a, 0x5c, 0xea, 0x42, 0x91, 0x53,
+	0xea, 0x10, 0x43, 0xe6, 0xfe, 0x0b, 0x50, 0xd2, 0x38, 0x52, 0x8c, 0xf6, 0xf8, 0x3e, 0xa7, 0x5d,
+	0xf2, 0x93, 0x24, 0xc3, 0x13, 0xaf, 0x76, 0x10, 0x65, 0x2d, 0x1b, 0xdc, 0xe9, 0xb9, 0x6d, 0xe5,
+	0x4a, 0xc2, 0x9d, 0xed, 0x16, 0xbf, 0x29, 0x2f, 0x1e, 0xcc, 0x4f, 0x45, 0x06, 0xc6, 0x0a, 0x3d,
+	0x26, 0xb3, 0x92, 0x50, 0xa7, 0x01, 0xe3, 0x8a, 0xf5, 0xa2, 0xb0, 0xae, 0xe3, 0x43, 0xb6, 0x6b,
+	0xbc, 0xb0, 0x46, 0x63, 0x5a, 0x07, 0x77, 0x71, 0x79, 0xaf, 0x74, 0xb0, 0x9f, 0xed, 0xe5, 0x75,
+	0x90, 0x8f, 0xd1, 0x05, 0x56, 0x5c, 0xfb, 0x29, 0xfc, 0x68, 0x04, 0x4f, 0x96, 0xd6, 0xea, 0xdb,
+	0xec, 0x52, 0xfc, 0x9d, 0x8c, 0x78, 0x18, 0x5d, 0xc7, 0x87, 0x9b, 0x9e, 0xdf, 0x3c, 0x66, 0x60,
+	0xfd, 0xd4, 0x82, 0x71, 0x96, 0x12, 0xa6, 0xf0, 0xba, 0x65, 0xd8, 0x55, 0x09, 0x64, 0xc1, 0xb0,
+	0xf2, 0x94, 0x9b, 0x6c, 0x52, 0x06, 0xfd, 0xcc, 0x82, 0x09, 0x7e, 0xae, 0xa8, 0x5a, 0xa6, 0xa8,
+	0x96, 0xb7, 0x8f, 0xd2, 0xd2, 0xb0, 0xf4, 0x94, 0x6a, 0x1a, 0xd5, 0x41, 0x3f, 0xb4, 0x60, 0x54,
+	0x9b, 0xc8, 0xf6, 0x53, 0x15, 0x97, 0x8f, 0xa7, 0xe2, 0x29, 0xb5, 0xd3, 0x95, 0x40, 0x9f, 0x5b,
+	0x30, 0xa2, 0x3a, 0x36, 0x9b, 0xa1, 0x7a, 0xe5, 0x8f, 0xb5, 0xc1, 0xa7, 0x54, 0x4b, 0x53, 0x21,
+	0x77, 0x1f, 0xb2, 0xed, 0x02, 0xe8, 0x58, 0xc9, 0xfc, 0x00, 0xa6, 0xdb, 0x6e, 0xf1, 0xb1, 0x04,
+	0x7d, 0x90, 0x08, 0xb3, 0x17, 0x76, 0x38, 0xe4, 0xde, 0xd7, 0xf3, 0xec, 0xc5, 0x9d, 0x3b, 0xbf,
+	0xb2, 0xe0, 0x6c, 0x62, 0xff, 0xf8, 0xe1, 0xe3, 0xc0, 0x10, 0x37, 0x89, 0x65, 0x0c, 0x3b, 0x64,
+	0x14, 0x1a, 0x9a, 0x87, 0x41, 0xa6, 0x1a, 0x63, 0xe9, 0xa3, 0x2c, 0x32, 0x09, 0x5d, 0x16, 0x65,
+	0x7e, 0xc0, 0x7c, 0x1c, 0xc5, 0x75, 0xff, 0x62, 0x5c, 0x70, 0xc1, 0xcc, 0x19, 0xdd, 0x72, 0x5b,
+	0x30, 0xf2, 0x5e, 0xd3, 0x6b, 0x48, 0xb5, 0x30, 0xf9, 0x34, 0x41, 0x29, 0xeb, 0xe2, 0xcd, 0xce,
+	0x3a, 0xa9, 0xe7, 0x1b, 0x5e, 0x59, 0xba, 0x33, 0xb3, 0x51, 0x7c, 0xdc, 0xa5, 0x3b, 0xbf, 0x54,
+	0x7b, 0x03, 0x46, 0x63, 0x50, 0xee, 0xa1, 0x2c, 0xf4, 0x13, 0x52, 0x03, 0x57, 0xb8, 0x73, 0xa2,
+	0xa1, 0xf3, 0x93, 0x34, 0xd8, 0x5b, 0xc1, 0x47, 0xaa, 0x92, 0x12, 0xbb, 0xa5, 0xb0, 0x9f, 0x40,
+	0xd9, 0xde, 0xce, 0x67, 0xf3, 0x67, 0x89, 0xa2, 0xcf, 0x6a, 0xed, 0x1b, 0xd1, 0x02, 0x5d, 0xb9,
+	0x97, 0x59, 0xf2, 0xff, 0x4f, 0x2a, 0xf9, 0x03, 0x54, 0x8d, 0xd7, 0x8f, 0x54, 0xe3, 0xdb, 0x5e,
+	0xf0, 0x3f, 0xb5, 0x60, 0x4c, 0x32, 0x9e, 0x07, 0xd4, 0xeb, 0x30, 0xc2, 0x88, 0x0d, 0x5c, 0x61,
+	0xdb, 0xd6, 0x4f, 0xb5, 0xd1, 0xa8, 0x4a, 0xed, 0xcf, 0x68, 0xb5, 0xff, 0x2a, 0x0c, 0xc4, 0xdc,
+	0xed, 0x12, 0x49, 0x70, 0x38, 0xdf, 0x4b, 0x83, 0x7d, 0x0f, 0x37, 0xfd, 0x27, 0x27, 0xb8, 0x5a,
+	0x7e, 0xd6, 0xe6, 0x6a, 0x19, 0x47, 0x99, 0x2e, 0xf8, 0x65, 0x46, 0x59, 0x16, 0xfa, 0x0b, 0x5e,
+	0x0b, 0x4b, 0x8f, 0xe4, 0x7c, 0x18, 0xdf, 0xc4, 0xd3, 0xd2, 0x4d, 0x5c, 0x8e, 0xc9, 0x8c, 0x1a,
+	0x93, 0x6d, 0x95, 0xfe, 0xb6, 0xc7, 0xe4, 0x33, 0x18, 0x93, 0x6c, 0xe7, 0x21, 0x39, 0x0f, 0x83,
+	0x0f, 0xf1, 0x47, 0xfa, 0x09, 0x2f, 0x91, 0x94, 0x60, 0xec, 0xd7, 0x82, 0xf1, 0x22, 0xf4, 0x31,
+	0xd6, 0x76, 0x87, 0x3f, 0x9f, 0x76, 0xa6, 0x49, 0x1d, 0x0a, 0xe3, 0x00, 0x7b, 0xc7, 0x8f, 0x3f,
+	0x48, 0x38, 0x3e, 0x64, 0x93, 0x53, 0x5c, 0xbb, 0x0d, 0xe8, 0x25, 0x13, 0x2c, 0xf0, 0xd2, 0x85,
+	0x5b, 0xdf, 0x3c, 0x3f, 0xce, 0xde, 0x88, 0x78, 0x66, 0x52, 0x9c, 0x1d, 0x55, 0x8b, 0xb5, 0x60,
+	0xa7, 0x1e, 0xa5, 0xc4, 0xba, 0xf4, 0xd4, 0x77, 0x0a, 0x20, 0x56, 0x4b, 0x36, 0x54, 0x93, 0x18,
+	0x0e, 0x37, 0x69, 0x09, 0x32, 0x64, 0x82, 0xd0, 0x68, 0x20, 0x0f, 0xe6, 0x27, 0x13, 0xf9, 0x47,
+	0x17, 0xc4, 0x6c, 0xce, 0x5f, 0x53, 0x54, 0x9e, 0xb6, 0xb3, 0xe2, 0x31, 0xf6, 0xdd, 0xed, 0xff,
+	0xc5, 0xe5, 0x30, 0x7a, 0x8c, 0x65, 0x23, 0xf4, 0x23, 0x0b, 0x46, 0xe3, 0x15, 0x2d, 0x39, 0x7d,
+	0x6f, 0x88, 0x9b, 0x9d, 0x59, 0xe6, 0x82, 0xb6, 0xee, 0xb4, 0x77, 0x4e, 0x4d, 0x1c, 0xfa, 0xbe,
+	0x05, 0x20, 0x68, 0xfc, 0xaa, 0x7e, 0xed, 0x18, 0x5a, 0x9d, 0x52, 0x21, 0x09, 0x3c, 0x57, 0x80,
+	0x09, 0x93, 0xb5, 0xc7, 0xca, 0xd6, 0x2d, 0xd9, 0xd3, 0x2f, 0x2e, 0x5f, 0xbf, 0x48, 0xc1, 0xb4,
+	0xc1, 0x19, 0x3c, 0x8e, 0x7e, 0xdc, 0x76, 0x7f, 0x6f, 0x76, 0xf0, 0x24, 0x5b, 0xfc, 0xb2, 0x37,
+	0xf8, 0x33, 0x75, 0x83, 0xd3, 0x54, 0xad, 0xa5, 0xe3, 0xa8, 0xf5, 0xcf, 0xb1, 0xc3, 0x24, 0xb1,
+	0x4b, 0x2f, 0x21, 0xb1, 0x4b, 0xff, 0x90, 0x89, 0x5d, 0xfa, 0x57, 0x62, 0xb3, 0x6d, 0x5f, 0x86,
+	0xe9, 0x52, 0xdb, 0xbc, 0x6e, 0xb3, 0xed, 0xce, 0x9f, 0x53, 0x30, 0x10, 0x17, 0x08, 0xb4, 0x25,
+	0x0d, 0x98, 0x32, 0x27, 0xaf, 0x59, 0x92, 0xd8, 0x79, 0x80, 0x4d, 0xaf, 0xe9, 0xed, 0xe3, 0x10,
+	0x37, 0x0b, 0xcc, 0x1f, 0xab, 0x67, 0x5c, 0x89, 0x86, 0xee, 0x82, 0xed, 0x96, 0xee, 0xbe, 0x7b,
+	0x77, 0x65, 0x33, 0x26, 0xf2, 0x32, 0x36, 0x1e, 0x19, 0x2e, 0xe6, 0xf7, 0x57, 0xcf, 0xb8, 0x09,
+	0x76, 0xf4, 0x9f, 0x30, 0xea, 0x96, 0xee, 0x6e, 0x96, 0x4a, 0x42, 0x02, 0x7b, 0x36, 0x43, 0x92,
+	0x04, 0x36, 0x4d, 0x04, 0xe8, 0xcc, 0x68, 0x03, 0x26, 0x56, 0x8a, 0xf7, 0x56, 0x97, 0xd8, 0x65,
+	0x46, 0x08, 0x61, 0xcf, 0x4c, 0x67, 0x23, 0x21, 0x2a, 0x0f, 0x91, 0x64, 0x5c, 0x86, 0x1e, 0x00,
+	0x2a, 0x3c, 0x2a, 0xea, 0xc2, 0xfa, 0xd4, 0xd2, 0x2c, 0x73, 0x10, 0x51, 0x86, 0x25, 0xe8, 0x36,
+	0x0c, 0xaf, 0x14, 0x4b, 0x0f, 0x84, 0x0c, 0xf6, 0x7e, 0xce, 0x16, 0x0a, 0xd1, 0x49, 0xb2, 0x5c,
+	0x65, 0x2c, 0x0c, 0xc2, 0x40, 0x3c, 0x70, 0x30, 0x0c, 0x2b, 0x17, 0x01, 0x34, 0x0b, 0xb0, 0xe1,
+	0x07, 0xeb, 0xf8, 0xb0, 0xe4, 0x3f, 0xc3, 0x3c, 0xf2, 0x24, 0x0a, 0x9d, 0xf7, 0x9e, 0x46, 0xf3,
+	0x3d, 0x7c, 0x3e, 0xa6, 0x90, 0xf8, 0xbe, 0x5f, 0xf3, 0xaa, 0x2d, 0xba, 0x4f, 0x69, 0x97, 0x0d,
+	0x9c, 0xef, 0x5a, 0x30, 0xf8, 0x80, 0x2a, 0xb6, 0xd2, 0x6c, 0xd6, 0x9b, 0x68, 0x15, 0xd2, 0xc5,
+	0x7a, 0x85, 0xcb, 0x2f, 0x5c, 0xff, 0xe6, 0xf9, 0xdc, 0xb5, 0xee, 0x83, 0xc9, 0xc5, 0xe1, 0x41,
+	0x33, 0x70, 0xa9, 0x04, 0xda, 0x72, 0x80, 0x43, 0xcf, 0xaf, 0x51, 0x5d, 0x06, 0x5c, 0x3e, 0x22,
+	0x7a, 0xb8, 0x38, 0x6c, 0xb2, 0xfb, 0x7b, 0xc6, 0x65, 0x03, 0xe7, 0x17, 0x29, 0x18, 0x94, 0x22,
+	0x06, 0x95, 0x20, 0xb3, 0xea, 0xb5, 0x76, 0xe3, 0xe7, 0x93, 0x53, 0x04, 0x76, 0x2c, 0x08, 0x5d,
+	0x81, 0xd4, 0x46, 0x75, 0x87, 0xea, 0x33, 0x92, 0xcf, 0x1a, 0x02, 0x75, 0x61, 0xc3, 0x6b, 0xed,
+	0xb9, 0x84, 0x09, 0xad, 0x82, 0xbd, 0x12, 0x94, 0xeb, 0x15, 0x3f, 0xa8, 0x92, 0x99, 0x47, 0x87,
+	0x0d, 0xf6, 0x11, 0x64, 0x24, 0x3f, 0x63, 0x5a, 0x18, 0xf1, 0xb8, 0x89, 0x55, 0xc8, 0x81, 0x21,
+	0x99, 0xc6, 0x1f, 0x50, 0x14, 0x9a, 0x13, 0x42, 0x9a, 0x40, 0xa3, 0x51, 0x18, 0x2c, 0xee, 0x55,
+	0x37, 0xaa, 0x3b, 0x4b, 0x0f, 0xeb, 0x01, 0xb6, 0xcf, 0x48, 0x84, 0xd2, 0xae, 0xb7, 0x64, 0x5b,
+	0x68, 0x0c, 0x86, 0x05, 0x21, 0x7f, 0xe3, 0xa6, 0xdd, 0xa3, 0x92, 0x96, 0x6f, 0x5f, 0xb7, 0x53,
+	0x2a, 0xe9, 0xc6, 0x52, 0xde, 0x4e, 0x6b, 0x0b, 0xf3, 0xd7, 0xed, 0x5e, 0xe7, 0x2d, 0xc8, 0xc4,
+	0x5a, 0x4e, 0x01, 0x2a, 0xee, 0x3d, 0x7b, 0x58, 0x27, 0xcf, 0x4d, 0xa5, 0x06, 0x2e, 0xfb, 0x3b,
+	0x3e, 0xae, 0xd8, 0x67, 0xd0, 0x24, 0x8c, 0x15, 0xf7, 0x9e, 0x49, 0x54, 0x42, 0xb6, 0x9c, 0x9f,
+	0xf7, 0x00, 0x88, 0xfc, 0x7c, 0x39, 0xdb, 0x75, 0x59, 0xde, 0xae, 0xb3, 0xc9, 0x53, 0x41, 0xda,
+	0xad, 0x57, 0x61, 0xb8, 0xe4, 0xd5, 0x42, 0x72, 0xc0, 0x17, 0xeb, 0x07, 0x41, 0xc8, 0x83, 0x5c,
+	0x25, 0xfe, 0x9d, 0xbc, 0xfc, 0xdb, 0x1e, 0x18, 0xd5, 0x4e, 0x21, 0xf4, 0x36, 0xa4, 0xd6, 0x2b,
+	0x3b, 0xd4, 0x55, 0x23, 0xe2, 0x1b, 0x8d, 0xc6, 0x45, 0x1e, 0x9f, 0xe8, 0x88, 0x76, 0xa2, 0xdd,
+	0x3f, 0x08, 0xca, 0xe4, 0x7f, 0x97, 0xac, 0x24, 0xd9, 0x5e, 0xda, 0xf5, 0x9a, 0xb8, 0x22, 0x7d,
+	0xb6, 0x93, 0x28, 0x64, 0x7e, 0xf3, 0x60, 0xbb, 0xe6, 0x97, 0xa5, 0xaf, 0x53, 0x12, 0xc5, 0xf9,
+	0xa5, 0x05, 0x93, 0x46, 0xf1, 0xcc, 0x17, 0x95, 0x87, 0xf5, 0x70, 0xab, 0x85, 0x2b, 0xd7, 0xec,
+	0x33, 0x68, 0x10, 0xfa, 0x09, 0xe1, 0xa0, 0x56, 0xb3, 0x2d, 0x34, 0x02, 0x50, 0xdc, 0xab, 0x10,
+	0x2f, 0xad, 0x57, 0x76, 0xec, 0x1e, 0x95, 0x7b, 0xd9, 0x4e, 0xa9, 0x84, 0xeb, 0x76, 0x1a, 0xd9,
+	0x30, 0xc4, 0x56, 0xe4, 0xf3, 0xd7, 0xc9, 0x9a, 0x5e, 0x89, 0x72, 0xe3, 0x26, 0xa1, 0xf4, 0x09,
+	0xca, 0xf2, 0x6d, 0xca, 0xd3, 0x2f, 0x28, 0x37, 0x96, 0xf2, 0x84, 0x92, 0x71, 0x3e, 0x49, 0xc1,
+	0xb0, 0x72, 0xfe, 0xa2, 0x5b, 0x90, 0xa6, 0x69, 0xc9, 0xbc, 0xf8, 0x8a, 0xf1, 0x90, 0x16, 0x23,
+	0x9a, 0x9d, 0x74, 0x01, 0x89, 0x96, 0xe2, 0xae, 0x5f, 0xab, 0xac, 0xe3, 0xc3, 0xb5, 0xa0, 0x82,
+	0x9f, 0xf2, 0xd3, 0x52, 0x25, 0xa2, 0x19, 0x18, 0x28, 0xee, 0x7a, 0x7e, 0x40, 0xcf, 0x43, 0xfe,
+	0xfd, 0x33, 0x26, 0xa0, 0x2c, 0xf4, 0x3f, 0xc6, 0xcd, 0x96, 0x5f, 0x67, 0xdd, 0x06, 0x69, 0x37,
+	0x1a, 0x3a, 0x7f, 0xb4, 0x24, 0x45, 0x29, 0xde, 0x04, 0xd8, 0xc5, 0xbd, 0xc2, 0xda, 0xe6, 0xb5,
+	0x6b, 0xcb, 0x79, 0xee, 0x19, 0xfb, 0x8c, 0x42, 0xdd, 0x74, 0x1f, 0x93, 0x7f, 0xb6, 0x95, 0xa4,
+	0x6e, 0x15, 0xec, 0x1e, 0x95, 0xba, 0x55, 0xa0, 0xd4, 0x94, 0x42, 0xdd, 0xb8, 0x5b, 0x7a, 0xb4,
+	0xe2, 0xae, 0xdb, 0x69, 0x96, 0xb1, 0xa5, 0x77, 0x08, 0x79, 0xe9, 0x5a, 0x24, 0xb8, 0xd7, 0x40,
+	0xde, 0x2a, 0xd8, 0x7d, 0x1a, 0x99, 0x8b, 0xee, 0x57, 0xc9, 0x91, 0xec, 0x8c, 0x13, 0x42, 0x26,
+	0xaa, 0x5f, 0xe8, 0xaa, 0xe2, 0xfe, 0x69, 0xbd, 0xbe, 0xd1, 0x1f, 0xc2, 0xe9, 0xe4, 0xb0, 0x89,
+	0x28, 0x4c, 0xf1, 0x95, 0x72, 0xab, 0xba, 0xb6, 0xbd, 0x2f, 0x1c, 0x72, 0x16, 0xc6, 0x63, 0xea,
+	0x4a, 0xb9, 0x55, 0x69, 0x79, 0x25, 0x92, 0x7a, 0x29, 0xe7, 0xdf, 0x60, 0x74, 0x75, 0xe3, 0x6e,
+	0x91, 0xbd, 0xc2, 0xae, 0x51, 0xf0, 0x4b, 0x30, 0xca, 0xaa, 0x8d, 0x48, 0x79, 0xa2, 0xc7, 0xb0,
+	0xab, 0x93, 0x9d, 0x3c, 0xd8, 0x2e, 0xd6, 0xda, 0x99, 0x66, 0x01, 0xf8, 0x4b, 0x59, 0xf1, 0x3e,
+	0x59, 0xa2, 0x38, 0xb7, 0x60, 0x4c, 0x5a, 0x23, 0xde, 0x94, 0xbb, 0xf8, 0x23, 0x7d, 0x99, 0x42,
+	0x73, 0x6e, 0xc2, 0x04, 0x1b, 0x47, 0x6f, 0x3e, 0xba, 0x04, 0xdc, 0x81, 0x49, 0x6d, 0x5d, 0xf7,
+	0xa0, 0xe8, 0x32, 0xf4, 0xf3, 0x65, 0xfc, 0xf2, 0x99, 0x7c, 0xf9, 0xce, 0x7f, 0x38, 0xbf, 0xb6,
+	0x60, 0x44, 0xbd, 0x71, 0xa2, 0x6b, 0xd2, 0x65, 0xbd, 0xc0, 0xe4, 0x17, 0x46, 0xbe, 0x7e, 0x3e,
+	0x27, 0x51, 0xc9, 0xe5, 0x4f, 0x8c, 0xd0, 0x32, 0x0c, 0xc6, 0xa3, 0x47, 0xf7, 0x29, 0x66, 0xa6,
+	0x30, 0xfa, 0xf5, 0xf3, 0x39, 0x99, 0xbc, 0x7a, 0xc6, 0x95, 0x87, 0x0a, 0xcc, 0x1a, 0x4d, 0xa7,
+	0x94, 0x06, 0xb3, 0xa6, 0xc0, 0xac, 0x15, 0x00, 0x32, 0xf5, 0x00, 0xff, 0x8f, 0x17, 0x86, 0x4d,
+	0xe7, 0x37, 0x3d, 0xb1, 0x8d, 0x24, 0x2f, 0xf9, 0xcf, 0xb5, 0x7b, 0xdc, 0x1f, 0x82, 0x20, 0xe7,
+	0x25, 0x51, 0x2c, 0x15, 0xe7, 0x25, 0x42, 0x90, 0x7e, 0xf4, 0x74, 0xed, 0x5e, 0xf4, 0xa9, 0x9e,
+	0xfc, 0x46, 0x4f, 0x0d, 0x4f, 0xa8, 0x73, 0x9a, 0xf7, 0x5e, 0xca, 0x83, 0x49, 0xf4, 0xd1, 0xb7,
+	0x56, 0xdf, 0x6e, 0x65, 0x7b, 0xe7, 0x53, 0xd1, 0x47, 0x5f, 0x32, 0x7e, 0x49, 0x0f, 0x1c, 0xf9,
+	0xbf, 0xcc, 0x41, 0x5f, 0x91, 0x84, 0x74, 0x1d, 0x1d, 0xc0, 0x88, 0xda, 0xa3, 0x8c, 0xce, 0xeb,
+	0x1f, 0xfa, 0x94, 0x36, 0xe7, 0xdc, 0x6c, 0xbb, 0x69, 0xde, 0xbd, 0xf0, 0xea, 0x27, 0x7f, 0xf8,
+	0xd3, 0xe7, 0x3d, 0xb3, 0xce, 0xf4, 0xe2, 0x93, 0xa5, 0x45, 0x9a, 0x37, 0xf5, 0x45, 0x95, 0xf5,
+	0x8e, 0x75, 0x05, 0x61, 0x00, 0xd1, 0xb2, 0x8c, 0xe2, 0x23, 0x23, 0xd1, 0x02, 0x9d, 0xcb, 0x99,
+	0xa6, 0x38, 0xd4, 0x3c, 0x85, 0xca, 0x39, 0x93, 0x12, 0x94, 0x60, 0x23, 0x30, 0x5b, 0x51, 0xb7,
+	0x2b, 0x9a, 0x54, 0xe5, 0x44, 0xe2, 0xa7, 0x74, 0x32, 0x17, 0x3d, 0x43, 0x45, 0x4f, 0x39, 0x63,
+	0x09, 0xd1, 0x44, 0xec, 0x3e, 0x0c, 0xc9, 0xed, 0xc9, 0xe8, 0x9c, 0x2a, 0x45, 0xe9, 0x7a, 0xca,
+	0xcd, 0x98, 0x27, 0x39, 0x90, 0x43, 0x81, 0x66, 0x9c, 0xb3, 0x09, 0x20, 0xc6, 0x48, 0xe0, 0x3c,
+	0x18, 0x88, 0x7b, 0x94, 0x51, 0x56, 0x15, 0x27, 0xde, 0x5b, 0xe7, 0xa6, 0x0d, 0x33, 0x1c, 0x65,
+	0x8e, 0xa2, 0x4c, 0x3b, 0x13, 0x09, 0x94, 0x75, 0x7c, 0x48, 0x20, 0x7c, 0x18, 0x94, 0xfa, 0x95,
+	0x91, 0xe6, 0x75, 0xb9, 0xf5, 0x29, 0x77, 0xce, 0x38, 0xc7, 0x81, 0x2e, 0x50, 0xa0, 0x73, 0xce,
+	0x54, 0x02, 0x88, 0xf2, 0x29, 0xce, 0x63, 0x6d, 0x2f, 0xba, 0xf3, 0x94, 0xa6, 0x1c, 0xdd, 0x79,
+	0x5a, 0xa7, 0x4c, 0x7b, 0xe7, 0x31, 0x46, 0x6e, 0x99, 0xd4, 0x89, 0x2c, 0x2c, 0x4b, 0x76, 0x3b,
+	0x0b, 0xcb, 0x0c, 0xad, 0xcb, 0x46, 0xcb, 0x24, 0xbe, 0xc8, 0x89, 0xd8, 0x00, 0x95, 0x6c, 0x6e,
+	0x96, 0x9c, 0x88, 0xbb, 0x83, 0x92, 0xf8, 0x08, 0xd4, 0x87, 0x30, 0xac, 0xb4, 0x1c, 0xa3, 0x19,
+	0x4d, 0x77, 0x35, 0x06, 0xcf, 0xb7, 0x99, 0xe5, 0x80, 0xaf, 0x50, 0xc0, 0xf3, 0x4e, 0x36, 0x69,
+	0x9b, 0x88, 0xc2, 0x0f, 0x61, 0x58, 0x69, 0x28, 0x16, 0x90, 0xa6, 0x8e, 0x65, 0x01, 0x69, 0xec,
+	0x42, 0x36, 0x42, 0x2a, 0x9c, 0x04, 0xf2, 0x7d, 0xe8, 0xe7, 0x6a, 0xa0, 0x29, 0xcd, 0x82, 0x08,
+	0xe6, 0x6c, 0x82, 0xce, 0x01, 0xce, 0x53, 0x80, 0xb3, 0x0e, 0x4a, 0xda, 0xc4, 0x45, 0x73, 0x38,
+	0x21, 0x5a, 0xed, 0x3e, 0x16, 0xa2, 0xb5, 0x8e, 0x62, 0xa3, 0x68, 0xce, 0xc3, 0x03, 0x5c, 0xee,
+	0x16, 0x46, 0x7a, 0x58, 0x29, 0xd9, 0x34, 0x63, 0x9e, 0xec, 0x10, 0xe0, 0x32, 0x63, 0x94, 0x4f,
+	0xd8, 0x04, 0x67, 0x68, 0x3f, 0xce, 0xcd, 0x98, 0x27, 0x3b, 0xe5, 0x13, 0x56, 0xe1, 0x44, 0xe4,
+	0xf1, 0xfc, 0xd5, 0x2d, 0x50, 0x13, 0xf8, 0x7c, 0x9b, 0xd9, 0xa3, 0x23, 0x4f, 0xa4, 0xb0, 0x88,
+	0x3c, 0x1d, 0xd2, 0xd4, 0x6a, 0x9c, 0x88, 0xbc, 0x2e, 0x20, 0x15, 0x4e, 0x02, 0xf9, 0xdf, 0x90,
+	0x89, 0xda, 0x7a, 0x51, 0x1c, 0x07, 0x5a, 0xf3, 0x70, 0x2e, 0x9b, 0x9c, 0xe0, 0x18, 0xb3, 0x14,
+	0x23, 0xeb, 0x8c, 0x4b, 0x18, 0x11, 0x13, 0x2f, 0x7f, 0xa2, 0x6f, 0x57, 0x94, 0xbf, 0x44, 0x7f,
+	0xb0, 0x28, 0x7f, 0xc9, 0x36, 0x5f, 0x63, 0xf9, 0x13, 0x6c, 0x1c, 0x46, 0xf4, 0xec, 0x0a, 0x98,
+	0x44, 0x1b, 0xb0, 0x80, 0x49, 0xb6, 0xf8, 0x1a, 0x61, 0x04, 0x1b, 0x8f, 0x40, 0xb9, 0x5b, 0x57,
+	0x44, 0xa0, 0xa1, 0x09, 0x58, 0x44, 0xa0, 0xa9, 0xc1, 0xd7, 0x18, 0x81, 0x32, 0x23, 0x2f, 0x87,
+	0x71, 0x13, 0x2f, 0x52, 0xf6, 0x40, 0x09, 0xf5, 0x69, 0xc3, 0x4c, 0x87, 0x72, 0x18, 0x73, 0xf1,
+	0x93, 0x5c, 0x6a, 0xd5, 0x45, 0xda, 0x2e, 0x98, 0xcb, 0xa1, 0xa9, 0xb7, 0xd7, 0x74, 0x92, 0x4b,
+	0x7c, 0x04, 0x6a, 0x03, 0xd2, 0x04, 0x1a, 0x8d, 0xcb, 0xea, 0x46, 0xc2, 0x27, 0x54, 0x22, 0x97,
+	0x9a, 0xa3, 0x52, 0x27, 0x9c, 0x51, 0x4d, 0x7d, 0x7e, 0xe3, 0x61, 0x00, 0xe2, 0xc6, 0xa3, 0xb4,
+	0xfd, 0x8a, 0x1b, 0x8f, 0xd6, 0xb4, 0x6b, 0xba, 0xf1, 0x30, 0x16, 0x29, 0x92, 0x78, 0xfe, 0x29,
+	0xae, 0x55, 0x93, 0x2f, 0x67, 0x9a, 0x3a, 0x22, 0x92, 0x44, 0xda, 0xc5, 0x91, 0xa4, 0xdf, 0x0d,
+	0x0c, 0x0d, 0xbb, 0x7a, 0x24, 0x75, 0x71, 0x37, 0x90, 0x19, 0xf9, 0x36, 0x4b, 0xdd, 0x50, 0x62,
+	0x9b, 0x93, 0x9d, 0xa9, 0x62, 0x9b, 0x0d, 0x7d, 0x9b, 0xc6, 0x6d, 0x96, 0xf8, 0x08, 0xd4, 0x21,
+	0x8c, 0x6a, 0x8d, 0x57, 0x68, 0xb6, 0x73, 0x47, 0x5d, 0x6e, 0xae, 0xed, 0x3c, 0x87, 0x7d, 0x8d,
+	0xc2, 0xce, 0x39, 0x39, 0x33, 0x2c, 0xe1, 0xe5, 0xa5, 0x8e, 0x77, 0x32, 0x89, 0x52, 0xa7, 0xf6,
+	0x53, 0x89, 0x52, 0xa7, 0xb5, 0x3c, 0x19, 0x4b, 0x1d, 0xe7, 0xe1, 0xa9, 0x18, 0x77, 0xb5, 0x88,
+	0x54, 0xd4, 0xbb, 0x7c, 0x44, 0x2a, 0x26, 0x5a, 0x60, 0x8c, 0xa9, 0x18, 0x73, 0x45, 0x97, 0xdf,
+	0xa8, 0x4b, 0x41, 0xba, 0xfc, 0x6a, 0x4d, 0x1b, 0xd2, 0xe5, 0x57, 0x6f, 0x69, 0x30, 0x5f, 0x7e,
+	0x23, 0x2e, 0x02, 0xf1, 0x31, 0xd8, 0x7a, 0xc7, 0x01, 0x92, 0x9c, 0x6f, 0x6c, 0x53, 0xc8, 0xcd,
+	0xb7, 0x67, 0xe0, 0xb8, 0xaf, 0x53, 0xdc, 0x79, 0xe7, 0x9c, 0xb2, 0x3d, 0x2a, 0xb3, 0x01, 0x9e,
+	0xbe, 0xe3, 0x37, 0xc2, 0x4b, 0xfd, 0x09, 0x66, 0x78, 0xb9, 0xb1, 0xe0, 0x48, 0x78, 0xc2, 0x4c,
+	0xe0, 0xff, 0xdf, 0x82, 0xb1, 0xc4, 0x27, 0x58, 0x34, 0x7f, 0xd4, 0xe7, 0xf7, 0xdc, 0x85, 0x23,
+	0xbf, 0xdf, 0x3a, 0x17, 0xa9, 0x0a, 0x17, 0x9c, 0x19, 0x55, 0x05, 0x95, 0x3b, 0xd2, 0xa1, 0xd4,
+	0x5e, 0x87, 0xd2, 0x91, 0x3a, 0x94, 0x8e, 0xa5, 0x43, 0xc9, 0xa4, 0x43, 0x0b, 0x86, 0x95, 0x37,
+	0x2f, 0xe2, 0x96, 0x61, 0x7a, 0x91, 0x23, 0x6e, 0x19, 0xc6, 0xd7, 0x35, 0x71, 0x6e, 0x9e, 0x27,
+	0xb0, 0x95, 0xfa, 0xbe, 0xe7, 0x07, 0x5e, 0x65, 0xdf, 0x0f, 0x16, 0x9b, 0x94, 0x7d, 0x0f, 0x1f,
+	0x6e, 0x13, 0x8c, 0x32, 0x0c, 0xc4, 0xef, 0x97, 0x44, 0x74, 0xeb, 0xaf, 0xa9, 0x44, 0x74, 0x27,
+	0x5e, 0x46, 0xc5, 0x67, 0xcf, 0x74, 0x12, 0x08, 0x33, 0xd6, 0xc2, 0x95, 0xdf, 0x7d, 0x35, 0x6b,
+	0xfd, 0xfe, 0xab, 0x59, 0xeb, 0xcb, 0xaf, 0x66, 0x2d, 0xc8, 0x95, 0xeb, 0xfb, 0xec, 0x6d, 0x05,
+	0x75, 0x46, 0x24, 0xb9, 0xda, 0x6c, 0x94, 0x37, 0xad, 0xed, 0x3e, 0xfa, 0x57, 0xce, 0xcb, 0x7f,
+	0x0b, 0x00, 0x00, 0xff, 0xff, 0x63, 0xd9, 0x1f, 0x5f, 0x27, 0x3d, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -5445,17 +5664,8 @@ type CryptoClient interface {
 	//     CK_ATTRIBUTE_PTR attributesBytes, CK_ULONG attributesByteslen,
 	//     target_t target) ;
 	SetAttributeValue(ctx context.Context, in *SetAttributeValueRequest, opts ...grpc.CallOption) (*SetAttributeValueResponse, error)
-	// CK_RV m_Login (
-	//     CK_UTF8CHAR_PTR pin, CK_ULONG pinLen,
-	//     const unsigned char *nonce, size_t noncelen,
-	//     unsigned char *pinblob, size_t *pinbloblen,
-	//     target_t target) ;
-	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error)
-	// CK_RV m_Logout (
-	//     const unsigned char *pinblob, size_t pinbloblen,
-	//     target_t target) ;
-	Logout(ctx context.Context, in *LogoutRequest, opts ...grpc.CallOption) (*LogoutResponse, error)
 	RewrapKeyBlob(ctx context.Context, in *RewrapKeyBlobRequest, opts ...grpc.CallOption) (*RewrapKeyBlobResponse, error)
+	ReEncrypt(ctx context.Context, in *ReEncryptRequest, opts ...grpc.CallOption) (*ReEncryptResponse, error)
 }
 
 type cryptoClient struct {
@@ -5790,27 +6000,18 @@ func (c *cryptoClient) SetAttributeValue(ctx context.Context, in *SetAttributeVa
 	return out, nil
 }
 
-func (c *cryptoClient) Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error) {
-	out := new(LoginResponse)
-	err := c.cc.Invoke(ctx, "/grep11.Crypto/Login", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *cryptoClient) Logout(ctx context.Context, in *LogoutRequest, opts ...grpc.CallOption) (*LogoutResponse, error) {
-	out := new(LogoutResponse)
-	err := c.cc.Invoke(ctx, "/grep11.Crypto/Logout", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *cryptoClient) RewrapKeyBlob(ctx context.Context, in *RewrapKeyBlobRequest, opts ...grpc.CallOption) (*RewrapKeyBlobResponse, error) {
 	out := new(RewrapKeyBlobResponse)
 	err := c.cc.Invoke(ctx, "/grep11.Crypto/RewrapKeyBlob", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *cryptoClient) ReEncrypt(ctx context.Context, in *ReEncryptRequest, opts ...grpc.CallOption) (*ReEncryptResponse, error) {
+	out := new(ReEncryptResponse)
+	err := c.cc.Invoke(ctx, "/grep11.Crypto/ReEncrypt", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -6040,17 +6241,8 @@ type CryptoServer interface {
 	//     CK_ATTRIBUTE_PTR attributesBytes, CK_ULONG attributesByteslen,
 	//     target_t target) ;
 	SetAttributeValue(context.Context, *SetAttributeValueRequest) (*SetAttributeValueResponse, error)
-	// CK_RV m_Login (
-	//     CK_UTF8CHAR_PTR pin, CK_ULONG pinLen,
-	//     const unsigned char *nonce, size_t noncelen,
-	//     unsigned char *pinblob, size_t *pinbloblen,
-	//     target_t target) ;
-	Login(context.Context, *LoginRequest) (*LoginResponse, error)
-	// CK_RV m_Logout (
-	//     const unsigned char *pinblob, size_t pinbloblen,
-	//     target_t target) ;
-	Logout(context.Context, *LogoutRequest) (*LogoutResponse, error)
 	RewrapKeyBlob(context.Context, *RewrapKeyBlobRequest) (*RewrapKeyBlobResponse, error)
+	ReEncrypt(context.Context, *ReEncryptRequest) (*ReEncryptResponse, error)
 }
 
 // UnimplementedCryptoServer can be embedded to have forward compatible implementations.
@@ -6165,14 +6357,11 @@ func (*UnimplementedCryptoServer) GetAttributeValue(ctx context.Context, req *Ge
 func (*UnimplementedCryptoServer) SetAttributeValue(ctx context.Context, req *SetAttributeValueRequest) (*SetAttributeValueResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetAttributeValue not implemented")
 }
-func (*UnimplementedCryptoServer) Login(ctx context.Context, req *LoginRequest) (*LoginResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Login not implemented")
-}
-func (*UnimplementedCryptoServer) Logout(ctx context.Context, req *LogoutRequest) (*LogoutResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Logout not implemented")
-}
 func (*UnimplementedCryptoServer) RewrapKeyBlob(ctx context.Context, req *RewrapKeyBlobRequest) (*RewrapKeyBlobResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RewrapKeyBlob not implemented")
+}
+func (*UnimplementedCryptoServer) ReEncrypt(ctx context.Context, req *ReEncryptRequest) (*ReEncryptResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ReEncrypt not implemented")
 }
 
 func RegisterCryptoServer(s *grpc.Server, srv CryptoServer) {
@@ -6827,42 +7016,6 @@ func _Crypto_SetAttributeValue_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Crypto_Login_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(LoginRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CryptoServer).Login(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/grep11.Crypto/Login",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CryptoServer).Login(ctx, req.(*LoginRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Crypto_Logout_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(LogoutRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CryptoServer).Logout(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/grep11.Crypto/Logout",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CryptoServer).Logout(ctx, req.(*LogoutRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Crypto_RewrapKeyBlob_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(RewrapKeyBlobRequest)
 	if err := dec(in); err != nil {
@@ -6877,6 +7030,24 @@ func _Crypto_RewrapKeyBlob_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CryptoServer).RewrapKeyBlob(ctx, req.(*RewrapKeyBlobRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Crypto_ReEncrypt_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReEncryptRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CryptoServer).ReEncrypt(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/grep11.Crypto/ReEncrypt",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CryptoServer).ReEncrypt(ctx, req.(*ReEncryptRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -7030,16 +7201,12 @@ var _Crypto_serviceDesc = grpc.ServiceDesc{
 			Handler:    _Crypto_SetAttributeValue_Handler,
 		},
 		{
-			MethodName: "Login",
-			Handler:    _Crypto_Login_Handler,
-		},
-		{
-			MethodName: "Logout",
-			Handler:    _Crypto_Logout_Handler,
-		},
-		{
 			MethodName: "RewrapKeyBlob",
 			Handler:    _Crypto_RewrapKeyBlob_Handler,
+		},
+		{
+			MethodName: "ReEncrypt",
+			Handler:    _Crypto_ReEncrypt_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -9160,6 +9327,25 @@ func (m *GenerateKeyRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 			dAtA[i] = 0x32
 		}
 	}
+	if len(m.TemplateBytes) > 0 {
+		for k := range m.TemplateBytes {
+			v := m.TemplateBytes[k]
+			baseI := i
+			if len(v) > 0 {
+				i -= len(v)
+				copy(dAtA[i:], v)
+				i = encodeVarintServer(dAtA, i, uint64(len(v)))
+				i--
+				dAtA[i] = 0x12
+			}
+			i = encodeVarintServer(dAtA, i, uint64(k))
+			i--
+			dAtA[i] = 0x8
+			i = encodeVarintServer(dAtA, i, uint64(baseI-i))
+			i--
+			dAtA[i] = 0x12
+		}
+	}
 	if m.Mech != nil {
 		{
 			size, err := m.Mech.MarshalToSizedBuffer(dAtA[:i])
@@ -9298,6 +9484,44 @@ func (m *GenerateKeyPairRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) 
 			i = encodeVarintServer(dAtA, i, uint64(baseI-i))
 			i--
 			dAtA[i] = 0x3a
+		}
+	}
+	if len(m.PrivKeyTemplateBytes) > 0 {
+		for k := range m.PrivKeyTemplateBytes {
+			v := m.PrivKeyTemplateBytes[k]
+			baseI := i
+			if len(v) > 0 {
+				i -= len(v)
+				copy(dAtA[i:], v)
+				i = encodeVarintServer(dAtA, i, uint64(len(v)))
+				i--
+				dAtA[i] = 0x12
+			}
+			i = encodeVarintServer(dAtA, i, uint64(k))
+			i--
+			dAtA[i] = 0x8
+			i = encodeVarintServer(dAtA, i, uint64(baseI-i))
+			i--
+			dAtA[i] = 0x1a
+		}
+	}
+	if len(m.PubKeyTemplateBytes) > 0 {
+		for k := range m.PubKeyTemplateBytes {
+			v := m.PubKeyTemplateBytes[k]
+			baseI := i
+			if len(v) > 0 {
+				i -= len(v)
+				copy(dAtA[i:], v)
+				i = encodeVarintServer(dAtA, i, uint64(len(v)))
+				i--
+				dAtA[i] = 0x12
+			}
+			i = encodeVarintServer(dAtA, i, uint64(k))
+			i--
+			dAtA[i] = 0x8
+			i = encodeVarintServer(dAtA, i, uint64(baseI-i))
+			i--
+			dAtA[i] = 0x12
 		}
 	}
 	if m.Mech != nil {
@@ -9522,6 +9746,25 @@ func (m *UnwrapKeyRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 			dAtA[i] = 0x4a
 		}
 	}
+	if len(m.TemplateBytes) > 0 {
+		for k := range m.TemplateBytes {
+			v := m.TemplateBytes[k]
+			baseI := i
+			if len(v) > 0 {
+				i -= len(v)
+				copy(dAtA[i:], v)
+				i = encodeVarintServer(dAtA, i, uint64(len(v)))
+				i--
+				dAtA[i] = 0x12
+			}
+			i = encodeVarintServer(dAtA, i, uint64(k))
+			i--
+			dAtA[i] = 0x8
+			i = encodeVarintServer(dAtA, i, uint64(baseI-i))
+			i--
+			dAtA[i] = 0x32
+		}
+	}
 	if m.Mech != nil {
 		{
 			size, err := m.Mech.MarshalToSizedBuffer(dAtA[:i])
@@ -9672,6 +9915,25 @@ func (m *DeriveKeyRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i = encodeVarintServer(dAtA, i, uint64(len(m.BaseKey)))
 		i--
 		dAtA[i] = 0x1a
+	}
+	if len(m.TemplateBytes) > 0 {
+		for k := range m.TemplateBytes {
+			v := m.TemplateBytes[k]
+			baseI := i
+			if len(v) > 0 {
+				i -= len(v)
+				copy(dAtA[i:], v)
+				i = encodeVarintServer(dAtA, i, uint64(len(v)))
+				i--
+				dAtA[i] = 0x12
+			}
+			i = encodeVarintServer(dAtA, i, uint64(k))
+			i--
+			dAtA[i] = 0x8
+			i = encodeVarintServer(dAtA, i, uint64(baseI-i))
+			i--
+			dAtA[i] = 0x12
+		}
 	}
 	if m.Mech != nil {
 		{
@@ -10079,6 +10341,25 @@ func (m *SetAttributeValueRequest) MarshalToSizedBuffer(dAtA []byte) (int, error
 			dAtA[i] = 0x1a
 		}
 	}
+	if len(m.AttributesBytes) > 0 {
+		for k := range m.AttributesBytes {
+			v := m.AttributesBytes[k]
+			baseI := i
+			if len(v) > 0 {
+				i -= len(v)
+				copy(dAtA[i:], v)
+				i = encodeVarintServer(dAtA, i, uint64(len(v)))
+				i--
+				dAtA[i] = 0x12
+			}
+			i = encodeVarintServer(dAtA, i, uint64(k))
+			i--
+			dAtA[i] = 0x8
+			i = encodeVarintServer(dAtA, i, uint64(baseI-i))
+			i--
+			dAtA[i] = 0x12
+		}
+	}
 	if len(m.Object) > 0 {
 		i -= len(m.Object)
 		copy(dAtA[i:], m.Object)
@@ -10119,135 +10400,6 @@ func (m *SetAttributeValueResponse) MarshalToSizedBuffer(dAtA []byte) (int, erro
 		i = encodeVarintServer(dAtA, i, uint64(len(m.Object)))
 		i--
 		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
-}
-
-func (m *LoginRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *LoginRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *LoginRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.XXX_unrecognized != nil {
-		i -= len(m.XXX_unrecognized)
-		copy(dAtA[i:], m.XXX_unrecognized)
-	}
-	if len(m.Pin) > 0 {
-		i -= len(m.Pin)
-		copy(dAtA[i:], m.Pin)
-		i = encodeVarintServer(dAtA, i, uint64(len(m.Pin)))
-		i--
-		dAtA[i] = 0x12
-	}
-	if len(m.Storeid) > 0 {
-		i -= len(m.Storeid)
-		copy(dAtA[i:], m.Storeid)
-		i = encodeVarintServer(dAtA, i, uint64(len(m.Storeid)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
-}
-
-func (m *LoginResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *LoginResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *LoginResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.XXX_unrecognized != nil {
-		i -= len(m.XXX_unrecognized)
-		copy(dAtA[i:], m.XXX_unrecognized)
-	}
-	if len(m.Pinblob) > 0 {
-		i -= len(m.Pinblob)
-		copy(dAtA[i:], m.Pinblob)
-		i = encodeVarintServer(dAtA, i, uint64(len(m.Pinblob)))
-		i--
-		dAtA[i] = 0x22
-	}
-	return len(dAtA) - i, nil
-}
-
-func (m *LogoutRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *LogoutRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *LogoutRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.XXX_unrecognized != nil {
-		i -= len(m.XXX_unrecognized)
-		copy(dAtA[i:], m.XXX_unrecognized)
-	}
-	return len(dAtA) - i, nil
-}
-
-func (m *LogoutResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *LogoutResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *LogoutResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.XXX_unrecognized != nil {
-		i -= len(m.XXX_unrecognized)
-		copy(dAtA[i:], m.XXX_unrecognized)
 	}
 	return len(dAtA) - i, nil
 }
@@ -10369,6 +10521,48 @@ func (m *Mechanism_ECDH1DeriveParameter) MarshalToSizedBuffer(dAtA []byte) (int,
 		}
 		i--
 		dAtA[i] = 0x2a
+	}
+	return len(dAtA) - i, nil
+}
+func (m *Mechanism_BTCDeriveParameter) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *Mechanism_BTCDeriveParameter) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	if m.BTCDeriveParameter != nil {
+		{
+			size, err := m.BTCDeriveParameter.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintServer(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0x32
+	}
+	return len(dAtA) - i, nil
+}
+func (m *Mechanism_ECSGParameter) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *Mechanism_ECSGParameter) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	if m.ECSGParameter != nil {
+		{
+			size, err := m.ECSGParameter.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintServer(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0x3a
 	}
 	return len(dAtA) - i, nil
 }
@@ -10600,6 +10794,87 @@ func (m *ECDH1DeriveParm) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+func (m *BTCDeriveParm) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *BTCDeriveParm) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *BTCDeriveParm) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if m.Version != 0 {
+		i = encodeVarintServer(dAtA, i, uint64(m.Version))
+		i--
+		dAtA[i] = 0x20
+	}
+	if len(m.ChainCode) > 0 {
+		i -= len(m.ChainCode)
+		copy(dAtA[i:], m.ChainCode)
+		i = encodeVarintServer(dAtA, i, uint64(len(m.ChainCode)))
+		i--
+		dAtA[i] = 0x1a
+	}
+	if m.ChildKeyIndex != 0 {
+		i = encodeVarintServer(dAtA, i, uint64(m.ChildKeyIndex))
+		i--
+		dAtA[i] = 0x10
+	}
+	if m.Type != 0 {
+		i = encodeVarintServer(dAtA, i, uint64(m.Type))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *ECSGParm) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *ECSGParm) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *ECSGParm) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if m.Type != 0 {
+		i = encodeVarintServer(dAtA, i, uint64(m.Type))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
 func (m *HMACGeneralParm) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -10628,6 +10903,74 @@ func (m *HMACGeneralParm) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i = encodeVarintServer(dAtA, i, uint64(m.ReturnByteCount))
 		i--
 		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *ReEncryptRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *ReEncryptRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *ReEncryptRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.WrappedKey) > 0 {
+		i -= len(m.WrappedKey)
+		copy(dAtA[i:], m.WrappedKey)
+		i = encodeVarintServer(dAtA, i, uint64(len(m.WrappedKey)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *ReEncryptResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *ReEncryptResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *ReEncryptResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.XXX_unrecognized != nil {
+		i -= len(m.XXX_unrecognized)
+		copy(dAtA[i:], m.XXX_unrecognized)
+	}
+	if len(m.RewrappedKey) > 0 {
+		i -= len(m.RewrappedKey)
+		copy(dAtA[i:], m.RewrappedKey)
+		i = encodeVarintServer(dAtA, i, uint64(len(m.RewrappedKey)))
+		i--
+		dAtA[i] = 0xa
 	}
 	return len(dAtA) - i, nil
 }
@@ -11860,6 +12203,18 @@ func (m *GenerateKeyRequest) Size() (n int) {
 		l = m.Mech.Size()
 		n += 1 + l + sovServer(uint64(l))
 	}
+	if len(m.TemplateBytes) > 0 {
+		for k, v := range m.TemplateBytes {
+			_ = k
+			_ = v
+			l = 0
+			if len(v) > 0 {
+				l = 1 + len(v) + sovServer(uint64(len(v)))
+			}
+			mapEntrySize := 1 + sovServer(uint64(k)) + l
+			n += mapEntrySize + 1 + sovServer(uint64(mapEntrySize))
+		}
+	}
 	if len(m.Template) > 0 {
 		for k, v := range m.Template {
 			_ = k
@@ -11912,6 +12267,30 @@ func (m *GenerateKeyPairRequest) Size() (n int) {
 	if m.Mech != nil {
 		l = m.Mech.Size()
 		n += 1 + l + sovServer(uint64(l))
+	}
+	if len(m.PubKeyTemplateBytes) > 0 {
+		for k, v := range m.PubKeyTemplateBytes {
+			_ = k
+			_ = v
+			l = 0
+			if len(v) > 0 {
+				l = 1 + len(v) + sovServer(uint64(len(v)))
+			}
+			mapEntrySize := 1 + sovServer(uint64(k)) + l
+			n += mapEntrySize + 1 + sovServer(uint64(mapEntrySize))
+		}
+	}
+	if len(m.PrivKeyTemplateBytes) > 0 {
+		for k, v := range m.PrivKeyTemplateBytes {
+			_ = k
+			_ = v
+			l = 0
+			if len(v) > 0 {
+				l = 1 + len(v) + sovServer(uint64(len(v)))
+			}
+			mapEntrySize := 1 + sovServer(uint64(k)) + l
+			n += mapEntrySize + 1 + sovServer(uint64(mapEntrySize))
+		}
 	}
 	if len(m.PrivKeyTemplate) > 0 {
 		for k, v := range m.PrivKeyTemplate {
@@ -12039,6 +12418,18 @@ func (m *UnwrapKeyRequest) Size() (n int) {
 		l = m.Mech.Size()
 		n += 1 + l + sovServer(uint64(l))
 	}
+	if len(m.TemplateBytes) > 0 {
+		for k, v := range m.TemplateBytes {
+			_ = k
+			_ = v
+			l = 0
+			if len(v) > 0 {
+				l = 1 + len(v) + sovServer(uint64(len(v)))
+			}
+			mapEntrySize := 1 + sovServer(uint64(k)) + l
+			n += mapEntrySize + 1 + sovServer(uint64(mapEntrySize))
+		}
+	}
 	if len(m.Template) > 0 {
 		for k, v := range m.Template {
 			_ = k
@@ -12091,6 +12482,18 @@ func (m *DeriveKeyRequest) Size() (n int) {
 	if m.Mech != nil {
 		l = m.Mech.Size()
 		n += 1 + l + sovServer(uint64(l))
+	}
+	if len(m.TemplateBytes) > 0 {
+		for k, v := range m.TemplateBytes {
+			_ = k
+			_ = v
+			l = 0
+			if len(v) > 0 {
+				l = 1 + len(v) + sovServer(uint64(len(v)))
+			}
+			mapEntrySize := 1 + sovServer(uint64(k)) + l
+			n += mapEntrySize + 1 + sovServer(uint64(mapEntrySize))
+		}
 	}
 	l = len(m.BaseKey)
 	if l > 0 {
@@ -12293,6 +12696,18 @@ func (m *SetAttributeValueRequest) Size() (n int) {
 	if l > 0 {
 		n += 1 + l + sovServer(uint64(l))
 	}
+	if len(m.AttributesBytes) > 0 {
+		for k, v := range m.AttributesBytes {
+			_ = k
+			_ = v
+			l = 0
+			if len(v) > 0 {
+				l = 1 + len(v) + sovServer(uint64(len(v)))
+			}
+			mapEntrySize := 1 + sovServer(uint64(k)) + l
+			n += mapEntrySize + 1 + sovServer(uint64(mapEntrySize))
+		}
+	}
 	if len(m.Attributes) > 0 {
 		for k, v := range m.Attributes {
 			_ = k
@@ -12322,66 +12737,6 @@ func (m *SetAttributeValueResponse) Size() (n int) {
 	if l > 0 {
 		n += 1 + l + sovServer(uint64(l))
 	}
-	if m.XXX_unrecognized != nil {
-		n += len(m.XXX_unrecognized)
-	}
-	return n
-}
-
-func (m *LoginRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.Storeid)
-	if l > 0 {
-		n += 1 + l + sovServer(uint64(l))
-	}
-	l = len(m.Pin)
-	if l > 0 {
-		n += 1 + l + sovServer(uint64(l))
-	}
-	if m.XXX_unrecognized != nil {
-		n += len(m.XXX_unrecognized)
-	}
-	return n
-}
-
-func (m *LoginResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.Pinblob)
-	if l > 0 {
-		n += 1 + l + sovServer(uint64(l))
-	}
-	if m.XXX_unrecognized != nil {
-		n += len(m.XXX_unrecognized)
-	}
-	return n
-}
-
-func (m *LogoutRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.XXX_unrecognized != nil {
-		n += len(m.XXX_unrecognized)
-	}
-	return n
-}
-
-func (m *LogoutResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
 	}
@@ -12450,6 +12805,30 @@ func (m *Mechanism_ECDH1DeriveParameter) Size() (n int) {
 	_ = l
 	if m.ECDH1DeriveParameter != nil {
 		l = m.ECDH1DeriveParameter.Size()
+		n += 1 + l + sovServer(uint64(l))
+	}
+	return n
+}
+func (m *Mechanism_BTCDeriveParameter) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.BTCDeriveParameter != nil {
+		l = m.BTCDeriveParameter.Size()
+		n += 1 + l + sovServer(uint64(l))
+	}
+	return n
+}
+func (m *Mechanism_ECSGParameter) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.ECSGParameter != nil {
+		l = m.ECSGParameter.Size()
 		n += 1 + l + sovServer(uint64(l))
 	}
 	return n
@@ -12566,6 +12945,46 @@ func (m *ECDH1DeriveParm) Size() (n int) {
 	return n
 }
 
+func (m *BTCDeriveParm) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Type != 0 {
+		n += 1 + sovServer(uint64(m.Type))
+	}
+	if m.ChildKeyIndex != 0 {
+		n += 1 + sovServer(uint64(m.ChildKeyIndex))
+	}
+	l = len(m.ChainCode)
+	if l > 0 {
+		n += 1 + l + sovServer(uint64(l))
+	}
+	if m.Version != 0 {
+		n += 1 + sovServer(uint64(m.Version))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *ECSGParm) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Type != 0 {
+		n += 1 + sovServer(uint64(m.Type))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
 func (m *HMACGeneralParm) Size() (n int) {
 	if m == nil {
 		return 0
@@ -12574,6 +12993,38 @@ func (m *HMACGeneralParm) Size() (n int) {
 	_ = l
 	if m.ReturnByteCount != 0 {
 		n += 1 + sovServer(uint64(m.ReturnByteCount))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *ReEncryptRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.WrappedKey)
+	if l > 0 {
+		n += 1 + l + sovServer(uint64(l))
+	}
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *ReEncryptResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.RewrappedKey)
+	if l > 0 {
+		n += 1 + l + sovServer(uint64(l))
 	}
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -12764,7 +13215,10 @@ func (m *GenerateRandomRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -12849,7 +13303,10 @@ func (m *GenerateRandomResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -12936,7 +13393,10 @@ func (m *DigestInitRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -13021,7 +13481,10 @@ func (m *DigestInitResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -13140,7 +13603,10 @@ func (m *DigestRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -13225,7 +13691,10 @@ func (m *DigestResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -13344,7 +13813,10 @@ func (m *DigestUpdateRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -13429,7 +13901,10 @@ func (m *DigestUpdateResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -13548,7 +14023,10 @@ func (m *DigestKeyRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -13633,7 +14111,10 @@ func (m *DigestKeyResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -13718,7 +14199,10 @@ func (m *DigestFinalRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -13803,7 +14287,10 @@ func (m *DigestFinalResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -13924,7 +14411,10 @@ func (m *DigestSingleRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -14009,7 +14499,10 @@ func (m *DigestSingleResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -14130,7 +14623,10 @@ func (m *EncryptInitRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -14215,7 +14711,10 @@ func (m *EncryptInitResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -14336,7 +14835,10 @@ func (m *DecryptInitRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -14421,7 +14923,10 @@ func (m *DecryptInitResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -14540,7 +15045,10 @@ func (m *EncryptUpdateRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -14659,7 +15167,10 @@ func (m *EncryptUpdateResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -14778,7 +15289,10 @@ func (m *DecryptUpdateRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -14897,7 +15411,10 @@ func (m *DecryptUpdateResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -15016,7 +15533,10 @@ func (m *EncryptRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -15101,7 +15621,10 @@ func (m *EncryptResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -15220,7 +15743,10 @@ func (m *DecryptRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -15305,7 +15831,10 @@ func (m *DecryptResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -15390,7 +15919,10 @@ func (m *EncryptFinalRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -15475,7 +16007,10 @@ func (m *EncryptFinalResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -15560,7 +16095,10 @@ func (m *DecryptFinalRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -15645,7 +16183,10 @@ func (m *DecryptFinalResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -15800,7 +16341,10 @@ func (m *EncryptSingleRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -15885,7 +16429,10 @@ func (m *EncryptSingleResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -16040,7 +16587,10 @@ func (m *DecryptSingleRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -16125,7 +16675,10 @@ func (m *DecryptSingleResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -16246,7 +16799,10 @@ func (m *SignInitRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -16331,7 +16887,10 @@ func (m *SignInitResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -16452,7 +17011,10 @@ func (m *VerifyInitRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -16537,7 +17099,10 @@ func (m *VerifyInitResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -16656,7 +17221,10 @@ func (m *SignUpdateRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -16741,7 +17309,10 @@ func (m *SignUpdateResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -16860,7 +17431,10 @@ func (m *VerifyUpdateRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -16945,7 +17519,10 @@ func (m *VerifyUpdateResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -17030,7 +17607,10 @@ func (m *SignFinalRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -17115,7 +17695,10 @@ func (m *SignFinalResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -17234,7 +17817,10 @@ func (m *VerifyFinalRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -17285,7 +17871,10 @@ func (m *VerifyFinalResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -17404,7 +17993,10 @@ func (m *SignRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -17489,7 +18081,10 @@ func (m *SignResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -17642,7 +18237,10 @@ func (m *VerifyRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -17693,7 +18291,10 @@ func (m *VerifyResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -17848,7 +18449,10 @@ func (m *SignSingleRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -17933,7 +18537,10 @@ func (m *SignSingleResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -18122,7 +18729,10 @@ func (m *VerifySingleRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -18173,7 +18783,10 @@ func (m *VerifySingleResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -18254,6 +18867,120 @@ func (m *GenerateKeyRequest) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field TemplateBytes", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowServer
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthServer
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthServer
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.TemplateBytes == nil {
+				m.TemplateBytes = make(map[ep11.Attribute][]byte)
+			}
+			var mapkey uint64
+			mapvalue := []byte{}
+			for iNdEx < postIndex {
+				entryPreIndex := iNdEx
+				var wire uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return ErrIntOverflowServer
+					}
+					if iNdEx >= l {
+						return io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					wire |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				fieldNum := int32(wire >> 3)
+				if fieldNum == 1 {
+					for shift := uint(0); ; shift += 7 {
+						if shift >= 64 {
+							return ErrIntOverflowServer
+						}
+						if iNdEx >= l {
+							return io.ErrUnexpectedEOF
+						}
+						b := dAtA[iNdEx]
+						iNdEx++
+						mapkey |= uint64(b&0x7F) << shift
+						if b < 0x80 {
+							break
+						}
+					}
+				} else if fieldNum == 2 {
+					var mapbyteLen uint64
+					for shift := uint(0); ; shift += 7 {
+						if shift >= 64 {
+							return ErrIntOverflowServer
+						}
+						if iNdEx >= l {
+							return io.ErrUnexpectedEOF
+						}
+						b := dAtA[iNdEx]
+						iNdEx++
+						mapbyteLen |= uint64(b&0x7F) << shift
+						if b < 0x80 {
+							break
+						}
+					}
+					intMapbyteLen := int(mapbyteLen)
+					if intMapbyteLen < 0 {
+						return ErrInvalidLengthServer
+					}
+					postbytesIndex := iNdEx + intMapbyteLen
+					if postbytesIndex < 0 {
+						return ErrInvalidLengthServer
+					}
+					if postbytesIndex > l {
+						return io.ErrUnexpectedEOF
+					}
+					mapvalue = make([]byte, mapbyteLen)
+					copy(mapvalue, dAtA[iNdEx:postbytesIndex])
+					iNdEx = postbytesIndex
+				} else {
+					iNdEx = entryPreIndex
+					skippy, err := skipServer(dAtA[iNdEx:])
+					if err != nil {
+						return err
+					}
+					if skippy < 0 {
+						return ErrInvalidLengthServer
+					}
+					if (iNdEx + skippy) > postIndex {
+						return io.ErrUnexpectedEOF
+					}
+					iNdEx += skippy
+				}
+			}
+			m.TemplateBytes[ep11.Attribute(mapkey)] = mapvalue
+			iNdEx = postIndex
 		case 6:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Template", wireType)
@@ -18284,7 +19011,7 @@ func (m *GenerateKeyRequest) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Template == nil {
-				m.Template = make(map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue)
+				m.Template = make(map[ep11.Attribute]*AttributeValue)
 			}
 			var mapkey uint64
 			var mapvalue *AttributeValue
@@ -18358,7 +19085,7 @@ func (m *GenerateKeyRequest) Unmarshal(dAtA []byte) error {
 					if err != nil {
 						return err
 					}
-					if (skippy < 0) || (iNdEx+skippy) < 0 {
+					if skippy < 0 {
 						return ErrInvalidLengthServer
 					}
 					if (iNdEx + skippy) > postIndex {
@@ -18367,7 +19094,7 @@ func (m *GenerateKeyRequest) Unmarshal(dAtA []byte) error {
 					iNdEx += skippy
 				}
 			}
-			m.Template[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute(mapkey)] = mapvalue
+			m.Template[ep11.Attribute(mapkey)] = mapvalue
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
@@ -18375,7 +19102,10 @@ func (m *GenerateKeyRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -18530,7 +19260,10 @@ func (m *GenerateKeyResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -18611,6 +19344,234 @@ func (m *GenerateKeyPairRequest) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field PubKeyTemplateBytes", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowServer
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthServer
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthServer
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.PubKeyTemplateBytes == nil {
+				m.PubKeyTemplateBytes = make(map[ep11.Attribute][]byte)
+			}
+			var mapkey uint64
+			mapvalue := []byte{}
+			for iNdEx < postIndex {
+				entryPreIndex := iNdEx
+				var wire uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return ErrIntOverflowServer
+					}
+					if iNdEx >= l {
+						return io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					wire |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				fieldNum := int32(wire >> 3)
+				if fieldNum == 1 {
+					for shift := uint(0); ; shift += 7 {
+						if shift >= 64 {
+							return ErrIntOverflowServer
+						}
+						if iNdEx >= l {
+							return io.ErrUnexpectedEOF
+						}
+						b := dAtA[iNdEx]
+						iNdEx++
+						mapkey |= uint64(b&0x7F) << shift
+						if b < 0x80 {
+							break
+						}
+					}
+				} else if fieldNum == 2 {
+					var mapbyteLen uint64
+					for shift := uint(0); ; shift += 7 {
+						if shift >= 64 {
+							return ErrIntOverflowServer
+						}
+						if iNdEx >= l {
+							return io.ErrUnexpectedEOF
+						}
+						b := dAtA[iNdEx]
+						iNdEx++
+						mapbyteLen |= uint64(b&0x7F) << shift
+						if b < 0x80 {
+							break
+						}
+					}
+					intMapbyteLen := int(mapbyteLen)
+					if intMapbyteLen < 0 {
+						return ErrInvalidLengthServer
+					}
+					postbytesIndex := iNdEx + intMapbyteLen
+					if postbytesIndex < 0 {
+						return ErrInvalidLengthServer
+					}
+					if postbytesIndex > l {
+						return io.ErrUnexpectedEOF
+					}
+					mapvalue = make([]byte, mapbyteLen)
+					copy(mapvalue, dAtA[iNdEx:postbytesIndex])
+					iNdEx = postbytesIndex
+				} else {
+					iNdEx = entryPreIndex
+					skippy, err := skipServer(dAtA[iNdEx:])
+					if err != nil {
+						return err
+					}
+					if skippy < 0 {
+						return ErrInvalidLengthServer
+					}
+					if (iNdEx + skippy) > postIndex {
+						return io.ErrUnexpectedEOF
+					}
+					iNdEx += skippy
+				}
+			}
+			m.PubKeyTemplateBytes[ep11.Attribute(mapkey)] = mapvalue
+			iNdEx = postIndex
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field PrivKeyTemplateBytes", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowServer
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthServer
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthServer
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.PrivKeyTemplateBytes == nil {
+				m.PrivKeyTemplateBytes = make(map[ep11.Attribute][]byte)
+			}
+			var mapkey uint64
+			mapvalue := []byte{}
+			for iNdEx < postIndex {
+				entryPreIndex := iNdEx
+				var wire uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return ErrIntOverflowServer
+					}
+					if iNdEx >= l {
+						return io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					wire |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				fieldNum := int32(wire >> 3)
+				if fieldNum == 1 {
+					for shift := uint(0); ; shift += 7 {
+						if shift >= 64 {
+							return ErrIntOverflowServer
+						}
+						if iNdEx >= l {
+							return io.ErrUnexpectedEOF
+						}
+						b := dAtA[iNdEx]
+						iNdEx++
+						mapkey |= uint64(b&0x7F) << shift
+						if b < 0x80 {
+							break
+						}
+					}
+				} else if fieldNum == 2 {
+					var mapbyteLen uint64
+					for shift := uint(0); ; shift += 7 {
+						if shift >= 64 {
+							return ErrIntOverflowServer
+						}
+						if iNdEx >= l {
+							return io.ErrUnexpectedEOF
+						}
+						b := dAtA[iNdEx]
+						iNdEx++
+						mapbyteLen |= uint64(b&0x7F) << shift
+						if b < 0x80 {
+							break
+						}
+					}
+					intMapbyteLen := int(mapbyteLen)
+					if intMapbyteLen < 0 {
+						return ErrInvalidLengthServer
+					}
+					postbytesIndex := iNdEx + intMapbyteLen
+					if postbytesIndex < 0 {
+						return ErrInvalidLengthServer
+					}
+					if postbytesIndex > l {
+						return io.ErrUnexpectedEOF
+					}
+					mapvalue = make([]byte, mapbyteLen)
+					copy(mapvalue, dAtA[iNdEx:postbytesIndex])
+					iNdEx = postbytesIndex
+				} else {
+					iNdEx = entryPreIndex
+					skippy, err := skipServer(dAtA[iNdEx:])
+					if err != nil {
+						return err
+					}
+					if skippy < 0 {
+						return ErrInvalidLengthServer
+					}
+					if (iNdEx + skippy) > postIndex {
+						return io.ErrUnexpectedEOF
+					}
+					iNdEx += skippy
+				}
+			}
+			m.PrivKeyTemplateBytes[ep11.Attribute(mapkey)] = mapvalue
+			iNdEx = postIndex
 		case 7:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field PrivKeyTemplate", wireType)
@@ -18641,7 +19602,7 @@ func (m *GenerateKeyPairRequest) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.PrivKeyTemplate == nil {
-				m.PrivKeyTemplate = make(map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue)
+				m.PrivKeyTemplate = make(map[ep11.Attribute]*AttributeValue)
 			}
 			var mapkey uint64
 			var mapvalue *AttributeValue
@@ -18715,7 +19676,7 @@ func (m *GenerateKeyPairRequest) Unmarshal(dAtA []byte) error {
 					if err != nil {
 						return err
 					}
-					if (skippy < 0) || (iNdEx+skippy) < 0 {
+					if skippy < 0 {
 						return ErrInvalidLengthServer
 					}
 					if (iNdEx + skippy) > postIndex {
@@ -18724,7 +19685,7 @@ func (m *GenerateKeyPairRequest) Unmarshal(dAtA []byte) error {
 					iNdEx += skippy
 				}
 			}
-			m.PrivKeyTemplate[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute(mapkey)] = mapvalue
+			m.PrivKeyTemplate[ep11.Attribute(mapkey)] = mapvalue
 			iNdEx = postIndex
 		case 8:
 			if wireType != 2 {
@@ -18756,7 +19717,7 @@ func (m *GenerateKeyPairRequest) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.PubKeyTemplate == nil {
-				m.PubKeyTemplate = make(map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue)
+				m.PubKeyTemplate = make(map[ep11.Attribute]*AttributeValue)
 			}
 			var mapkey uint64
 			var mapvalue *AttributeValue
@@ -18830,7 +19791,7 @@ func (m *GenerateKeyPairRequest) Unmarshal(dAtA []byte) error {
 					if err != nil {
 						return err
 					}
-					if (skippy < 0) || (iNdEx+skippy) < 0 {
+					if skippy < 0 {
 						return ErrInvalidLengthServer
 					}
 					if (iNdEx + skippy) > postIndex {
@@ -18839,7 +19800,7 @@ func (m *GenerateKeyPairRequest) Unmarshal(dAtA []byte) error {
 					iNdEx += skippy
 				}
 			}
-			m.PubKeyTemplate[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute(mapkey)] = mapvalue
+			m.PubKeyTemplate[ep11.Attribute(mapkey)] = mapvalue
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
@@ -18847,7 +19808,10 @@ func (m *GenerateKeyPairRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -19038,7 +20002,10 @@ func (m *GenerateKeyPairResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -19227,7 +20194,10 @@ func (m *WrapKeyRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -19312,7 +20282,10 @@ func (m *WrapKeyResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -19495,6 +20468,120 @@ func (m *UnwrapKeyRequest) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
+		case 6:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field TemplateBytes", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowServer
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthServer
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthServer
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.TemplateBytes == nil {
+				m.TemplateBytes = make(map[ep11.Attribute][]byte)
+			}
+			var mapkey uint64
+			mapvalue := []byte{}
+			for iNdEx < postIndex {
+				entryPreIndex := iNdEx
+				var wire uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return ErrIntOverflowServer
+					}
+					if iNdEx >= l {
+						return io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					wire |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				fieldNum := int32(wire >> 3)
+				if fieldNum == 1 {
+					for shift := uint(0); ; shift += 7 {
+						if shift >= 64 {
+							return ErrIntOverflowServer
+						}
+						if iNdEx >= l {
+							return io.ErrUnexpectedEOF
+						}
+						b := dAtA[iNdEx]
+						iNdEx++
+						mapkey |= uint64(b&0x7F) << shift
+						if b < 0x80 {
+							break
+						}
+					}
+				} else if fieldNum == 2 {
+					var mapbyteLen uint64
+					for shift := uint(0); ; shift += 7 {
+						if shift >= 64 {
+							return ErrIntOverflowServer
+						}
+						if iNdEx >= l {
+							return io.ErrUnexpectedEOF
+						}
+						b := dAtA[iNdEx]
+						iNdEx++
+						mapbyteLen |= uint64(b&0x7F) << shift
+						if b < 0x80 {
+							break
+						}
+					}
+					intMapbyteLen := int(mapbyteLen)
+					if intMapbyteLen < 0 {
+						return ErrInvalidLengthServer
+					}
+					postbytesIndex := iNdEx + intMapbyteLen
+					if postbytesIndex < 0 {
+						return ErrInvalidLengthServer
+					}
+					if postbytesIndex > l {
+						return io.ErrUnexpectedEOF
+					}
+					mapvalue = make([]byte, mapbyteLen)
+					copy(mapvalue, dAtA[iNdEx:postbytesIndex])
+					iNdEx = postbytesIndex
+				} else {
+					iNdEx = entryPreIndex
+					skippy, err := skipServer(dAtA[iNdEx:])
+					if err != nil {
+						return err
+					}
+					if skippy < 0 {
+						return ErrInvalidLengthServer
+					}
+					if (iNdEx + skippy) > postIndex {
+						return io.ErrUnexpectedEOF
+					}
+					iNdEx += skippy
+				}
+			}
+			m.TemplateBytes[ep11.Attribute(mapkey)] = mapvalue
+			iNdEx = postIndex
 		case 9:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Template", wireType)
@@ -19525,7 +20612,7 @@ func (m *UnwrapKeyRequest) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Template == nil {
-				m.Template = make(map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue)
+				m.Template = make(map[ep11.Attribute]*AttributeValue)
 			}
 			var mapkey uint64
 			var mapvalue *AttributeValue
@@ -19599,7 +20686,7 @@ func (m *UnwrapKeyRequest) Unmarshal(dAtA []byte) error {
 					if err != nil {
 						return err
 					}
-					if (skippy < 0) || (iNdEx+skippy) < 0 {
+					if skippy < 0 {
 						return ErrInvalidLengthServer
 					}
 					if (iNdEx + skippy) > postIndex {
@@ -19608,7 +20695,7 @@ func (m *UnwrapKeyRequest) Unmarshal(dAtA []byte) error {
 					iNdEx += skippy
 				}
 			}
-			m.Template[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute(mapkey)] = mapvalue
+			m.Template[ep11.Attribute(mapkey)] = mapvalue
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
@@ -19616,7 +20703,10 @@ func (m *UnwrapKeyRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -19771,7 +20861,10 @@ func (m *UnwrapKeyResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -19851,6 +20944,120 @@ func (m *DeriveKeyRequest) Unmarshal(dAtA []byte) error {
 			if err := m.Mech.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field TemplateBytes", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowServer
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthServer
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthServer
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.TemplateBytes == nil {
+				m.TemplateBytes = make(map[ep11.Attribute][]byte)
+			}
+			var mapkey uint64
+			mapvalue := []byte{}
+			for iNdEx < postIndex {
+				entryPreIndex := iNdEx
+				var wire uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return ErrIntOverflowServer
+					}
+					if iNdEx >= l {
+						return io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					wire |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				fieldNum := int32(wire >> 3)
+				if fieldNum == 1 {
+					for shift := uint(0); ; shift += 7 {
+						if shift >= 64 {
+							return ErrIntOverflowServer
+						}
+						if iNdEx >= l {
+							return io.ErrUnexpectedEOF
+						}
+						b := dAtA[iNdEx]
+						iNdEx++
+						mapkey |= uint64(b&0x7F) << shift
+						if b < 0x80 {
+							break
+						}
+					}
+				} else if fieldNum == 2 {
+					var mapbyteLen uint64
+					for shift := uint(0); ; shift += 7 {
+						if shift >= 64 {
+							return ErrIntOverflowServer
+						}
+						if iNdEx >= l {
+							return io.ErrUnexpectedEOF
+						}
+						b := dAtA[iNdEx]
+						iNdEx++
+						mapbyteLen |= uint64(b&0x7F) << shift
+						if b < 0x80 {
+							break
+						}
+					}
+					intMapbyteLen := int(mapbyteLen)
+					if intMapbyteLen < 0 {
+						return ErrInvalidLengthServer
+					}
+					postbytesIndex := iNdEx + intMapbyteLen
+					if postbytesIndex < 0 {
+						return ErrInvalidLengthServer
+					}
+					if postbytesIndex > l {
+						return io.ErrUnexpectedEOF
+					}
+					mapvalue = make([]byte, mapbyteLen)
+					copy(mapvalue, dAtA[iNdEx:postbytesIndex])
+					iNdEx = postbytesIndex
+				} else {
+					iNdEx = entryPreIndex
+					skippy, err := skipServer(dAtA[iNdEx:])
+					if err != nil {
+						return err
+					}
+					if skippy < 0 {
+						return ErrInvalidLengthServer
+					}
+					if (iNdEx + skippy) > postIndex {
+						return io.ErrUnexpectedEOF
+					}
+					iNdEx += skippy
+				}
+			}
+			m.TemplateBytes[ep11.Attribute(mapkey)] = mapvalue
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
@@ -19950,7 +21157,7 @@ func (m *DeriveKeyRequest) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Template == nil {
-				m.Template = make(map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue)
+				m.Template = make(map[ep11.Attribute]*AttributeValue)
 			}
 			var mapkey uint64
 			var mapvalue *AttributeValue
@@ -20024,7 +21231,7 @@ func (m *DeriveKeyRequest) Unmarshal(dAtA []byte) error {
 					if err != nil {
 						return err
 					}
-					if (skippy < 0) || (iNdEx+skippy) < 0 {
+					if skippy < 0 {
 						return ErrInvalidLengthServer
 					}
 					if (iNdEx + skippy) > postIndex {
@@ -20033,7 +21240,7 @@ func (m *DeriveKeyRequest) Unmarshal(dAtA []byte) error {
 					iNdEx += skippy
 				}
 			}
-			m.Template[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute(mapkey)] = mapvalue
+			m.Template[ep11.Attribute(mapkey)] = mapvalue
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
@@ -20041,7 +21248,10 @@ func (m *DeriveKeyRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -20196,7 +21406,10 @@ func (m *DeriveKeyResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -20247,7 +21460,10 @@ func (m *GetMechanismListRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -20294,7 +21510,7 @@ func (m *GetMechanismListResponse) Unmarshal(dAtA []byte) error {
 		switch fieldNum {
 		case 2:
 			if wireType == 0 {
-				var v github_com_IBM_Cloud_hpcs_grep11_go_ep11.Mechanism
+				var v ep11.Mechanism
 				for shift := uint(0); ; shift += 7 {
 					if shift >= 64 {
 						return ErrIntOverflowServer
@@ -20304,7 +21520,7 @@ func (m *GetMechanismListResponse) Unmarshal(dAtA []byte) error {
 					}
 					b := dAtA[iNdEx]
 					iNdEx++
-					v |= github_com_IBM_Cloud_hpcs_grep11_go_ep11.Mechanism(b&0x7F) << shift
+					v |= ep11.Mechanism(b&0x7F) << shift
 					if b < 0x80 {
 						break
 					}
@@ -20345,10 +21561,10 @@ func (m *GetMechanismListResponse) Unmarshal(dAtA []byte) error {
 				}
 				elementCount = count
 				if elementCount != 0 && len(m.Mechs) == 0 {
-					m.Mechs = make([]github_com_IBM_Cloud_hpcs_grep11_go_ep11.Mechanism, 0, elementCount)
+					m.Mechs = make([]ep11.Mechanism, 0, elementCount)
 				}
 				for iNdEx < postIndex {
-					var v github_com_IBM_Cloud_hpcs_grep11_go_ep11.Mechanism
+					var v ep11.Mechanism
 					for shift := uint(0); ; shift += 7 {
 						if shift >= 64 {
 							return ErrIntOverflowServer
@@ -20358,7 +21574,7 @@ func (m *GetMechanismListResponse) Unmarshal(dAtA []byte) error {
 						}
 						b := dAtA[iNdEx]
 						iNdEx++
-						v |= github_com_IBM_Cloud_hpcs_grep11_go_ep11.Mechanism(b&0x7F) << shift
+						v |= ep11.Mechanism(b&0x7F) << shift
 						if b < 0x80 {
 							break
 						}
@@ -20374,7 +21590,10 @@ func (m *GetMechanismListResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -20433,7 +21652,7 @@ func (m *GetMechanismInfoRequest) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.Mech |= github_com_IBM_Cloud_hpcs_grep11_go_ep11.Mechanism(b&0x7F) << shift
+				m.Mech |= ep11.Mechanism(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
@@ -20444,7 +21663,10 @@ func (m *GetMechanismInfoRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -20531,7 +21753,10 @@ func (m *GetMechanismInfoResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -20640,7 +21865,7 @@ func (m *GetAttributeValueRequest) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.AttributesBytes == nil {
-				m.AttributesBytes = make(map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute][]byte)
+				m.AttributesBytes = make(map[ep11.Attribute][]byte)
 			}
 			var mapkey uint64
 			mapvalue := []byte{}
@@ -20713,7 +21938,7 @@ func (m *GetAttributeValueRequest) Unmarshal(dAtA []byte) error {
 					if err != nil {
 						return err
 					}
-					if (skippy < 0) || (iNdEx+skippy) < 0 {
+					if skippy < 0 {
 						return ErrInvalidLengthServer
 					}
 					if (iNdEx + skippy) > postIndex {
@@ -20722,7 +21947,7 @@ func (m *GetAttributeValueRequest) Unmarshal(dAtA []byte) error {
 					iNdEx += skippy
 				}
 			}
-			m.AttributesBytes[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute(mapkey)] = mapvalue
+			m.AttributesBytes[ep11.Attribute(mapkey)] = mapvalue
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
@@ -20754,7 +21979,7 @@ func (m *GetAttributeValueRequest) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Attributes == nil {
-				m.Attributes = make(map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue)
+				m.Attributes = make(map[ep11.Attribute]*AttributeValue)
 			}
 			var mapkey uint64
 			var mapvalue *AttributeValue
@@ -20828,7 +22053,7 @@ func (m *GetAttributeValueRequest) Unmarshal(dAtA []byte) error {
 					if err != nil {
 						return err
 					}
-					if (skippy < 0) || (iNdEx+skippy) < 0 {
+					if skippy < 0 {
 						return ErrInvalidLengthServer
 					}
 					if (iNdEx + skippy) > postIndex {
@@ -20837,7 +22062,7 @@ func (m *GetAttributeValueRequest) Unmarshal(dAtA []byte) error {
 					iNdEx += skippy
 				}
 			}
-			m.Attributes[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute(mapkey)] = mapvalue
+			m.Attributes[ep11.Attribute(mapkey)] = mapvalue
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
@@ -20845,7 +22070,10 @@ func (m *GetAttributeValueRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -20920,7 +22148,7 @@ func (m *GetAttributeValueResponse) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.AttributesBytes == nil {
-				m.AttributesBytes = make(map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute][]byte)
+				m.AttributesBytes = make(map[ep11.Attribute][]byte)
 			}
 			var mapkey uint64
 			mapvalue := []byte{}
@@ -20993,7 +22221,7 @@ func (m *GetAttributeValueResponse) Unmarshal(dAtA []byte) error {
 					if err != nil {
 						return err
 					}
-					if (skippy < 0) || (iNdEx+skippy) < 0 {
+					if skippy < 0 {
 						return ErrInvalidLengthServer
 					}
 					if (iNdEx + skippy) > postIndex {
@@ -21002,7 +22230,7 @@ func (m *GetAttributeValueResponse) Unmarshal(dAtA []byte) error {
 					iNdEx += skippy
 				}
 			}
-			m.AttributesBytes[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute(mapkey)] = mapvalue
+			m.AttributesBytes[ep11.Attribute(mapkey)] = mapvalue
 			iNdEx = postIndex
 		case 4:
 			if wireType != 2 {
@@ -21034,7 +22262,7 @@ func (m *GetAttributeValueResponse) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Attributes == nil {
-				m.Attributes = make(map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue)
+				m.Attributes = make(map[ep11.Attribute]*AttributeValue)
 			}
 			var mapkey uint64
 			var mapvalue *AttributeValue
@@ -21108,7 +22336,7 @@ func (m *GetAttributeValueResponse) Unmarshal(dAtA []byte) error {
 					if err != nil {
 						return err
 					}
-					if (skippy < 0) || (iNdEx+skippy) < 0 {
+					if skippy < 0 {
 						return ErrInvalidLengthServer
 					}
 					if (iNdEx + skippy) > postIndex {
@@ -21117,7 +22345,7 @@ func (m *GetAttributeValueResponse) Unmarshal(dAtA []byte) error {
 					iNdEx += skippy
 				}
 			}
-			m.Attributes[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute(mapkey)] = mapvalue
+			m.Attributes[ep11.Attribute(mapkey)] = mapvalue
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
@@ -21125,7 +22353,10 @@ func (m *GetAttributeValueResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -21204,6 +22435,120 @@ func (m *SetAttributeValueRequest) Unmarshal(dAtA []byte) error {
 				m.Object = []byte{}
 			}
 			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field AttributesBytes", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowServer
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthServer
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthServer
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.AttributesBytes == nil {
+				m.AttributesBytes = make(map[ep11.Attribute][]byte)
+			}
+			var mapkey uint64
+			mapvalue := []byte{}
+			for iNdEx < postIndex {
+				entryPreIndex := iNdEx
+				var wire uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return ErrIntOverflowServer
+					}
+					if iNdEx >= l {
+						return io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					wire |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				fieldNum := int32(wire >> 3)
+				if fieldNum == 1 {
+					for shift := uint(0); ; shift += 7 {
+						if shift >= 64 {
+							return ErrIntOverflowServer
+						}
+						if iNdEx >= l {
+							return io.ErrUnexpectedEOF
+						}
+						b := dAtA[iNdEx]
+						iNdEx++
+						mapkey |= uint64(b&0x7F) << shift
+						if b < 0x80 {
+							break
+						}
+					}
+				} else if fieldNum == 2 {
+					var mapbyteLen uint64
+					for shift := uint(0); ; shift += 7 {
+						if shift >= 64 {
+							return ErrIntOverflowServer
+						}
+						if iNdEx >= l {
+							return io.ErrUnexpectedEOF
+						}
+						b := dAtA[iNdEx]
+						iNdEx++
+						mapbyteLen |= uint64(b&0x7F) << shift
+						if b < 0x80 {
+							break
+						}
+					}
+					intMapbyteLen := int(mapbyteLen)
+					if intMapbyteLen < 0 {
+						return ErrInvalidLengthServer
+					}
+					postbytesIndex := iNdEx + intMapbyteLen
+					if postbytesIndex < 0 {
+						return ErrInvalidLengthServer
+					}
+					if postbytesIndex > l {
+						return io.ErrUnexpectedEOF
+					}
+					mapvalue = make([]byte, mapbyteLen)
+					copy(mapvalue, dAtA[iNdEx:postbytesIndex])
+					iNdEx = postbytesIndex
+				} else {
+					iNdEx = entryPreIndex
+					skippy, err := skipServer(dAtA[iNdEx:])
+					if err != nil {
+						return err
+					}
+					if skippy < 0 {
+						return ErrInvalidLengthServer
+					}
+					if (iNdEx + skippy) > postIndex {
+						return io.ErrUnexpectedEOF
+					}
+					iNdEx += skippy
+				}
+			}
+			m.AttributesBytes[ep11.Attribute(mapkey)] = mapvalue
+			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Attributes", wireType)
@@ -21234,7 +22579,7 @@ func (m *SetAttributeValueRequest) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Attributes == nil {
-				m.Attributes = make(map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue)
+				m.Attributes = make(map[ep11.Attribute]*AttributeValue)
 			}
 			var mapkey uint64
 			var mapvalue *AttributeValue
@@ -21308,7 +22653,7 @@ func (m *SetAttributeValueRequest) Unmarshal(dAtA []byte) error {
 					if err != nil {
 						return err
 					}
-					if (skippy < 0) || (iNdEx+skippy) < 0 {
+					if skippy < 0 {
 						return ErrInvalidLengthServer
 					}
 					if (iNdEx + skippy) > postIndex {
@@ -21317,7 +22662,7 @@ func (m *SetAttributeValueRequest) Unmarshal(dAtA []byte) error {
 					iNdEx += skippy
 				}
 			}
-			m.Attributes[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute(mapkey)] = mapvalue
+			m.Attributes[ep11.Attribute(mapkey)] = mapvalue
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
@@ -21325,7 +22670,10 @@ func (m *SetAttributeValueRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -21410,313 +22758,10 @@ func (m *SetAttributeValueResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
 				return ErrInvalidLengthServer
 			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *LoginRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowServer
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: LoginRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: LoginRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Storeid", wireType)
-			}
-			var byteLen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowServer
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				byteLen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if byteLen < 0 {
-				return ErrInvalidLengthServer
-			}
-			postIndex := iNdEx + byteLen
-			if postIndex < 0 {
-				return ErrInvalidLengthServer
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Storeid = append(m.Storeid[:0], dAtA[iNdEx:postIndex]...)
-			if m.Storeid == nil {
-				m.Storeid = []byte{}
-			}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Pin", wireType)
-			}
-			var byteLen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowServer
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				byteLen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if byteLen < 0 {
-				return ErrInvalidLengthServer
-			}
-			postIndex := iNdEx + byteLen
-			if postIndex < 0 {
-				return ErrInvalidLengthServer
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Pin = append(m.Pin[:0], dAtA[iNdEx:postIndex]...)
-			if m.Pin == nil {
-				m.Pin = []byte{}
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipServer(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthServer
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *LoginResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowServer
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: LoginResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: LoginResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Pinblob", wireType)
-			}
-			var byteLen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowServer
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				byteLen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if byteLen < 0 {
-				return ErrInvalidLengthServer
-			}
-			postIndex := iNdEx + byteLen
-			if postIndex < 0 {
-				return ErrInvalidLengthServer
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Pinblob = append(m.Pinblob[:0], dAtA[iNdEx:postIndex]...)
-			if m.Pinblob == nil {
-				m.Pinblob = []byte{}
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipServer(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthServer
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *LogoutRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowServer
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: LogoutRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: LogoutRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipServer(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthServer
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *LogoutResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowServer
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: LogoutResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: LogoutResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipServer(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -21775,7 +22820,7 @@ func (m *Mechanism) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.Mechanism |= github_com_IBM_Cloud_hpcs_grep11_go_ep11.Mechanism(b&0x7F) << shift
+				m.Mechanism |= ep11.Mechanism(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
@@ -21918,13 +22963,86 @@ func (m *Mechanism) Unmarshal(dAtA []byte) error {
 			}
 			m.Parameter = &Mechanism_ECDH1DeriveParameter{v}
 			iNdEx = postIndex
+		case 6:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field BTCDeriveParameter", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowServer
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthServer
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthServer
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			v := &BTCDeriveParm{}
+			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			m.Parameter = &Mechanism_BTCDeriveParameter{v}
+			iNdEx = postIndex
+		case 7:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ECSGParameter", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowServer
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthServer
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthServer
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			v := &ECSGParm{}
+			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			m.Parameter = &Mechanism_ECSGParameter{v}
+			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
 			skippy, err := skipServer(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -22032,7 +23150,10 @@ func (m *MechanismInfo) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -22091,7 +23212,7 @@ func (m *Grep11Error) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.Code |= github_com_IBM_Cloud_hpcs_grep11_go_ep11.Return(b&0x7F) << shift
+				m.Code |= ep11.Return(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
@@ -22154,7 +23275,10 @@ func (m *Grep11Error) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -22213,7 +23337,7 @@ func (m *RSAOAEPParm) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.HashMech |= github_com_IBM_Cloud_hpcs_grep11_go_ep11.Mechanism(b&0x7F) << shift
+				m.HashMech |= ep11.Mechanism(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
@@ -22296,7 +23420,10 @@ func (m *RSAOAEPParm) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -22355,7 +23482,7 @@ func (m *RSAPSSParm) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.HashMech |= github_com_IBM_Cloud_hpcs_grep11_go_ep11.Mechanism(b&0x7F) << shift
+				m.HashMech |= ep11.Mechanism(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
@@ -22404,7 +23531,10 @@ func (m *RSAPSSParm) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -22542,7 +23672,228 @@ func (m *ECDH1DeriveParm) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *BTCDeriveParm) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowServer
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: BTCDeriveParm: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: BTCDeriveParm: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Type", wireType)
+			}
+			m.Type = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowServer
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Type |= BTCDeriveParm_BTCDeriveType(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ChildKeyIndex", wireType)
+			}
+			m.ChildKeyIndex = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowServer
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.ChildKeyIndex |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ChainCode", wireType)
+			}
+			var byteLen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowServer
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				byteLen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if byteLen < 0 {
+				return ErrInvalidLengthServer
+			}
+			postIndex := iNdEx + byteLen
+			if postIndex < 0 {
+				return ErrInvalidLengthServer
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.ChainCode = append(m.ChainCode[:0], dAtA[iNdEx:postIndex]...)
+			if m.ChainCode == nil {
+				m.ChainCode = []byte{}
+			}
+			iNdEx = postIndex
+		case 4:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Version", wireType)
+			}
+			m.Version = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowServer
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Version |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipServer(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *ECSGParm) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowServer
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: ECSGParm: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: ECSGParm: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Type", wireType)
+			}
+			m.Type = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowServer
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Type |= ECSGParm_ECSGType(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipServer(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -22612,7 +23963,186 @@ func (m *HMACGeneralParm) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *ReEncryptRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowServer
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: ReEncryptRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: ReEncryptRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field WrappedKey", wireType)
+			}
+			var byteLen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowServer
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				byteLen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if byteLen < 0 {
+				return ErrInvalidLengthServer
+			}
+			postIndex := iNdEx + byteLen
+			if postIndex < 0 {
+				return ErrInvalidLengthServer
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.WrappedKey = append(m.WrappedKey[:0], dAtA[iNdEx:postIndex]...)
+			if m.WrappedKey == nil {
+				m.WrappedKey = []byte{}
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipServer(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.XXX_unrecognized = append(m.XXX_unrecognized, dAtA[iNdEx:iNdEx+skippy]...)
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *ReEncryptResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowServer
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: ReEncryptResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: ReEncryptResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field RewrappedKey", wireType)
+			}
+			var byteLen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowServer
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				byteLen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if byteLen < 0 {
+				return ErrInvalidLengthServer
+			}
+			postIndex := iNdEx + byteLen
+			if postIndex < 0 {
+				return ErrInvalidLengthServer
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.RewrappedKey = append(m.RewrappedKey[:0], dAtA[iNdEx:postIndex]...)
+			if m.RewrappedKey == nil {
+				m.RewrappedKey = []byte{}
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipServer(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -22697,7 +24227,10 @@ func (m *RewrapKeyBlobRequest) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -22818,7 +24351,10 @@ func (m *RewrapKeyBlobResponse) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -22943,7 +24479,10 @@ func (m *AttributeValue) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
@@ -23105,7 +24644,7 @@ func (m *KeyBlob) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Attributes == nil {
-				m.Attributes = make(map[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute]*AttributeValue)
+				m.Attributes = make(map[ep11.Attribute]*AttributeValue)
 			}
 			var mapkey uint64
 			var mapvalue *AttributeValue
@@ -23179,7 +24718,7 @@ func (m *KeyBlob) Unmarshal(dAtA []byte) error {
 					if err != nil {
 						return err
 					}
-					if (skippy < 0) || (iNdEx+skippy) < 0 {
+					if skippy < 0 {
 						return ErrInvalidLengthServer
 					}
 					if (iNdEx + skippy) > postIndex {
@@ -23188,7 +24727,7 @@ func (m *KeyBlob) Unmarshal(dAtA []byte) error {
 					iNdEx += skippy
 				}
 			}
-			m.Attributes[github_com_IBM_Cloud_hpcs_grep11_go_ep11.Attribute(mapkey)] = mapvalue
+			m.Attributes[ep11.Attribute(mapkey)] = mapvalue
 			iNdEx = postIndex
 		case 5:
 			if wireType != 2 {
@@ -23228,7 +24767,10 @@ func (m *KeyBlob) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
+			if skippy < 0 {
+				return ErrInvalidLengthServer
+			}
+			if (iNdEx + skippy) < 0 {
 				return ErrInvalidLengthServer
 			}
 			if (iNdEx + skippy) > l {
